@@ -1,0 +1,22 @@
+	{
+		"returnCode":0,
+		"message":"",
+		"rows":[{
+			    "id":"123456",
+				"name":"思沃福",
+				"model":"SWF001",
+				"hasFlowAccount":"是",
+				"hasTDS":"是",
+				"fees":"包年",
+				"instr":{
+					"id":"589bcd2fdeffdedd7b6af972",
+					"name":"测试"
+				},
+				"describe":"阿斯达斯",
+				"createTime":"2017-03-30 14:37:43",
+				"modifyTime":"2017-03-30 14:37:43"
+	
+			}
+		],
+		"total":1
+	}

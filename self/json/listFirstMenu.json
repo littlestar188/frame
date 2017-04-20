@@ -1,0 +1,23 @@
+{
+		"returnCode":0,
+		"message":"",
+		"data":[{
+				"id":"58d4f2e58b650f29b6b2b479",
+				"name":"库存管理",
+				"permission":[1,2,3,4]
+				
+			},
+			{
+				"id":"58d4f2e58b650f29b6b2b48d",
+				"name":"流量管理",
+				"permission":[1,2,3,4]
+				
+			},
+			{
+				"id":"58d4f2e58b650f29b6b2b45k",
+				"name":"系统管理",
+				"permission":[1,2,3,4]
+				
+			}
+		]
+	}

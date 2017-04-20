@@ -1,0 +1,15 @@
+.cont{
+	background-color: #f9f9f9;
+}
+.user-lineh{
+	height:40px;
+	line-height:40px;
+}
+.user-body .user-lineh a{
+	display: block;
+	height:40px;
+	line-height:40px;
+}
+.user-body .user-lineh a:hover{	
+	background-color:#f4f4f4;
+}

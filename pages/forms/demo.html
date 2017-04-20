@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+   <div class="box-body">
+            <form class="form-horizontal nice-validator n-default" action="/updatePassword" method="post" novalidate="novalidate">
+                <div class="form-group row">
+                    <label class="control-label col-xs-3" for="oldPaw">旧密码
+                        <span class="required">*</span>
+                    </label>
+                    <div class="col-xs-3">
+                        <input type="password" class="form-control n-invalid" id="oldPaw" name="oldPaw" placeholder="旧密码" aria-required="true" aria-invalid="true">
+                        <span for="oldPaw">
+                            <span class="n-msg" style="display:none">不能为空</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-xs-3" for="newPaw">新密码
+                        <span class="required">*</span>
+                    </label>
+                    <div class="col-xs-3">
+                        <input type="password" class="form-control" id="newPaw" name="newPaw" placeholder="新密码" aria-required="true">
+                    </div>
+                    <div class="col-xs-3 confPws">
+                        <span for="inputConfirmPaw">
+                            <span class="n-msg" style="display:none;padding: 6px 12px"></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-xs-3" for="inputConfirmPaw">确认新密码
+                        <span class="required">*</span>
+                    </label>
+                    <div class="col-xs-3"> 
+                        <input type="password" class="form-control" id="inputConfirmPaw" placeholder="确认新密码" aria-required="true">                      
+                    </div>
+                    <div class="col-xs-3 confPws">
+                        <span for="inputConfirmPaw">
+                            <span class="n-msg" style="display:none;padding: 6px 12px"></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group" style="display: none;" id="error_msg">
+                    <div class="col-md-3 col-md-offset-3">
+                        <span class="text-danger" style="color: red;font-weight: bold;"></span>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <a href="invoice-print.html" target="_blank" class="btn btn-default save"><i class="fa fa-save"></i> 保存</a>
+                  </div>
+                </div>
+            </form>
+        </div>
+   <script>
+
+     $(function(){
+      var pws = {
+        old:"",
+        new:"",
+        conf:"",
+        init:function(){
+          var that = this;
+          //this.old = $('#oldPaw').val();
+          // this.new = $('#newPaw').val();
+          // this.conf = $('#inputConfirmPaw').val();             
+          this.judge();
+          //点击保存 向后台传参
+          $('.save').click(function(){
+            $.ajax({
+              url:'../../self/js/person.json',
+              type:'get',
+              dataType:'json',
+              data:{
+                password:that.old,
+                newPassword:that.new,
+                confirmPassword:that.conf
+              },
+              success:function(res){
+                //判断是否修改成功
+                if(res.returnCode == 0){
+                  $('.modal-wrapper').show();
+                  $('.modal-wrapper .beTure').click(function(){
+                    $('.modal-wrapper').hide();
+                  })
+                }
+              },
+              error:function(){
+                console.log('后台报错');
+              }
+
+            })  
+          })
+        },
+        //基本校验
+        judge:function(){
+          var that = this;
+          $('.box-body').on('blur','input',function(){
+
+            if($(this).is('#oldPaw')){
+              that.old = $(this).val().trim();
+              console.log(that.old);
+            }
+            if($(this).is('#newPaw')){
+              that.new = $(this).val().trim();
+              console.log(that.new);
+            }
+            if($(this).is('#inputConfirmPaw')){
+              that.conf = $(this).val().trim();
+              console.log(that.conf);
+            }
+            //新密码的基本校验 
+            //字母数字 6-16位 
+            var reg=/[a-zA-Z\d]{6,16}/;
+            if(reg.test($(this).val().trim()) == 1){
+              if(that.new != that.conf){                
+                $('.confPws').css('color','#c33').html('密码不一致').show();
+                console.log(that.new !== that.conf)
+              }
+            }else{
+              $(this).parent().next().css('color','#c33').html('密码格式不正确').show();
+            }
+            
+          })  
+
+          $('.box-body').on('input','input',function(){
+            $('.confPws').hide();
+          });
+          
+        }
+      }
+      pws.init();
+     })
+   </script>
+   <script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+   <script src="../../self/js/global.js"></script>
+</body>
+</html>

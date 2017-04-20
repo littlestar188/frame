@@ -1,0 +1,23 @@
+	{
+		"returnCode":0,
+		"message":"",
+		"rows":[{
+				"id":"589bcd2fdeffdedd7b6af972",
+				"name":"测试",				
+				"creater":
+					{					
+					"id":"100001",
+					"realName":"创建管理员"
+					},
+				"createTime":"2015-5-7",
+				"modifyUser":
+					{					
+					"modifyUserId":"5861d11b2d75473374557efe",
+					"realName":"编辑管理员"
+					},
+				"modifyTime":"2015-5-10"
+				
+			}
+	],
+		"total":1
+	}
