@@ -24,23 +24,44 @@ $(function(){
              pageList: [10, 25, 50, 100],
              toolbar:'#custom-toolbar',
              columns: [
-                       {field: 'state',checkbox: true},
+                        {field: 'state',checkbox: true,formatter:function(value, row){
+                        role.stateFormatter(value, row)}//function(value,row){
+                       // 		if (row.state == true)
+                       // 	        return {
+                       // 	            disabled : true,//设置是否可用
+                       // 	            checked : true//设置选中
+                       // 	        }
+                       // 		   // return value;
+                       // 		}
+                       // }
+                   		},
                        {field: 'roleName',title: '角色名称',align: 'center',valign: 'middle'},
                        {field: 'id',title: '操作',align: 'center',valign: 'middle',formatter:function(value){
                        	//console.log(value)                     	
                        //return "<span><a href='javascript:void(0)' class='btn btn-success btn-xs' id='btn-watch' data-id="+value+">详情</a>&nbsp;&nbsp;<a href='javascript:void(0)' class='btn btn-info btn-xs' data-id="+value+" id='btn-edit'>修改</a>&nbsp;&nbsp;<a href='javascript:void(0)' class='btn btn-danger btn-xs' data-id="+value+" id='btn-del'>删除</a>&nbsp;&nbsp;</span>"
-                       	return role.optShow(value);
-                       }
+                       	return role.optShow(value);}
                        }
        				]
          	})
          	
 			this.addRole();
-			// this.delRole();
-			this.searchRole();
+			//查询
+			//this.searchRole();
 			//改 查 删 功能实现
 			this.btnPer();
+			
+			
 
+		},
+		stateFormatter:function(value, row){
+			if (row.state == true){
+		        return {
+		            disabled : true,//设置是否可用
+		            checked : true//设置选中
+		        };
+			   return value;
+			}
+			
 		},
 		//根据一级菜单权限显示/隐藏  功能按键
 		optShow:function(value){
@@ -113,15 +134,16 @@ $(function(){
 					modalCon = $(document).find('.list_edit li').remove();
 					//初始化选项显示					
 					that.oneMenu(roleId);
-					
+					that.editRole();
+
 					//修改后
-					that.checkRole('/manage/role/updateCheck',roleId);
+					that.checkEditRole('/manage/role/updateCheck',roleId);
 					var tableLis = '#list_table .list_edit li';				 
 			 		$('#btn-edit-save').click(function(){
 			 			that.saveClick(tableLis,'/manage/role/updateRole',roleId);
 			 		})
 
-					that.editRole();
+					
 				}
 
 				//判断是否为【删除】
@@ -200,7 +222,7 @@ $(function(){
 			//只负责传参数 "menus":[{"id":"",permission:[]}]					
  			var cmenu = {};
  			//$('#list_table li').each(function(){
- 			console.log(elem)
+ 			//console.log(elem)
  			$(elem).each(function(){
 	 			var cid,cper;
  				var perArray = [];
@@ -237,7 +259,7 @@ $(function(){
             //根据参数个数选择that.datas类型
             //增
            var tdatas = {"menus":that.menuId, "roleName":that.valueName};
-           console.log(arguments)
+ 
            //增
            	if(arguments.length == 2){
            		that.datas = tdatas;
@@ -321,7 +343,13 @@ $(function(){
 		},
 		//批量删除
 		batchDel:function(){
-			$('#role_table').on('.bs-checkbox input[type="text"]')
+			//role/deleteRoles post
+
+			var checkBoxs = $('#role_table').find('.bs-checkbox input[type="checkbox"]');
+			console.log(checkBoxs)
+				
+
+			
 		},
 		//修改
 		editRole:function(){
@@ -337,18 +365,32 @@ $(function(){
 				$('#list_table .list_choice').hide();
                 $('#list_table .list_person').hide();
                 $('#list_table .list_edit').show();
-                
-
-				
+               
 
 				$('#roleModal').modal({show:true})
 			//})
 		},
 		//查询角色
 		searchRole:function(){
-			$('.searchBtn').click(function(){
+			$('.searchBtn').click(function(){				
+				$("#role_table").bootstrapTable('refresh',{
+					url:'manage/role/selectRoles',
+					queryParams: role.queryParams
+				})
+
 
 			})
+
+		},
+		queryParams:function(params){
+			console.log($('#custom-toolbar input[type="text"]').val())
+			var temp = {
+				limit:params.limit,
+				offset:params.offset,
+				"roleName":$('#custom-toolbar input[type="text"]').val(),
+				
+			}
+			return temp;
 		},
 		//查看功能
 		watchRole:function(){
@@ -361,7 +403,6 @@ $(function(){
 				$('#list_table .list_choice').hide();
 				$('#list_table .list_edit').hide();
 				$('#list_table .list_person').show();
-
 
 				$('#roleModal').modal({show:true});
 		  // })
@@ -376,7 +417,7 @@ $(function(){
 	 	 	$.post("/manage/menu/listFirstMenu",{"cache": false},function(res){
 	 	 		console.log('当前账号的所有菜单权限--------')
 	 	 		console.log(res)	 	 		
-	 	 		data = res.data;
+	 	 		data = res.data; 
 	 	 		for(var key = 0;key<data.length;key++){
 	 	 			(function(i){
 	 	 				var id = data[i].id;
@@ -396,29 +437,36 @@ $(function(){
 		 	})
 		},
 		//角色查重
-		checkRole:function(ajaxURL,editId){
+		checkRole:function(ajaxURL){
 			var that = this;
-			length = arguments.length;
+			
 			$('.role-input').on("blur",function(){
-
-				that.valueName = $(this).val();
-				if(length == 1){
-					that.cdatas = {"roleName":that.valueName};
-				}
-
-				if(length == 2){
-					that.cdatas = {"roleName":that.valueName,"roleId":editId};
-
-				}
+				that.valueName = $(this).val();	
+				that.cdatas = {"roleName":that.valueName};
+				console.log(that.valueName,ajaxURL,that.cdatas)
 				that.sendCheck(that.valueName,ajaxURL,that.cdatas);
-
+			})
+			$('.role-input').on("focus",function(){
+				$('.error i').html('');
+				$('.error').hide();
+			})
+    		
+			
+		},
+		checkEditRole:function(ajaxURL,editId){
+			//console.log(ajaxURL,editId)
+			var that = this;
+			$('.role-input').on("blur",function(){
+				that.valueName = $(this).val();	
+				that.cdatas = {"roleName":that.valueName,"roleId":editId};
+				that.sendCheck(that.valueName,ajaxURL,that.cdatas);
+				
 			})
 
 			$('.role-input').on("focus",function(){
 				$('.error i').html('');
 				$('.error').hide();
 			})
-			
 		},
 		sendCheck:function(valueName,ajaxURL,data){
 			var that = this;
@@ -427,10 +475,10 @@ $(function(){
 	    			//url:"../../self/json/addCheck.json",
 	    			url:ajaxURL,
 	    			type:"post",
-	    			contentType: 'application/json;charset=utf-8',
+	    			//contentType: 'application/json;charset=utf-8',
 	    			cache: false,
 	    			//async : false,
-	    			data:JSON.stringify(data),
+	    			data:data,
 	    			success:function(res){
 	    				var returnCode = res.returnCode;
 	    				var returnMsg = res.message;
