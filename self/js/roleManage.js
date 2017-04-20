@@ -4,6 +4,7 @@ $(function(){
 	//var role = $.extend(role,{
 	var role = {
 		datas:{},
+		cdatas:{},
 		valueName:"",
 		menuId:[],
 		//roleId:"",
@@ -112,9 +113,9 @@ $(function(){
 					modalCon = $(document).find('.list_edit li').remove();
 					//初始化选项显示					
 					that.oneMenu(roleId);
-					that.checkRole();
-
+					
 					//修改后
+					that.checkRole('/manage/role/updateCheck',roleId);
 					var tableLis = '#list_table .list_edit li';				 
 			 		$('#btn-edit-save').click(function(){
 			 			that.saveClick(tableLis,'/manage/role/updateRole',roleId);
@@ -127,18 +128,18 @@ $(function(){
 				if($(this).is('#btn-del')){
 					console.log("del")
 					roleId = $(this).attr('data-id');
-					console.log(roleId)
+					//console.log(roleId)
 					that.delRole(roleId);	
 				}
 
 			})
 		},
 		//判断当前账号的角色 是否有角色管理的权限
-		judgePer:function(){
-			//../../self/json/listFirstMenu.json
-			//$.get("/manage/menu/listFirstMenu.json",{"cache": false},function(res){})
-			$.post("/manage/menu/listFirstMenu.json",{"cache": false},function(res){})
-		},
+		// judgePer:function(){
+		// 	//../../self/json/listFirstMenu.json
+		// 	//$.get("/manage/menu/listFirstMenu.json",{"cache": false},function(res){})
+		// 	$.post("/manage/menu/listFirstMenu.json",{"cache": false},function(res){})
+		// },
 		//新增
 		addRole:function(){	
 
@@ -164,14 +165,15 @@ $(function(){
 				$('#list_table .list_person').hide();
 				$('#list_table .list_edit').hide()
 
-		    	//角色名输入 显示是否可用请求判断 aadCheck
-		    	//that.checkRole();
+		    	
 		    	
 		 		$('#roleModal').modal({show:true})
+		 		//角色名输入 显示是否可用请求判断 aadCheck
+		    	that.saveRole();
 		 	})	
 		 	//获取对应权限的一级菜单列表	 			 	
  	 		this.selectTotal();
- 	 		this.saveRole();
+ 	 		
 
 		 	
 		 	 
@@ -182,7 +184,7 @@ $(function(){
 			var that = this;
 
 			//角色名是否重名
-			this.checkRole();
+			this.checkRole("/manage/role/addCheck");
 			//单个按钮
 	 		//监视所有复选框 data-id =  navId-permission
 	 		var tableLis = '#list_table .list_choice li';
@@ -235,7 +237,7 @@ $(function(){
             //根据参数个数选择that.datas类型
             //增
            var tdatas = {"menus":that.menuId, "roleName":that.valueName};
-           
+           console.log(arguments)
            //增
            	if(arguments.length == 2){
            		that.datas = tdatas;
@@ -394,37 +396,56 @@ $(function(){
 		 	})
 		},
 		//角色查重
-		checkRole:function(){
+		checkRole:function(ajaxURL,editId){
 			var that = this;
+			length = arguments.length;
 			$('.role-input').on("blur",function(){
-	    		that.valueName = $(this).val();
-	    		console.log("checkRole------"+that.valueName)
-	    		//
-	    		if(that.valueName != ""){
-	    			$.ajax({
-		    			//url:"../../self/json/addCheck.json",
-		    			url:"/manage/role/addCheck",
-		    			type:"post",
-		    			cache: false,
-		    			//async : false,
-		    			data:{
-		    				"roleName":that.valueName
-		    			},
-		    			success:function(res){
-		    				var returnCode = res.returnCode;
-		    				var returnMsg = res.message;
-		    				that.checkCallback(returnCode,returnMsg,that.valueName);
-		    				
-		    				
-		    			}
-		    		})
-	    		
-	    		}else{
-	    			$('.error').html('用户名不能为空').show();
-	    		}
-		    })
-		    //console.log(sendName)
-		    //return sendName;
+
+				that.valueName = $(this).val();
+				if(length == 1){
+					that.cdatas = {"roleName":that.valueName};
+				}
+
+				if(length == 2){
+					that.cdatas = {"roleName":that.valueName,"roleId":editId};
+
+				}
+				that.sendCheck(that.valueName,ajaxURL,that.cdatas);
+
+			})
+
+			$('.role-input').on("focus",function(){
+				$('.error i').html('');
+				$('.error').hide();
+			})
+			
+		},
+		sendCheck:function(valueName,ajaxURL,data){
+			var that = this;
+			if(valueName != ""){
+    			$.ajax({
+	    			//url:"../../self/json/addCheck.json",
+	    			url:ajaxURL,
+	    			type:"post",
+	    			contentType: 'application/json;charset=utf-8',
+	    			cache: false,
+	    			//async : false,
+	    			data:JSON.stringify(data),
+	    			success:function(res){
+	    				var returnCode = res.returnCode;
+	    				var returnMsg = res.message;
+	    				that.checkCallback(returnCode,returnMsg,valueName);
+	    				
+	    				
+	    			}
+	    		})
+    		
+    		}else{
+
+    			$('.error i').html('用户名不能为空');
+    			$('.error').show()
+    		}
+
 			
 		},
 		checkCallback:function(returnCode,retrunMsg,value){
@@ -446,7 +467,7 @@ $(function(){
 			$.ajax({
 				//url:"../../self/json/getOneRole.json",
 				url:"/manage/role/getOneRole",
-				type:'post',
+				type:'get',
 				cache: "false",
 				data:{
 					"roleId":roleId	
