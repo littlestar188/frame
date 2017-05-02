@@ -1,4 +1,5 @@
 $(function(){
+
 	//var role = Object.create(publicFun)
 
 	//var role = $.extend(role,{
@@ -7,6 +8,7 @@ $(function(){
 		cdatas:{},
 		valueName:"",
 		menuId:[],
+		firstMenuLi:{},
 		//roleId:"",
 		init:function(){
 			var that = this;
@@ -18,23 +20,14 @@ $(function(){
              sidePagination:'server',
              cache: false,//设置False禁用AJAX请求的缓存
              height: '',
+             //queryParams: role.queryParams,
              striped: true,//使表格带有条纹
              pagination: true,//设置True在表格底部显示分页工具栏
              pageSize: 10,
              pageList: [10, 25, 50, 100],
              toolbar:'#custom-toolbar',
              columns: [
-                        {field: 'state',checkbox: true,formatter:function(value, row){
-                        role.stateFormatter(value, row)}//function(value,row){
-                       // 		if (row.state == true)
-                       // 	        return {
-                       // 	            disabled : true,//设置是否可用
-                       // 	            checked : true//设置选中
-                       // 	        }
-                       // 		   // return value;
-                       // 		}
-                       // }
-                   		},
+                       {field: 'state',checkbox: true},                  	   
                        {field: 'roleName',title: '角色名称',align: 'center',valign: 'middle'},
                        {field: 'id',title: '操作',align: 'center',valign: 'middle',formatter:function(value){
                        	//console.log(value)                     	
@@ -46,23 +39,65 @@ $(function(){
          	
 			this.addRole();
 			//查询
-			//this.searchRole();
+			this.searchRole();
 			//改 查 删 功能实现
 			this.btnPer();
+			this.batchDel();
+			
+
+		},
+		//批量删除
+		batchDel:function(){
+			var that = this;
+			$('.delGoupBtn').click(function(){
+				var rows = $("#role_table").bootstrapTable('getAllSelections');
+				
+				for(var i=0;i<rows.length;i++){
+					console.log(rows[i].id)
+					id = rows[i].id;
+					//that.batchDelOpt(id);					
+					
+				}
+				
+			})
+
+			 
+		},
+		/*
+			批量验证角色是否为【超级管理员】
+		*/
+		batchDelOpt:function(id){
 			
 			
 
 		},
-		stateFormatter:function(value, row){
-			if (row.state == true){
-		        return {
-		            disabled : true,//设置是否可用
-		            checked : true//设置选中
-		        };
-			   return value;
+		delCheck:function(resData,roleName){
+			
+			if(roleName !== '超级管理员'){
+				return resData.id;
 			}
+
+			
 			
 		},
+		sendDelData:function(roleIdArr){
+			$.ajax({
+				url:"/manage/role/deleteRoles",
+				type:"post",
+				dataType:"json",
+				contentType: 'application/json;charset=utf-8',
+				cache:false,
+				data:{
+					"roleIds":JSON.stringify(roleIdArr)
+				},
+				success:function(res){
+					console.log('删除成功')
+					
+				}
+
+			})
+		},
+		
 		//根据一级菜单权限显示/隐藏  功能按键
 		optShow:function(value){
 			//获取hash值
@@ -109,7 +144,10 @@ $(function(){
 			//监视option 实现某个option功能
 			var roleId="";
 			var modalCon = "";
-			$('#role_table').on('click','.btn',function(){
+			$('#role_table').on('click','.btn.btn-xs',function(event){
+				//阻止冒泡
+				window.event? window.event.cancelBubble = true : event.stopPropagation();
+
 				console.log($(this))
 				//console.log($(this).attr('data-id'))
 
@@ -130,6 +168,7 @@ $(function(){
 
 				//判断是否为【修改】
 				if($(this).is('#btn-edit')){
+
 					roleId = $(this).attr('data-id');
 					modalCon = $(document).find('.list_edit li').remove();
 					//初始化选项显示					
@@ -138,8 +177,11 @@ $(function(){
 
 					//修改后
 					that.checkEditRole('/manage/role/updateCheck',roleId);
-					var tableLis = '#list_table .list_edit li';				 
-			 		$('#btn-edit-save').click(function(){
+					var tableLis = '#list_table .list_edit li';
+					//解绑click事件
+					$('#btn-edit-save').off('click');				 
+			 		$('#btn-edit-save').click(function(event){
+			 			event.stopPropagation();
 			 			that.saveClick(tableLis,'/manage/role/updateRole',roleId);
 			 		})
 
@@ -167,9 +209,11 @@ $(function(){
 
 			var that = this;
 			//登录账号对应角色的权限菜单列表
-			this.firstMenu();			
+			this.firstMenu('#list_table>.list_choice .modal-footer');			
 
-			$('.addBtn').click(function(){
+			$('.addBtn').click(function(event){
+
+				event.stopPropagation();
 
 				$("#roleModalLabel").html("新增");
 				//所有复选框初始化
@@ -210,7 +254,8 @@ $(function(){
 			//单个按钮
 	 		//监视所有复选框 data-id =  navId-permission
 	 		var tableLis = '#list_table .list_choice li';
-	 		$('#btn-role-save').click(function(){
+	 		$('#btn-role-save').click(function(event){
+	 			event.stopPropagation();
 	 			that.saveClick(tableLis,'/manage/role/addRole');
 	 		})
 	 		
@@ -285,6 +330,7 @@ $(function(){
                 type: "post",
                 dataType: "json",
                 contentType: 'application/json;charset=utf-8',
+                // async:false,
                 cache: false,
                 data: JSON.stringify(totalData),
 				success:function(res){
@@ -341,16 +387,7 @@ $(function(){
 		
 			//})
 		},
-		//批量删除
-		batchDel:function(){
-			//role/deleteRoles post
-
-			var checkBoxs = $('#role_table').find('.bs-checkbox input[type="checkbox"]');
-			console.log(checkBoxs)
-				
-
-			
-		},
+		
 		//修改
 		editRole:function(){
 			var that = this;
@@ -372,25 +409,30 @@ $(function(){
 		},
 		//查询角色
 		searchRole:function(){
-			$('.searchBtn').click(function(){				
-				$("#role_table").bootstrapTable('refresh',{
-					url:'manage/role/selectRoles',
-					queryParams: role.queryParams
-				})
+			$('.searchBtn').click(function(){
 
+				$("#role_table").bootstrapTable('refreshOptions',{
+					url:'/manage/role/selectRoles',
+					queryParams: role.queryParams
+					
+				})
+				// var temp = role.queryParams({limit:1,offset:10});
+				// console.log(temp)
 
 			})
 
 		},
 		queryParams:function(params){
-			console.log($('#custom-toolbar input[type="text"]').val())
+			//console.log($('#custom-toolbar input[type="text"]').val())
+			var value = $('#custom-toolbar input[type="text"]').val();
 			var temp = {
+				roleName:value,
 				limit:params.limit,
 				offset:params.offset,
-				"roleName":$('#custom-toolbar input[type="text"]').val(),
-				
+								
 			}
 			return temp;
+
 		},
 		//查看功能
 		watchRole:function(){
@@ -408,13 +450,21 @@ $(function(){
 		  // })
 
 		},
-
+		/*
+			@elem 某个模态框
+			@flag 是否初始化显示原有权限
+			@nextMenu 某角色的现有权限
+			@result   getOneRole的数据获取
+			
+		*/
 		//获取对应权限的一级菜单列表 如果是超级管理员默认是全部菜单
-		firstMenu:function(){
+		firstMenu:function(elem,flag,nextMenu,result){
+			var that = this;
 	 		var str = "";
 	 		var data;
+	 		var idArr = []
 	 	 	//$.get("../../self/json/listFirstMenu.json",{"cache": false},function(res){
-	 	 	$.post("/manage/menu/listFirstMenu",{"cache": false},function(res){
+	 	 	$.post("/manage/menu/listFirstMenu",{"cache": false,"async":true},function(res){
 	 	 		console.log('当前账号的所有菜单权限--------')
 	 	 		console.log(res)	 	 		
 	 	 		data = res.data; 
@@ -430,47 +480,72 @@ $(function(){
                             +'</li>';
 
 	 	 			})(key)
-	 	 			$('#list_table>.list_choice .modal-footer').before(str);
+
+		 	 		$(elem).before(str);
+		 	 		
 	 	 			
 	 	 		}
+	 	 		if(flag){
+	 	 			//console.log(111111111)
+            		nextMenu(result,data,key);
+            		//console.log('flag---'+key)
+            	}	
             	
 		 	})
+		 	
+		 	
 		},
 		//角色查重
 		checkRole:function(ajaxURL){
 			var that = this;
 			
-			$('.role-input').on("blur",function(){
+			$('.role-input').blur(function(){
+			// $('.role-input').on("blur",function(){
 				that.valueName = $(this).val();	
 				that.cdatas = {"roleName":that.valueName};
 				console.log(that.valueName,ajaxURL,that.cdatas)
 				that.sendCheck(that.valueName,ajaxURL,that.cdatas);
 			})
-			$('.role-input').on("focus",function(){
-				$('.error i').html('');
-				$('.error').hide();
-			})
+			// $('.role-input').focus(function(){
+			// // $('.role-input').on("focus",function(){				
+			// 	$('.error i').html('');
+			// 	$('.error').hide();
+			// })
     		
 			
 		},
 		checkEditRole:function(ajaxURL,editId){
 			//console.log(ajaxURL,editId)
+
 			var that = this;
-			$('.role-input').on("blur",function(){
+			//角色名称未修改
+			// that.valueName = $('.role-input').val();
+			// console.log(that.valueName)
+
+			//角色名称有修改
+			$('.role-input').blur(function(){
+			// $('.role-input').on("blur",function(){
 				that.valueName = $(this).val();	
 				that.cdatas = {"roleName":that.valueName,"roleId":editId};
 				that.sendCheck(that.valueName,ajaxURL,that.cdatas);
+				console.log('editcheck1111111111111111111')
 				
 			})
-
-			$('.role-input').on("focus",function(){
+			$('.role-input').focus(function(){
+			// $('.role-input').on("focus",function(){
 				$('.error i').html('');
 				$('.error').hide();
 			})
 		},
+		/* 
+			@valueName    修改或新增的角色名称
+			@ajaxURL      addCheck或updataCheck
+			@data         {roleId:,raleName,menu}
+		*/
 		sendCheck:function(valueName,ajaxURL,data){
 			var that = this;
-			if(valueName != ""){
+			console.log(valueName)
+			if(valueName != null){
     			$.ajax({
 	    			//url:"../../self/json/addCheck.json",
 	    			url:ajaxURL,
@@ -500,8 +575,7 @@ $(function(){
 			if(returnCode == 0){
 				$('.error').hide();
 				$('.correct i').html(retrunMsg);
-				$('.correct').show();
-				
+				$('.correct').show();				
 				return value;
 			}else{
 				$('.correct').hide();
@@ -509,6 +583,82 @@ $(function(){
 				$('.error').show();
 			}
 		},
+		/* 
+			@oneRoleData     getOneRole接口的数据获取
+			@firstMenuData   firstMenu接口 获取的所有一级菜单id
+			@i               继承firstMenu接口 所有一级菜单下标
+		*/
+		innerMenuAjax:function(oneRoleData,firstMenuData,i){
+			var that = this;
+			//获取到的角色名赋值给input
+			//console.log(oneRoleData)
+			console.log('innerMenuAjax---'+i)
+			$('#search-wrap .role-input').val(oneRoleData.data.roleName);
+
+				//获取菜单permission
+				var data = oneRoleData.data.menus;
+				console.log(data)
+				var str = "";
+				//console.log(22222222222)	
+
+				//角色用户的权限菜单长度【小于】所有一级菜单长度时					
+				for(var i=0;i<firstMenuData.length;i++){
+
+					for(var n=0 ;n<data.length;n++){
+
+						//匹配oneMenu 与 firstMenu -->记录【id相等】的firstMenu下标
+						if(firstMenuData[i].id == data[n].id){
+							//index.push(i)
+							for(var j = 0;j<data[n].permission.length;j++){
+			 	 				//console.log(3333330+j);			 	 				
+			 	 				var permStr = data[n].permission[j].toString();
+			 	 				//console.log(permStr)
+
+			 	 				//判断权限中是否包含1 增
+			 	 				if(permStr.indexOf("1") != -1 ){
+			 	 					
+			 	 					//当前对象的增加选择框
+			 	 					// var addChioce = $('#list_table>.list_edit>li[data-id='+data[i].id+'] #add'+i);
+			 	 					var addChoice =$('#list_table>.list_edit #add'+i);
+			 	 					console.log(addChoice.attr("data-id"))
+			 	 					//checked
+			 	 					addChoice.attr("checked",true);
+			 	 					//console.log(addChoice)
+			 	 					
+			 	 				}
+			 	 				//删
+			 	 				if(permStr.indexOf("2") != -1 ){
+			 	 					var delChoice = $('#list_table>.list_edit #delet'+i);
+			 	 					//console.log(delChoice)
+			 	 					delChoice.prop('checked',true);
+		 	 					}
+
+		 	 					//改
+			 	 				if(permStr.indexOf("3") != -1 ){
+			 	 					var edtChoice = $('#list_table>.list_edit #edit'+i);
+			 	 					//console.log(edtChoice)
+			 	 					edtChoice.prop('checked',true);
+			 	 					
+			 	 				}
+		 	 				
+		 	 					//查
+			 	 				if(permStr.indexOf("4") != -1 ){		 	 				
+			 	 					//当前对象的增加选择框
+			 	 					var seaChoice = $('#list_table>.list_edit #search'+i);
+			 	 					//console.log(seaChoice)
+			 	 					seaChoice.prop('checked',true);
+			 	 					
+			 	 				}
+		 	 				}
+						}
+					}
+				}
+				//console.log(index)
+					
+		},
+		/*
+			@roleId 某个角色ID
+		*/
 		//某角色的菜单权限初始状态
 		oneMenu:function(roleId){
 			var that = this;
@@ -517,90 +667,15 @@ $(function(){
 				url:"/manage/role/getOneRole",
 				type:'get',
 				cache: "false",
+				async:"true",
 				data:{
 					"roleId":roleId	
 				},
-				success:function(res){			
-					//获取到的角色名赋值给input
-					$('#search-wrap .role-input').val(res.data.roleName);
+				success:function(res){
+					//调用一级菜单函数 使之初始化
+					that.firstMenu('#list_table>.list_edit>.modal-footer',true,that.innerMenuAjax,res);
 
-					//获取菜单permission
-					var data = res.data.menus;
-					var str = "";						
-		 	 		for(var key = 0;key<data.length;key++){
-		 	 			(function(i){
-		 	 				var id = data[i].id;
-			 	 			str = '<li data-id="'+id+'">'
-	                              +'<span class="menu-name">'+data[i].name+'&nbsp;&nbsp;:</span>'
-	                              +'<div class="menu-item"><input type="checkbox" id="add'+i+'" data-id="'+id+'-'+1+'"><label for="add'+i+'">新增</label></div>'
-	                              +'<div class="menu-item"><input type="checkbox" id="delet'+i+'"  data-id="'+id+'-'+2+'"><label for="delet'+i+'">删除</label></div>'
-	                              +'<div class="menu-item"><input type="checkbox" id="edit'+i+'"  data-id="'+id+'-'+3+'"><label for="edit'+i+'">修改</label></div>'
-	                              +'<div class="menu-item"><input type="checkbox" id="search'+i+'"  data-id="'+id+'-'+4+'"><label for="search'+i+'">查询</a></label></div>'
-	                            +'</li>';
-
-		 	 			})(key)
-		 	 			
-		 	 			$('#list_table>.list_edit>.modal-footer').before(str);
-		 	 			//初始化复选框状态
-		 	 			for(var j = 0;j<data[key].permission.length;j++){
-		 	 				//console.log(data[key].permission);			 	 				
-		 	 				var permStr = data[key].permission[j].toString();
-		 	 				//console.log(permStr)
-		 	 				//判断权限中是否包含1
-		 	 				if(permStr.indexOf("1") != -1 ){
-		 	 					var perId = key;
-		 	 					//当前的权限数组
-		 	 					var perArr = data[key].permission;
-		 	 					//console.log(perArr)
-		 	 					//当前对象的增加选择框
-		 	 					var addChioce = $('#list_table>.list_edit>li[data-id='+data[key].id+'] #add'+key);
-		 	 					//console.log(addChioce)
-		 	 					//checked
-		 	 					addChioce.prop('checked',true);
-		 	 					//console.log(addChioce.prop('checked'))
-		 	 					
-		 	 				}
-                            
-                            if(permStr.indexOf("2") != -1 ){
-		 	 					var perId = key;
-		 	 					//当前的权限数组
-		 	 					var perArr = data[key].permission;
-		 	 					console.log(perArr)
-		 	 					//当前对象的增加选择框
-		 	 					var delChioce = $('#list_table>.list_edit>li[data-id='+data[key].id+'] #delet'+key);
-		 	 					//console.log(addChioce)
-		 	 					//checked
-		 	 					delChioce.prop('checked',true);
-		 	 					
-		 	 				}
-
-		 	 				if(permStr.indexOf("3") != -1 ){
-		 	 					var perId = key;
-		 	 					//当前的权限数组
-		 	 					var perArr = data[key].permission;
-		 	 					console.log(perArr)
-		 	 					//当前对象的增加选择框
-		 	 					var edtChioce = $('#list_table>.list_edit>li[data-id='+data[key].id+'] #edit'+key);
-		 	 					//console.log(addChioce)
-		 	 					//checked
-		 	 					edtChioce.prop('checked',true);
-		 	 					
-		 	 				}
-		 	 				
-		 	 				if(permStr.indexOf("4") != -1 ){
-		 	 					var perId = key;
-		 	 					//当前的权限数组
-		 	 					var perArr = data[key].permission;
-		 	 					console.log(perArr)
-		 	 					//当前对象的增加选择框
-		 	 					var seaChioce = $('#list_table>.list_edit>li[data-id='+data[key].id+'] #search'+key);
-		 	 					//console.log(addChioce)
-		 	 					//checked
-		 	 					seaChioce.prop('checked',true);
-		 	 					
-		 	 				}
-		 	 			}
-		 	 		}
+					
 				},
 				error:function(){
 					console.log('edit-getMenu--报错');
@@ -616,7 +691,7 @@ $(function(){
 			console.log(roleId)
 			$.ajax({
 				url:'/manage/role/getOneRole',
-				type:'post',
+				type:'get',
 				//url:"../../self/json/getOneRole.json",
 				cache: "false",
 				data:{

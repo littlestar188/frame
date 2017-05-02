@@ -16,7 +16,8 @@
   <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
   <!-- iCheck -->
   <link rel="stylesheet" href="../../plugins/iCheck/square/blue.css">
-
+  <!-- validator -->
+  <link rel="stylesheet" href="../../plugins/validator/jquery.validator.css">
   <!-- 特有样式 -->
   <link rel="stylesheet" href="../../self/css/public.css">
   <link rel="stylesheet" href="../../self/css/login.css">
@@ -70,15 +71,25 @@
       </div>
     </form>
 
-    <div class="row login-Wrapper" >
+    <div class="row login-Wrapper">
       <div class="col-xs-2 login"></div>
+
       <div class="col-xs-8 login">
-        <button type="submit" class="btn btn-primary btn-block btn-flat" id="btn_login">登录
+        <button type="submit" class="btn btn-primary btn-block btn-flat" data-toggle="modal" data-target=".bs-example-modal-sm" id="btn_login">登录
         <div class="line-top"></div>
         <div class="line-right"></div>
         <div class="line-bottom"></div>
         <div class="line-left"></div>
         </button>
+        <!-- small modal -->
+       <!--  <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+              登录超时
+            </div>
+          </div>
+        </div> -->
+
       </div>
       <div class="col-xs-2 login"></div>
     </div>
@@ -92,6 +103,8 @@
 <script src="../../bootstrap/js/bootstrap.min.js"></script>
 <!-- iCheck -->
 <script src="../../plugins/iCheck/icheck.min.js"></script>
+<!-- validator -->
+<script src="../../plugins/validator/jquery.validator.js"></script>
 <!-- login -->
 <script src="../../self/js/login.js"></script>
 

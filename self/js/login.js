@@ -19,6 +19,7 @@
         this.name = $(".username").val();
         this.password = $(".password").val();
         this.code = $(".incode").val();
+
         console.log(this.password,this.name,this.code);        
         this.imgCode();
         this.checkBlank();
@@ -29,10 +30,11 @@
         var that = this;
         //console.log(this.name);//有
         $.ajax({
-         url:'/manage/user/login',
-        //url:'self/js/user.json',
-         type:"post",
-          //type:"post",
+          url:'/manage/user/login',
+          //url:'self/js/user.json',
+          type:"post",
+          timeout:3000,//设置超时时间3秒
+          cache:false,
           async:false,
           dataType:"json",
           data:{
@@ -45,8 +47,13 @@
             //return res;
             that.result = res;        
           },
-          error:function(){
-            console.log('后台报错');
+          error:function(XMLHttpRequest, textStatus, errorThrown){
+            if(textStatus == 'timeout'){
+              confirm('请求超时');
+            }else{
+              console.log('login----------后台报错')
+            }
+            
           }
         })
          
@@ -68,15 +75,15 @@
         var that = this;
         
         $('.login').click(function(){
-          that.infoCheck()
+          that.infoCheck();
           console.log(that.result);
           console.log(that.result.returnCode,that.result.message);
           //alert(1);
-          that.getNav();
+          // that.getNav();
           if( that.result.returnCode == 0 ){
            $(this).removeAttr('disabled',"true");
            //延迟3秒跳转页面           
-            window.setTimeout(window.location.href = "http://192.168.0.92/frame/index.html",1000);//index.html
+            window.setTimeout(window.location.href = "http://192.168.0.92/frame/index.html",10000);//index.html
             //that.getNav();
          }else{
             that.errorInfo(that.result.message);
@@ -96,6 +103,9 @@
         }
         if(message == "1"){
           $(".error").parent().children('.error').html('验证码错误').show();
+        }
+        if(message == "3"){
+          $(".username").parent().children('.error').html('用户名或密码错误不能为空').show();
         }
         
       },
@@ -161,25 +171,25 @@
             $('.error').hide(); 
             //$(this).parents().siblings().children('.error').hide();                                                 
         });
-      },
-      getNav:function(){
-        var that = this;
-        $.ajax({
-          // url:'self/js/data.json',
-          // type:"get",
-          url:'/manage/menu/leftTree',
-          type:'post',
-          dataType:"json",
-          success:function(data){
-            console.log(data);
-            that.navData = data;
-          },
-          error:function(){
-
-          }
-        })
-          
       }
+      // getNav:function(){
+      //   var that = this;
+      //   $.ajax({
+      //     // url:'self/js/data.json',
+      //     // type:"get",
+      //     url:'/manage/menu/leftTree',
+      //     type:'post',
+      //     dataType:"json",
+      //     success:function(data){
+      //       console.log(data);
+      //       that.navData = data;
+      //     },
+      //     error:function(){
+
+      //     }
+      //   })
+          
+      // }
       
     }
     login.init();
