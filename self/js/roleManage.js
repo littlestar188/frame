@@ -56,9 +56,9 @@ $(function(){
 				var realIdArr = [];
 				//批量验证角色是否为【超级管理员】
 				for(var i=0;i<rows.length;i++){									
-					if(rows[i].roleName !== "超级管理员"){
+					// if(rows[i].roleName !== "超级管理员"){
 						realIdArr.push(rows[i].id);
-					}													
+					// }													
 				}
 				console.log(realIdArr)
 				that.sendDelData(realIdArr);
@@ -142,7 +142,8 @@ $(function(){
 			}
 			//改
 			if(hash.indexOf("3")!= -1 ){
-				html += '<a href="javascript:void(0)" class="btn btn-info btn-xs" id="btn-edit" data-id="'+value+'">修改</a>&nbsp;&nbsp;';
+				html += '<a href="javascript:void(0)" class="btn btn-info btn-xs" id="btn-edit" data-id="'+value+'">修改</a>&nbsp;&nbsp;'
+					+'<a href="javascript:void(0)" class="btn btn-info btn-xs" id="btn-edit2" data-id="'+value+'">修改2</a>&nbsp;&nbsp;';
 			}
 			//查
 			if(hash.indexOf("4")!= -1 ){
@@ -160,7 +161,7 @@ $(function(){
 			//监视option 实现某个option功能
 			var roleId="";
 			var modalCon = "";
-			// $('#role_table').off('click');
+			
 			$('#role_table').on('click','.btn.btn-xs',function(event){
 				//阻止冒泡
 				window.event? window.event.cancelBubble = true : event.stopPropagation();
@@ -203,6 +204,11 @@ $(function(){
 			 		})
 
 					
+				}
+				//判断是否是ztree版修改
+				if($(this).is('#btn-edit2')){
+
+					that.EditRoleTree();
 				}
 
 				//判断是否为【删除】
@@ -263,7 +269,7 @@ $(function(){
 			var that = this;
 
 			//角色名是否重名
-			this.checkRole("/manage/role/addCheck");
+			this.checkRole($('.role-input'),"/manage/role/addCheck");
 			//单个按钮
 	 		//监视所有复选框 data-id =  navId-permission
 	 		var tableLis = '#list_table .list_choice li';
@@ -477,22 +483,22 @@ $(function(){
 		
 		/*
 			//角色查重
-			@param elem      输入框对象
-			@param ajaxURL   
+			@param elem      输入框对象$('')
+			@param ajaxURL   /addCheck
 
 		*/
-		checkRole:function(ajaxURL){
+		checkRole:function(elem,ajaxURL){
 			var that = this;
 
-			$('.role-input').off('blur');
-			$('.role-input').on('blur',function(){
+			elem.off('blur');
+			elem.on('blur',function(){
 				that.valueName = $(this).val();	
 				that.cdatas = {"roleName":that.valueName};
 				console.log(that.valueName,ajaxURL,that.cdatas)
 				that.sendCheck(that.valueName,ajaxURL,that.cdatas);
 			})
 
-			$('.role-input').on("focus",function(){				
+			elem.on("focus",function(){				
 				$('.error i').html('');
 				$('.error').hide();
 			})
@@ -628,6 +634,7 @@ $(function(){
                               +'<div class="menu-item"><input type="checkbox" id="add'+i+'" data-id="'+id+'-'+1+'"><label style="display=none" for="add'+i+'">新增</label></div>'
                               +'<div class="menu-item"><input type="checkbox" id="delet'+i+'"  data-id="'+id+'-'+2+'"><label for="delet'+i+'">删除</label></div>'
                               +'<div class="menu-item"><input type="checkbox" id="edit'+i+'"  data-id="'+id+'-'+3+'"><label for="edit'+i+'">修改</label></div>'
+
                               +'<div class="menu-item"><input type="checkbox" id="search'+i+'"  data-id="'+id+'-'+4+'"><label for="search'+i+'">查询</a></label></div>'
                             +'</li>';
 
@@ -791,15 +798,32 @@ $(function(){
 		/*
 		  第二版功能模板
 		*/
+		funZtree:function(){
+		    this.addRoleTree();		    
+		    		   
+		},
 		addRoleTree:function(){
 			var that = this;
 			$('.addBtn2').click(function(event){
-				$('.ztreeWrapper').removeClass('slideOutRight')
-				$('.table_wrapper').addClass('col-lg-9');
-				$('.ztreeWrapper').addClass('slideInRight').fadeIn();
-
-				that.proZtree();
+				
+				that.falshZtree('新增');
+				that.initZtree('/frame/self/json/listPerMenu.json','get');
+		    	that.checkRole($('.ztreeRoleInput'),"/manage/role/addCheck");
+		    	that.ztreeDateSave();	
+				
 			})
+
+		},	
+		/*
+			@param elem   
+			@param title
+		*/
+		falshZtree:function(title){
+
+			$('.ztree_title').html(title);
+			$('.ztreeWrapper').removeClass('slideOutRight')
+			$('.table_wrapper').addClass('col-lg-9');
+			$('.ztreeWrapper').addClass('slideInRight').fadeIn();
 
 			$('.btnWrapper .treeCancel').click(function(){
 
@@ -807,25 +831,16 @@ $(function(){
 				$('.ztreeWrapper').removeClass('slideInRight').addClass('slideOutRight');
 			})
 
-			
-
-
-		},	
-		proZtree:function(){
-		    var that = this;		    
-		    this.initZtree();
-		    this.ztreeDateSave();
-		   
 		},
-		initZtree:function(){
+		/*
+			@param ajaxURL 
+			@param method  get/post
+			@param id
+		*/
+		initZtree:function(ajaxURL,method,id,callback){
 			var zNodes =[];
 		    //ajax获取数据 模拟数据
 		    var setting = {
-			   	// async:{
-			   	// 	enable:true,
-			   	// 	url:'/frame/self/json/listPerMenu.json',
-			  		// type:"get"
-			   	// },
 		   		view:{
 		   			showIcon:false,
 		   			fontCss:{}
@@ -845,28 +860,46 @@ $(function(){
 				}
 		    };
 		    
-		   $.ajax({
-		   		url:'/frame/self/json/listPerMenu.json',
-		   		type:'get',
+		    var ajaxObj = {
+		   		url:ajaxURL,
+		   		type:method,
 		   		dataType:"json",
 		   		async : false,//必写
 		   		success:function(res){
 		   			console.log(res)
-		   			zNodes = res;
-		   			
+		   			zNodes = res.menus;
+		   			callback();
 		   		}
-		   })
+		    }
+		    var params = {
+		   		data:{"id":id}
+		    }
+
+		    if(method == "get"){
+		   		$.ajax(ajaxObj)
+		    }
+		    if(method == "post"){
+		   		$.ajax($.extend(ajaxObj,params))
+		    }
+		   
+		   	console.log($.extend(ajaxObj,params))
+
 		    $.fn.zTree.init($('#treePermission'), setting, zNodes); 
 
 		    var zTreeObj = $.fn.zTree.getZTreeObj('treePermission'); 
 		    //必须有延迟才能实现初始化时全部展开
 		    // setTimeout(function(){
 		    // 	zTreeObj.expandAll(true);
-		    // },500)
-		    
-		    console.log(zTreeObj)
+		    // },500);		    
+		   
 		},
-		ztreeEdit:function(){
+		/*
+			@param roleId 
+		*/
+		EditRoleTree:function(roleId){
+			this.falshZtree('修改');
+			this.initZtree('/frame/self/json/listEditPer.json','get',"123456789");
+
 
 		},
 		ztreeDateSave:function(){
@@ -874,15 +907,39 @@ $(function(){
 
 				var ztreeObj = $.fn.zTree.getZTreeObj("treePermission");
             	var znodes = ztreeObj.getCheckedNodes(true);
-            	console.log(znodes)
+            	//console.log(znodes)
+            	//所选的权限菜单数组 pid
+	            // var nodesArr = znodes.map(function(item){	            	
+	            // 	if(item.checked == true){
+	            // 		return item.id
+	            // 	}	            		            	
+	            // })
+	            // console.log(nodesArr)
 
-            	//字符串格式传递所选权限
-            	var value="";
-	            for(var i=0;i<znodes.length;i++){
-	                value += znodes[i].id + ",";
+	            //所选的权限菜单数组
+	            var childs = [];
+	            for(var i in znodes){
+	            	console.log(znodes[i].children)
+	            	if(znodes[i].checked){
+	            		for(var j in znodes[i].children){
+	            			if(znodes[i].children[j].checked){
+	            				for(var k in znodes[i].children[j].children){
+	            					if(znodes[i].children[j].children[k].checked){
+	            						childs.push(znodes[i].children[j].children[k].id) ;
+	            					}
+	            					
+	            				}	            				
+	            			}	            		
+	            		}
+	            	}	            		            	
 	            }
-	            console.log(value)
-            	
+
+	            // var param = {
+	            // 	roleName:that.name
+	           	//	menus : childs
+	            // }
+	            console.log(childs)
+	           
 				setTimeout(function(){
 					$('.table_wrapper').removeClass('col-lg-9');
 					$('.ztreeWrapper').removeClass('slideInRight').addClass('slideOutRight');
@@ -922,7 +979,7 @@ $(function(){
 		}
 	}//)
 	role.init();
-	role.addRoleTree();	
+	role.funZtree();	
 })
 
 
