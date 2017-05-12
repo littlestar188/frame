@@ -1,5 +1,7 @@
 $(function(){
 	var nav = {
+		ajaxUrlheader:"http://127.0.0.1:8080",
+      	localHeader:"http://localhost:80",
 		navData:{},
 		sidebar:$('.sidebar-menu'),
 		personlBtn:$('.user-footer>.pull-left>.btn'),

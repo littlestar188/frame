@@ -1,4 +1,6 @@
 var publicFun = {
+	ajaxUrlheader:"http://127.0.0.1:8080",
+    localHeader:"http://127.0.0.1:80",
 	init:function(){
 		this.getHash();
 		this.selectTotal();
@@ -36,4 +38,16 @@ var publicFun = {
 		console.log(reg)
 	}
 }
-publicFun.init();
+// publicFun.init();
+
+$(document).ready(function(){
+   $.ajaxSetup({
+        complete:function(XMLHttpRequest){
+           var sessionstatus=XMLHttpRequest.getResponseHeader("sessionstatus");
+           alert(sessionstatus)
+           if(sessionstatus=="timeout"){
+               //跳转到登录界面，待改进
+           }
+        }
+    });
+});

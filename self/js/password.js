@@ -47,7 +47,7 @@ $(function(){
 					$.ajax({
 						// url:'../../self/js/password.json',
 						// type:'get',
-						url:"/manage/user/updatePassword",
+						url:"/user/updatePassword",
 						type:"post",
 						dataType:'json',
 						data:{

@@ -1,0 +1,73 @@
+		    var zNodes =[];
+		    //ajax获取数据 模拟数据
+		    var setting = {
+			   	async:{
+			   		enable:true,
+			   		url:'/frame/self/json/listPerMenu.json',
+			  		type:"get"
+			   	},
+		   		view:{
+		   			showIcon:false,
+		   			fontCss:{}
+		   		},
+			   	check:{
+			   		enable:true,
+			   		chkboxType :{ "Y" : "ps", "N" : "ps" },
+			   		chkStyle:"checkbox"
+			   	},
+			   	data: {
+					simpleData: {
+						enable: true,
+						idKey: "id",
+						pIdKey: "pId",
+						rootPId: 0
+					}
+				}
+		    };
+		  
+		    $.fn.zTree.init($('#treePermission'), setting, zNodes); 
+
+		    var zTreeObj = $.fn.zTree.getZTreeObj('treePermission'); 
+		    //必须有延迟才能实现初始化时全部展开
+		    // setTimeout(function(){
+		    // 	zTreeObj.expandAll(true);
+		    // },500)
+-------------------------------------------------------------------------------------------------------------
+		   var zNodes =[];
+		    //ajax获取数据 模拟数据
+		    var setting = {
+		   		view:{
+		   			showIcon:false,
+		   			fontCss:{}
+		   		},
+			   	check:{
+			   		enable:true,
+			   		chkboxType :{ "Y" : "ps", "N" : "ps" },
+			   		chkStyle:"checkbox"
+			   	},
+			   	data: {
+					simpleData: {
+						enable: true,
+						idKey: "id",
+						pIdKey: "pId",
+						rootPId: 0
+					}
+				}
+		    };
+		    
+		  $.ajax({
+		   		url:'/frame/self/json/listPerMenu.json',
+		   		type:'get',
+		   		dataType:"json",
+		   		async : false,//必写 否则无法出现ztree
+		   		success:function(res){
+		   			console.log(res)
+		   			zNodes = res;
+		   			
+		   		}
+		   })
+		    $.fn.zTree.init($('#treePermission'), setting, zNodes); 
+
+		    var zTreeObj = $.fn.zTree.getZTreeObj('treePermission'); 
+----------------------------------------------------------------------------------------------------------------
+		

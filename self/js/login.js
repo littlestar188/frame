@@ -1,7 +1,8 @@
 
   $(function () {
     var login = {
-      urlHeader:"http://192.168.0.90",
+      ajaxUrlheader:"http://127.0.0.1:8080",
+      localHeader:"http://localhost",//本地服务器 必须是localhost
       result:{},
       navData:{},
       name:"",
@@ -33,7 +34,7 @@
           url:'/manage/user/login',
           //url:'self/js/user.json',
           type:"post",
-          timeout:3000,//设置超时时间3秒
+          timeout:1000,//设置超时时间
           cache:false,
           async:false,
           dataType:"json",
@@ -41,28 +42,30 @@
             userName:this.name,
             passWord:this.password,
             checkCode:this.code           
-          },  
+          },
           success:function(res){
             console.log(res); 
             //return res;
             that.result = res;        
           },
-          error:function(XMLHttpRequest, textStatus, errorThrown){
+          error:function(XMLHttpRequest, textStatus,errorThrown){
             if(textStatus == 'timeout'){
               confirm('请求超时');
             }else{
-              console.log('login----------后台报错')
+              console.log('login/'+textStatus+'----------后台报错')
             }
             
           }
+        
         })
          
       },
       //验证码生成
       imgCode:function(){
+        var that = this;
         //var num = Math.random();
         $('.imgCheckCode').click(function(){
-         $('.imgCheckCode').attr('src', 'http://192.168.0.241/manage/checkCode?');
+         $('.imgCheckCode').attr('src', that.ajaxUrlheader+'/checkCode?');
         // alert(1);
         //return num
         //consle.log(num);
@@ -82,8 +85,8 @@
           // that.getNav();
           if( that.result.returnCode == 0 ){
            $(this).removeAttr('disabled',"true");
-           //延迟3秒跳转页面           
-            window.setTimeout(window.location.href = "http://192.168.0.92/frame/index.html",10000);//index.html
+           //延迟跳转页面           
+            window.setTimeout(window.location.href = that.localHeader+"/frame/index.html",10000);//index.html
             //that.getNav();
          }else{
             that.errorInfo(that.result.message);

@@ -1,24 +1,26 @@
-[	
 	{
 		"id":400,
 		"name":"产品中心",
 		"icon":"fa-desktop",
 		"link":"",
-		"sub_menu":[
+		"isParent":"true",
+		"menus":[
 			{
 				"name":"产品管理",
 				"link":"http://192.168.0.92/frame/pages/forms/productManage.html",
-				"sub_menu":"null"
+				"menus":"null"
 			},
 			{
 				"name":"资费管理",
+				
 				"link":"#",
-				"sub_menu":"null"
+				"menus":"null"
 			},
 			{
 				"name":"说明书管理",
+
 				"link":"#",
-				"sub_menu":"null"
+				"menus":"null"
 			}
 		]
 	},
@@ -27,11 +29,11 @@
 		"name":"库存中心",
 		"icon":"fa-th",
 		"link":"",
-		"sub_menu":[
+		"menus":[
 			{
 				"name":"库存管理",
 				"link":"#",
-				"sub_menu":"null"
+				"menus":"null"
 			}
 		]
 	},
@@ -40,16 +42,16 @@
 		"name":"设备中心",
 		"icon":"fa-tint",
 		"link":"",
-		"sub_menu":[
+		"menus":[
 			{
 				"name":"设备管理",
 				"link":"#",
-				"sub_menu":"null"
+				"menus":"null"
 			},
 			{
 				"name":"维修管理",
 				"link":"#",
-				"sub_menu":"null"
+				"menus":"null"
 			}
 		]
 	},
@@ -58,11 +60,11 @@
 		"name":"工单中心",
 		"icon":"fa-edit",
 		"link":"",
-		"sub_menu":[
+		"menus":[
 			{
 				"name":"工单管理",
 				"link":"#",
-				"sub_menu":"null"
+				"menus":"null"
 			}
 		]
 	},
@@ -71,11 +73,11 @@
 		"name":"收益中心",
 		"icon":"fa-pie-chart",
 		"link":"",
-		"sub_menu":[
+		"menus":[
 			{
 				"name":"收益统计",
 				"link":"#",
-				"sub_menu":"null"
+				"menus":"null"
 			}
 		]
 	},
@@ -84,31 +86,31 @@
 		"name":"组织中心",
 		"icon":"fa-tint",
 		"link":"",
-		"sub_menu":[
+		"menus":[
 			{
 				"name":"公司管理",
 				"link":"#",
-				"sub_menu":"null"
+				"menus":"null"
 			},
 			{
 				"name":"员工管理",
 				"link":"#",
-				"sub_menu":"null"
+				"menus":"null"
 			},
 			{
 				"name":"代理商管理",
 				"link":"#",
-				"sub_menu":"null"
+				"menus":"null"
 			},
 			{
 				"name":"经销商管理",
 				"link":"#",
-				"sub_menu":"null"
+				"menus":"null"
 			},
 			{
 				"name":"消费商管理",
 				"link":"#",
-				"sub_menu":"null"
+				"menus":"null"
 			}
 		]
 	},
@@ -117,16 +119,16 @@
 		"name":"动态中心",
 		"icon":"fa-newspaper-o",
 		"link":"",
-		"sub_menu":[
+		"menus":[
 			{
 				"name":"消息通知",
 				"link":"null",
-				"sub_menu":"null"
+				"menus":"null"
 			},
 			{
 				"name":"新闻中心",
 				"link":"null",
-				"sub_menu":"null"
+				"menus":"null"
 			}
 		]
 	},
@@ -135,16 +137,16 @@
 		"name":"用户中心",
 		"icon":"fa-user",
 		"link":"",
-		"sub_menu":[
+		"menus":[
 			{
 				"name":"个人信息",
 				"link":"http://192.168.0.92/frame/pages/forms/personal.html",
-				"sub_menu":"null"
+				"menus":"null"
 			},
 			{
 				"name":"注销",
 				"link":"http://192.168.0.92/frame/pages/forms/login.html",
-				"sub_menu":"null"
+				"menus":"null"
 			}
 		]
 	},
@@ -153,21 +155,21 @@
 		"name":"系统管理",
 		"icon":"fa-cog",
 		"link":"#",
-		"sub_menu":[
+		"menus":[
 			{
 				"name":"用户管理",
 				"link":"http://192.168.0.92/frame/pages/forms/userManage.html",
-				"sub_menu":"null"
+				"menus":"null"
 			},
 			{
 				"name":"角色管理",
 				"link":"http://192.168.0.92/frame/pages/forms/roleManage.html",
-				"sub_menu":"null"
+				"menus":"null"
 			},
 			{
 				"name":"日志管理",
 				"link":"#",
-				"sub_menu":[
+				"menus":[
 						{
 							"name":"日志文件",
 							"link":"#"
@@ -177,7 +179,7 @@
 			{
 				"name":"监控管理",
 				"link":"#",
-				"sub_menu":"null"
+				"menus":"null"
 			}
 			
 		]
