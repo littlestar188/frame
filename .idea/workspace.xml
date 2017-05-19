@@ -1,12 +1,346 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a687c56c-fadf-4154-b032-22a1aa6c6d86" name="Default" comment="">
+    <list default="true" id="9af830aa-9379-4f69-a71e-8c338e11f806" name="Default" comment="说明书管理功能完善">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/CHANGES.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/LICENSE.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/adapters/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/build-config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/ckeditor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/contents.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/af.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/ar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/bg.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/bn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/bs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/ca.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/cs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/cy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/da.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/de-ch.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/de.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/el.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/en-au.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/en-ca.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/en-gb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/en.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/eo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/es.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/et.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/eu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/fa.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/fi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/fo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/fr-ca.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/fr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/gl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/gu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/he.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/hi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/hr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/hu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/id.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/is.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/it.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/ja.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/ka.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/km.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/ko.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/ku.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/lt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/lv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/mk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/mn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/ms.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/nb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/nl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/no.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/pl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/pt-br.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/pt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/ro.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/ru.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/si.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/sk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/sl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/sq.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/sr-latn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/sr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/sv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/th.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/tr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/tt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/ug.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/uk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/vi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/zh-cn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/lang/zh.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/a11yhelp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/_translationstatus.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/af.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/ar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/bg.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/ca.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/cs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/cy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/da.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/de-ch.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/de.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/el.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/en-gb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/en.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/eo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/es.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/et.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/eu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/fa.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/fi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/fo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/fr-ca.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/fr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/gl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/gu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/he.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/hi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/hr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/hu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/id.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/it.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/ja.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/km.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/ko.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/ku.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/lt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/lv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/mk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/mn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/nb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/nl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/no.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/pl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/pt-br.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/pt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/ro.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/ru.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/si.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/sk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/sl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/sq.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/sr-latn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/sr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/sv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/th.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/tr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/tt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/ug.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/uk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/vi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/zh-cn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/a11yhelp/dialogs/lang/zh.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/about/dialogs/about.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/about/dialogs/hidpi/logo_ckeditor.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/about/dialogs/logo_ckeditor.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/clipboard/dialogs/paste.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/dialog/dialogDefinition.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/editor.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/filetools/lang/zh-cn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/filetools/plugin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/icons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/icons_hidpi.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/image/dialogs/image.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/image/images/noimage.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/image2/lang/zh-cn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/image2/plugin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/lineutils/plugin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/link/dialogs/anchor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/link/dialogs/link.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/link/images/anchor.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/link/images/hidpi/anchor.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/magicline/images/hidpi/icon-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/magicline/images/hidpi/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/magicline/images/icon-rtl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/magicline/images/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/notification/lang/zh-cn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/notification/plugin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/notificationaggregator/plugin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/pastefromword/filter/default.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/scayt/CHANGELOG.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/scayt/LICENSE.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/scayt/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/scayt/dialogs/options.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/scayt/dialogs/scayt.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/scayt/dialogs/toolbar.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/_translationstatus.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/af.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/ar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/bg.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/ca.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/cs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/cy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/da.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/de-ch.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/de.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/el.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/en-gb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/en.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/eo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/es.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/et.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/eu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/fa.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/fi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/fr-ca.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/fr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/gl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/he.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/hr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/hu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/id.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/it.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/ja.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/km.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/ko.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/ku.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/lt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/lv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/nb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/nl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/no.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/pl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/pt-br.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/pt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/ru.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/si.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/sk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/sl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/sq.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/sv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/th.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/tr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/tt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/ug.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/uk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/vi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/zh-cn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/lang/zh.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/specialchar/dialogs/specialchar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/table/dialogs/table.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/tabletools/dialogs/tableCell.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/uploadimage/lang/lang/zh-cn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/uploadimage/lang/zh-cn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/uploadimage/plugin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/uploadwidget/lang/zh-cn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/uploadwidget/plugin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/widget/lang/zh-cn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/widget/plugin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/widgetselection/plugin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/wsc/LICENSE.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/wsc/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/wsc/dialogs/ciframe.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/wsc/dialogs/tmpFrameset.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/wsc/dialogs/wsc.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/wsc/dialogs/wsc.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/plugins/wsc/dialogs/wsc_ie.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/css/samples.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/img/github-top.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/img/header-bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/img/header-separator.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/img/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/img/navigation-tip.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/js/sample.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/js/sf.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/ajax.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/api.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/appendto.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/assets/inlineall/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/assets/outputxhtml/outputxhtml.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/assets/posteddata.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/assets/sample.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/assets/uilanguages/languages.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/datafiltering.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/dialog/assets/my_dialog.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/dialog/dialog.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/divreplace.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/enterkey/enterkey.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/htmlwriter/assets/outputforflash/outputforflash.fla" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/htmlwriter/assets/outputforflash/outputforflash.swf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/htmlwriter/assets/outputforflash/swfobject.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/htmlwriter/outputforflash.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/htmlwriter/outputhtml.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/inlineall.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/inlinebycode.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/inlinetextarea.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/jquery.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/magicline/magicline.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/readonly.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/replacebyclass.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/replacebycode.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/sample.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/sample.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/sample_posteddata.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/tabindex.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/toolbar/toolbar.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/uicolor.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/uilanguages.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/wysiwygarea/fullpage.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/old/xhtmlstyle.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/toolbarconfigurator/css/fontello.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/toolbarconfigurator/font/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/toolbarconfigurator/font/config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/toolbarconfigurator/font/fontello.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/toolbarconfigurator/font/fontello.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/toolbarconfigurator/font/fontello.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/toolbarconfigurator/font/fontello.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/toolbarconfigurator/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/toolbarconfigurator/js/abstracttoolbarmodifier.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/toolbarconfigurator/js/fulltoolbareditor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/toolbarconfigurator/js/toolbarmodifier.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/toolbarconfigurator/js/toolbartextmodifier.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/toolbarconfigurator/lib/codemirror/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/toolbarconfigurator/lib/codemirror/codemirror.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/toolbarconfigurator/lib/codemirror/codemirror.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/toolbarconfigurator/lib/codemirror/javascript.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/toolbarconfigurator/lib/codemirror/neo.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/toolbarconfigurator/lib/codemirror/show-hint.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/samples/toolbarconfigurator/lib/codemirror/show-hint.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/dialog.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/dialog_ie.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/dialog_ie7.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/dialog_ie8.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/dialog_iequirks.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/editor.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/editor_gecko.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/editor_ie.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/editor_ie7.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/editor_ie8.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/editor_iequirks.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/icons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/icons_hidpi.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/images/arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/images/close.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/images/hidpi/close.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/images/hidpi/lock-open.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/images/hidpi/lock.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/images/hidpi/refresh.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/images/lock-open.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/images/lock.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/images/refresh.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/images/spinner.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/skins/moono/readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ckeditor_now/styles.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/forms/instr_detail.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/forms/roleManage.html" afterPath="$PROJECT_DIR$/pages/forms/roleManage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/forms/instruction.html" afterPath="$PROJECT_DIR$/pages/forms/instruction.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/forms/login.html" afterPath="$PROJECT_DIR$/pages/forms/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/ckeditor/config.js" afterPath="$PROJECT_DIR$/plugins/ckeditor/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/ckeditor/plugins/wsc/dialogs/wsc.css" afterPath="$PROJECT_DIR$/plugins/ckeditor/plugins/wsc/dialogs/wsc.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/self/js/instrcution.js" afterPath="$PROJECT_DIR$/self/js/instrcution.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/self/js/login.js" afterPath="$PROJECT_DIR$/self/js/login.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/self/js/roleManage.js" afterPath="$PROJECT_DIR$/self/js/roleManage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/self/json/listEditPer.json" afterPath="$PROJECT_DIR$/self/json/listEditPer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/self/json/listPerMenu.json" afterPath="$PROJECT_DIR$/self/json/listPerMenu.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,8 +368,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="290" />
-    <option name="y" value="159" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -54,14 +388,27 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frame" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frame" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="E:/ideaWorkspace" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
   </component>
@@ -315,7 +662,6 @@
       <setting name="passParentEnv" value="true" />
       <setting name="launchBrowser" value="true" />
       <setting name="launchBrowserUrl" value="" />
-      <setting name="depsClasspath" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -447,12 +793,6 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -487,69 +827,61 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a687c56c-fadf-4154-b032-22a1aa6c6d86" name="Default" comment="" />
-      <created>1492676184005</created>
+      <changelist id="9af830aa-9379-4f69-a71e-8c338e11f806" name="Default" comment="" />
+      <created>1494985488010</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1492676184005</updated>
-      <workItem from="1492676190049" duration="696000" />
-      <workItem from="1493944981386" duration="247000" />
-      <workItem from="1494550671349" duration="297000" />
-      <workItem from="1494570312103" duration="15000" />
+      <updated>1494985488010</updated>
+      <workItem from="1494985500323" duration="921000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1255000" />
+    <option name="totallyTimeSpent" value="921000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="290" y="159" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12625699" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26066098" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
   </component>
-  <component name="Vcs.Log.History.Properties">
-    <option name="COLUMN_ORDER">
-      <list>
-        <option value="0" />
-        <option value="2" />
-        <option value="3" />
-        <option value="1" />
-      </list>
-    </option>
-  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="说明书管理功能完善" />
+    <option name="LAST_COMMIT_MESSAGE" value="说明书管理功能完善" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

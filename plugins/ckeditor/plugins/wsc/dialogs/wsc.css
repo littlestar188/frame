@@ -12,12 +12,12 @@ html, body
 
 body
 {
-	padding: 10px;
+	-padding: 10px;
 }
 
 body, td, input, select, textarea
 {
-	font-size: 11px;
+	-font-size: 11px;
 	font-family: 'Microsoft Sans Serif' , Arial, Helvetica, Verdana;
 }
 

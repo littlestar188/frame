@@ -1,0 +1,40 @@
+.bg-block{
+	border-radius: 5px;
+    padding: 5px 20px 10px 10px;
+}
+.fsize-14 {
+    font-size: 14px;
+}
+.fsize-24{
+	font-size:24px;
+}
+.fsize-32{
+	font-size:32px;
+}
+.cont{
+	background-color: #f9f9f9;
+}
+/*content-wrapper*/
+.content-wrapper .content-section{
+	padding:15px 15px 0 15px;
+}
+.content-wrapper .content-section .info-box-text2{
+    font-size: 24px;
+    color: rgba(255,255,255,0.6);
+}
+.content-wrapper .content-section .info-box-number2{
+	color: #fff;
+    font-size: 32px;
+    text-align: right;
+    line-height: 26px;
+}
+.content-wrapper .content-section .small-box>.inner-box{
+	border-radius: 10px;
+    padding: 10px 0;
+    text-align: center;
+}
+.content-wrapper .content-section .small-box>.inner-box>.info-inner-box{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}

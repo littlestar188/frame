@@ -1,5 +1,20 @@
+#person_table>tbody{
+	border:1px solid #f2f2f2;
+}
+.box-profile{
+	padding:10px;
+}
+.box-profile .profile-rolename{
+	color:#fff;
+}
 .cont{
-	background-color: #f9f9f9;
+	background-color: #fff;
+}
+.cont>td:nth-child(1){
+	
+}
+.cont>td:nth-child(2){
+	color:#3c8dbc;
 }
 .user-lineh{
 	height:40px;

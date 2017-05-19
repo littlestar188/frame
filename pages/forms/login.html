@@ -7,21 +7,22 @@
   <title>AdminLTE 2 | Log in</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Bootstrap 3.3.6 --> 
+  <link rel="stylesheet" href="../../plugins/bootstrap/css/bootstrap.min.css">  
+  <!-- Font-awesome -->
+  <link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="../../plugins/iCheck/square/blue.css">
-  <!-- validator -->
-  <link rel="stylesheet" href="../../plugins/validator/jquery.validator.css">
-  <!-- 特有样式 -->
-  <link rel="stylesheet" href="../../self/css/public.css">
+  <link rel="stylesheet" href="../../dist/css/common.min.css">
+  <!-- private -->
   <link rel="stylesheet" href="../../self/css/login.css">
+  <!-- jQuery 2.2.3 -->
+  <!-- Bootstrap 3.3.6 -->
+  <script src="../../dist/js/js-jqboot.min.js"></script>
+  <!-- iCheck -->
+  <script src="../../plugins/iCheck/icheck.min.js"></script>
+  <!-- login -->
+  <script src="../../self/js/login.js"></script>
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -38,7 +39,7 @@
 <div class="login-box">
   <div class="login-logo">
   <!-- 公司名 -->
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
+    <a href="../../index.html"><b>Admin</b>LTE</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -66,7 +67,7 @@
         <div class="col-xs-4 imgCode">
           <!-- <img src="" class="imgCheckCode" title="点击换一张" /> -->
           <a href="javascript:void(0)" class="imgCheckCode">
-          <img src="http://127.0.0.1:8080/checkCode" title="换一张" style="width:100%;height:100%">  
+          <img src="http://192.168.0.15:8080/checkCode" title="换一张" style="width:100%;height:100%">  
           </a>
         </div>
       </div>
@@ -97,17 +98,5 @@
   </div>
   <!-- /.login-box-body -->
 </div>
-
-<!-- jQuery 2.2.3 -->
-<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="../../bootstrap/js/bootstrap.min.js"></script>
-<!-- iCheck -->
-<script src="../../plugins/iCheck/icheck.min.js"></script>
-<!-- validator -->
-<script src="../../plugins/validator/jquery.validator.js"></script>
-<!-- login -->
-<script src="../../self/js/login.js"></script>
-
 </body>
 </html>

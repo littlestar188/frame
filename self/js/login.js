@@ -2,7 +2,7 @@
   $(function () {
     var login = {
       ajaxUrlheader:"http://127.0.0.1:8080",
-      localHeader:"http://localhost",//本地服务器 必须是localhost
+      localHeader:"http://192.168.0.15:80",//本地服务器 必须是localhost
       result:{},
       navData:{},
       name:"",

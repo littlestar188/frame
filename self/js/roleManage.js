@@ -634,7 +634,6 @@ $(function(){
                               +'<div class="menu-item"><input type="checkbox" id="add'+i+'" data-id="'+id+'-'+1+'"><label style="display=none" for="add'+i+'">新增</label></div>'
                               +'<div class="menu-item"><input type="checkbox" id="delet'+i+'"  data-id="'+id+'-'+2+'"><label for="delet'+i+'">删除</label></div>'
                               +'<div class="menu-item"><input type="checkbox" id="edit'+i+'"  data-id="'+id+'-'+3+'"><label for="edit'+i+'">修改</label></div>'
-
                               +'<div class="menu-item"><input type="checkbox" id="search'+i+'"  data-id="'+id+'-'+4+'"><label for="search'+i+'">查询</a></label></div>'
                             +'</li>';
 

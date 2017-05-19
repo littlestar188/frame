@@ -6,125 +6,28 @@
   <title>instruction</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+ 
   <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../plugins/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
   <!-- bootstrap-table -->
   <link rel="stylesheet" href="../../plugins/bootstrap-table/css/bootstrap-table.css">
-  <!--editor -->
-  <link rel="stylesheet" href="../../plugins/ckeditor/contents.css">
- <link rel="stylesheet" type="text/css" href="../../plugins/ckeditor/skins/moono/editor.css">
- <link rel="stylesheet" type="text/css" href="../../plugins/ckeditor/plugins/scayt/skins/moono-lisa/scayt.css">
- <link rel="stylesheet" type="text/css" href="../../plugins/ckeditor/plugins/wsc/dialogs/wsc.css">
+   <!-- Ionicons -->
+  <link rel="stylesheet" href="../../plugins/ionicons/css/ionicons.min.css">
   <!--select2-->
   <link rel="stylesheet" href="../../plugins/select2/select2.min.css">
-  <!-- PNotify -->
-<!--   <link href="../../plugins/pnotify/css/pnotify.css" rel="stylesheet">
-  <link href="../../plugins/pnotify/css/pnotify.buttons.css" rel="stylesheet">
-  <link href="../../plugins/pnotify/css/pnotify.nonblock.css" rel="stylesheet"> -->
-
-
   <!--validator-->
   <link rel="stylesheet" href="../../plugins/validator/jquery.validator.css">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
-
   <!-- self css -->
-  <link rel="stylesheet" href="../../self/css/public.css">
-  <link rel="stylesheet" href="../../self/css/personal.css">
+  <link rel="stylesheet" href="../../dist/css/common.min.css">
+  <link rel="stylesheet" href="../../self/css/instr.css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-
-  <style>
-    
-    .modal-wrapper{
-      position:absolute;
-      z-index:99;
-      width:100%;
-      height:100%;
-      background-color:#000;
-      opacity: 0.5;
-    }
-    .modal-wrapper .box{
-      position:absolute;
-      z-index:100;
-      top:40%;
-      left:50%;
-      width:20%;
-      height:15%;
-      transform: translate(-50%,-50%);
-      background-color: #fff;
-      text-align:center;
-      padding:30px;
-    }
-     .modal-wrapper .btn{
-      position:absolute;
-      z-index:100;
-      top:42.3%;
-      left:50%;
-      transform: translate(-50%,-50%);
-      background-color: #fff;
-      text-align:center;
-     }
-
-     #search-wrap>.role-input{
-        border-radius: 4px;
-        box-sizing:border-box;
-        border:none;
-        width:32%;
-        border:1px solid #ddd;
-        height:30px;
-        margin:10px 0 10px 45px;
-        padding-left:5px
-
-     }
-    #search-wrap>.checkAll{
-        text-align:right;
-        display: inline-block;
-        width:30%;
-      }
-     #list_table>ul{
-      box-sizing: border-box;
-     }
-      #list_table>ul>li{
-        list-style:none;
-        padding:10px;
-        box-sizing: border-box;
-      }
-      #list_table>ul>li>.menu-name{
-        height:40px;
-        line-height:40px;
-        padding-right:25px;
-        display:inline-block;
-      }
-      #list_table>ul>li>.menu-item{
-        height:40px;
-        line-height:40px;
-        display: inline-block;
-        padding-right:24px;
-      }
-      #list_table>ul>li>.menu-item>label,.checkAll>label{
-         font-weight:500;         
-         padding-left:10px;
-      }
-      #list_table>ul>li>.menu-item>input,.checkAll>input:nth-child(2){
-        vertical-align:center;
-        display: inline-block;
-        position:relative;
-        top:2px;
-      }
-  </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -140,7 +43,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="../../src/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>Alexander Pierce</p>
@@ -197,60 +100,7 @@
     </section>
 	<!-- Main content -->
 	<section class="content">
-		<!-- Default box -->
-		<div class="box box-primary">
-			
-			<div class="box-body">
-				<!--说明书详情-->
-				<div id="instr-detail"></div>
-				<!--说明书管理-->
-				<div id="instr-list">
-					<div id="custom-toolbar">
-						<!-- <shiro:hasPermission name="role:1"> -->
-						<div class="row">
-							<div class="col-xs-6">
-								<input type="text" class="form-control" placeholder="说明书标题">
-							</div>
-							<div class="col-xs-3">
-								<button type="button" class="btn btn-primary searchBtn" id="search_product">
-									<i class="fa fa-search">
-									</i>
-									查询
-								</button>
-							</div>
-							<div class="col-xs-3">
-								<button type="button" class="btn btn-primary addBtn" id="add_product">
-									<i class="fa fa-plus">
-									</i>
-									新增
-								</button>
-							</div>
-						</div>
-					</div>
-					<table id="instr_table">
-
-					</table>
-					
-					<div class="modal fade bs-example-modal-md" id="productModal" tabindex="-1"
-					role="dialog" aria-labelledby="proModalLabel" aria-hidden="true">
-						<div class="modal-dialog modal-md">
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-										×
-									</button>
-									<h4 class="modal-title" id="proModalLabel" style="font-family:'微软雅黑'">
-									</h4>
-								</div>
-								<div class="modal-body">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- /.box-footer-->
-		</div>
+		 <section id="main-content"></section>
 		<!-- /.box -->
 	</section>
     
@@ -464,21 +314,19 @@
 
 </div>
 <!-- select2 -->
-<link rel="stylesheet" href="../../plugins/select2/select2.min.js">>
+<link rel="stylesheet" href="../../plugins/select2/select2.min.js">
 <!-- jQuery 2.2.3 -->
 <script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
-<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
 <!-- FastClick -->
 <script src="../../plugins/fastclick/fastclick.js"></script>
 <!-- <script src="/resource/plugins/dialog/bootstrap-dialog.min.js"></script> -->
 
 <!-- editor frame -->
-<script src="//cdn.ckeditor.com/4.6.2/basic/ckeditor.js"></script>
-<script src="../../plugins/ckeditor/config.js"></script>
-<script src="../../plugins/ckeditor/styles.js"></script>
+<script src="../../plugins/ckeditor/ckeditor.js"></script>
 
-<script type="text/javascript" src="../../plugins/ckeditor/lang/zh-cn.js">
+<!-- <script type="text/javascript" src="../../plugins/ckeditor/lang/zh-cn.js">
 </script>
 <script type="text/javascript" src="../../plugins/ckeditor/plugins/uploadimage/plugin.js">
 </script>
@@ -508,12 +356,13 @@
 <script type="text/javascript" src="../../plugins/ckeditor/plugins/filetools/lang/zh-cn.js">
 </script>
 <script type="text/javascript" src="../../plugins/ckeditor/plugins/notification/lang/zh-cn.js">
-</script>
+</script> -->
+<script src="../../dist/js/ckedior-plugins.min.js"></script>
 <!-- AdminLTE App -->
-<script src="../../dist/js/app.min.js"></script>
+<script src="../../src/js/app.min.js"></script>
 <script src="../../plugins/bootstrap-table/js/bootstrap-table.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
+<script src="../../src/js/demo.js"></script>
 <script src="../../self/js/navcontent.js"></script>
 <script src="../../self/js/instrcution.js"></script>
 <script src="../../self/js/personal.js"></script>

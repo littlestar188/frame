@@ -16,6 +16,7 @@ $(function(){
 				 // url:'../../self/js/person.json',
 				url:'/manage/user/personInfo',
 				type:'post',
+				cache:false,
 				dataType:"json",
 				success:function(res){
 					console.log('个人中心-------');
@@ -27,17 +28,10 @@ $(function(){
 			              +'<td>用户ID</td>'
 			              +'<td>'+result.userId+'</td>'
 			            +'</tr>'
-			            +'<tr class="cont">'
-			              +'<td>用户名</td>'
-			              +'<td>'+result.userName+'</td>'
-			            +'</tr>'
+			           
 			            +'<tr class="cont">'
 			              +'<td>真实姓名</td>'
 			              +'<td>'+result.realName+'</td>'
-			            +'</tr>'
-			            +'<tr class="cont">'
-			              +'<td>角色名</td>'
-			              +'<td>'+result.roleName+'</td>'
 			            +'</tr>'
 			            +'<tr class="cont">'
 			              +'<td>类型</td>'
@@ -105,9 +99,60 @@ $(function(){
 					//同步修改导航处用户名
 					//右上角导航栏及点出框在.html添加class user-name
 
-					$('.user.user-menu .user-name').html(result.userName);
+				$('.user.user-menu .user-name').html(result.userName);
 
-
+				var str2="";
+				str2 = '<li class="list-group-item">'
+			              +'<span>用户ID</span>'
+			              +'<a class="pull-right">'+result.userId+'</a>'
+			            +'</li>'
+			            +'<li class="list-group-item">'
+			              +'<span>真实姓名</span>'
+			              +'<a class="pull-right">'+result.realName+'</a>'
+			            +'</li>'			           
+			            +'<li class="list-group-item">'
+			              +'<span>类型</span>'
+			              +'<a class="pull-right">'+result.type+'</a>'
+			            +'</li>'
+			            
+			            +'<li class="list-group-item">'
+			              +'<span>性别</span>'
+			             +'<a class="pull-right">'+result.sex+'</a>'
+			            +'</li>'
+			            +'<li class="list-group-item">'
+			              +'<span>电话</span>'
+			              +'<a class="pull-right">'+result.phone+'</a>'
+			            +'</li>'
+			            +'<li class="list-group-item">'
+			              +'<span>邮箱</span>'
+			              +'<a class="pull-right">'+result.email+'</a>'
+			            +'</li>'
+			            +'<li class="list-group-item">'
+			              +'<span>创建时间</span>'
+			              +'<a class="pull-right">'+result.createTime+'</a>'
+			            +'</li>'
+			            +'<li class="list-group-item">'
+			              +'<span>上次登录时间</span>'
+			              +'<a class="pull-right">'+result.lastLoginTime+'</a>'
+			            +'</li>'			            
+			            +'<li class="list-group-item">'
+			              +'<span>上次登录IP</span>'
+			              +'<a class="pull-right">'+result.lastLoginIp+'</a>'
+			            +'</li>'
+			            +'<li class="list-group-item">'
+			              +'<span>登录次数</span>'
+			              +'<a class="pull-right">'+result.count+'</a>'
+			            +'</li><li class="list-group-item">'
+			              +'<span>区域权限</span>'
+			              +'<a class="pull-right">'+result.location+'</a>'
+			            +'</li>'
+			            +'<li class="list-group-item">'
+			              +'<span>备注</span>'
+			              +'<a class="pull-right">'+result.remark+'</a>'
+			            +'</li>';
+			     $('#person_table2').append(str2); 
+			     $('.box-profile .profile-username').html(result.userName);
+			     $('.box-profile .profile-rolename').html(result.roleName);
 				},
 				error:function(){
 					console.log('get person information -----后台报错');

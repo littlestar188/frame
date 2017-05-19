@@ -1,0 +1,103 @@
+<div class="nav-tabs-custom">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab_1" data-toggle="tab">列表</a></li>
+    <li><a href="#tab_2" data-toggle="tab">编辑</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab_1">
+      <!-- Default box -->
+          <!-- <div class="box box-primary"> -->
+            <div>
+            <div class="box-body">
+              <!--说明书详情-->
+              <div id="instr-detail"></div>
+              <!--说明书管理-->
+              <div id="instr-list">
+                <div id="custom-toolbar">
+                  <!-- <shiro:hasPermission name="role:1"> -->
+                  <div class="row">
+                    <div class="col-xs-6">
+                      <input type="text" class="form-control" placeholder="说明书标题">
+                    </div>
+                    <div class="col-xs-3">
+                      <button type="button" class="btn btn-primary searchBtn" id="search_product">
+                        <i class="fa fa-search">
+                        </i>
+                        查询
+                      </button>
+                    </div>
+                    <div class="col-xs-3">
+                      <button type="button" class="btn btn-primary addBtn" id="add_product">
+                        <i class="fa fa-plus">
+                        </i>
+                        新增
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <table id="instr_table">
+
+                </table>
+                
+                <div class="modal fade bs-example-modal-md" id="productModal" tabindex="-1"
+                role="dialog" aria-labelledby="proModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-md">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                          ×
+                        </button>
+                        <h4 class="modal-title" id="proModalLabel" style="font-family:'微软雅黑'">
+                        </h4>
+                      </div>
+                      <div class="modal-body">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.box-footer-->
+          </div>
+    </div>
+    <!-- /.tab-pane -->
+    <div class="tab-pane" id="tab_2">
+        <style>
+          .nav-tabs-custom .box-header>.col-xs-10,
+          .nav-tabs-custom .box-content>.col-xs-10{
+            margin-left:-4%;
+          }
+          .nav-tabs-custom .box-header #box-title{
+            width:41.5%;
+            padding-left:0.5%;
+          }
+          .nav-tabs-custom .box-content.row{
+            display: block;padding: 10px;position: relative;
+          }
+        </style>
+        <div class="box-header row"> 
+          <div class="col-xs-1">
+            <label for="box-title" class="box-tip">*标题:</label>
+          </div> 
+          <div class="col-xs-10">
+            <input id="box-title" value="Advanced and full of features"/>
+          </div>
+        </div>
+        <div class="box-content row">
+          <div class="col-xs-1">
+            <label for="form-content" class="box-tip">*内容:</label>
+          </div>
+          <div class="col-xs-10">
+            <form id="form-content">
+              <textarea name="editer" id="editer" row="10" cols="80">
+                 This is my textarea to be replaced with CKEditor.
+              </textarea>
+            </form>
+          </div>
+        </div>
+    </div>
+    
+    <!-- /.tab-pane -->
+  </div>
+  <!-- /.tab-content -->
+</div>

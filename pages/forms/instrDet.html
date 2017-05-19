@@ -1,0 +1,33 @@
+<style>
+	.nav-tabs-custom .box-header>.col-xs-10,
+	.nav-tabs-custom .box-content>.col-xs-10{
+		margin-left:-4%;
+	}
+	.nav-tabs-custom .box-header #box-title{
+		width:41.5%;
+		padding-left:0.5%;
+	}
+	.nav-tabs-custom .box-content.row{
+		display: block;padding: 10px;position: relative;
+	}
+</style>
+<div class="box-header row"> 
+	<div class="col-xs-1">
+		<label for="box-title" class="box-tip">*标题:</label>
+	</div> 
+	<div class="col-xs-10">
+		<input id="box-title" value="Advanced and full of features"/>
+	</div>
+</div>
+<div class="box-content row">
+	<div class="col-xs-1">
+		<label for="form-content" class="box-tip">*内容:</label>
+	</div>
+	<div class="col-xs-10">
+		<form id="form-content">
+			<textarea name="editer" id="editer" row="10" cols="80">
+				 This is my textarea to be replaced with CKEditor.
+			</textarea>
+		</form>
+	</div>
+</div>

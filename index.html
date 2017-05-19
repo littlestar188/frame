@@ -7,35 +7,26 @@
   <title>frameDemo</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  
   <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="plugins/ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="dist/css/common.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-  <!-- daterange picker -->    
+  <!-- daterange picker 日历表-->    
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
-  <!-- skin -->
-  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
   <!-- iCheck -->
   <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
-  <!-- Morris chart -->
+  <!-- Morris chart 时序图-->
   <link rel="stylesheet" href="plugins/morris/morris.css">
   <!-- jvectormap -->
   <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
   <!-- Date Picker -->
   <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
-  <link rel="stylesheet" href="self/css/public.css">
-  <link rel="stylesheet" href="self/css/personal.css">
+  <link rel="stylesheet" href="self/css/index.css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -56,7 +47,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="/frame/src/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>Alexander Pierce</p>
@@ -83,12 +74,36 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content 右边内容区-->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    
-    <!-- /.content -->
-  </div>
   <!-- /.content-wrapper -->
+  <div class="content-wrapper">
+    <!-- ./content-section -->   
+    <section class="content-section row">
+    <!-- ./small-box -->
+      <div class="col-lg-3 col-sm-6">
+        <div class="small-box bg-green">
+            <div class="inner-box">
+                <p class="info-inner-box">在库设备总量</p>
+                <b class="info-inner-number fsize-24">29</b>
+            </div>
+        </div>
+      </div>  
+    </section>
+    <!-- ./content-section -->
+    <section class="content-section row">     
+      <!-- small box -->
+      <div class="col-lg-3 col-sm-6">
+          <div class="bg-block bg-blue" style="cursor: pointer;" id="stock">
+              <div class="info-box-text2">普通</div>
+              <div class="info-box-number2">
+                <div>1</div>
+                <div class="fsize-14">库存</div>
+              </div>
+          </div>
+      </div>
+               
+    </section>
+  </div>
+  <!-- /. -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.3.12
@@ -291,21 +306,12 @@
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 </div>
-<!-- ./wrapper -->
 
-<!-- jQuery 2.2.3 -->
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-<!-- <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script> -->
-<!-- jQuery UI 1.11.4 -->
-
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-
-<!-- Bootstrap 3.3.6 -->
-<script src="bootstrap/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-<script src="dist/js/app.js"></script>
-<script src="self/js/login.js"></script>
+<script src="dist/js/common.min.js"></script>
+<!-- <script src="self/js/login.js"></script> -->
+<script type="self/js/index.js"></script>
 <script src="self/js/navcontent.js"></script> 
+
 <script>
   $('#nav-header').load('./pages/forms/nav.html',function(){
     // 未来元素 只能委托 更换顶部导航的用户链接

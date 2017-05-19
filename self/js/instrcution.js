@@ -6,11 +6,11 @@ $(function(){
 			console.log('ready')
 			var that = this;
             //this.addPro();
-            this.bindEvent();
-            this.ckEditor();
+            
+            
             //this.handleHash();
-			$('#nav-header').load('nav.html',function(){});
-				
+		    $('#nav-header').load('nav.html',function(){});
+		    $('#main-content').load('instContent.html',function(){			
 				$("#instr_table").bootstrapTable({
 	             // url: '/manage/role/listRoles',
 	             url:'../../self/json/listInstructions.json',
@@ -32,12 +32,12 @@ $(function(){
 	                       }},
 	                       {field: 'creater',title: '创建人',align: 'center',valign: 'middle',formatter:function(value){
 	                         // console.log(value)
-                              return value.realName;
+	                          return value.realName;
 	                       }},
 	                       {field: 'createTime',title: '创建时间',align: 'center',valign: 'middle'},
 	                       {field: 'modifyUser',title: '最后编辑人',align: 'center',valign: 'middle',formatter:function(value){
 	                          //console.log(value)
-                              return value.realName;
+	                          return value.realName;
 	                       }},
 	                       {field: 'modifyTime',title: '最后编辑时间',align: 'center',valign: 'middle'},
 	                       {field: 'id',title: '操作',align: 'center',valign: 'middle',formatter:function(value){
@@ -45,7 +45,9 @@ $(function(){
 		                   	}
 	       				]
 	         	})
-
+	         	that.bindEvent();
+	         	that.ckEditor();
+			});
 
 		},
 		addPro:function(){
@@ -95,22 +97,6 @@ $(function(){
 					
 				
 			})
-
-
-			
-   //       	window.onhashchange = function(){
-			// 	//if(location.hash){
-			// 	alert(1)
-			// 	var hash = location.hash;
-			// 	console.log(location,'hash值改变了',hash)
-			// 	var selector = '[href="'+hash+'"]';
-
-			// 	$('.box-body').empty();
-			// 	$('.header_title').html('说明书详情');
-			// 	$('.content-header>ol').append('<li class="active">说明书详情</li>')
-			// 	$('.box-body').load('instr_detail.html',function(){});
-				
-			// }
 				 
 		},
 		queryParams:function(params){
@@ -122,22 +108,29 @@ $(function(){
 		 
 		   
 		},
-		ckEditor:function(){
-			var editer = $('.box-body').find('#editer');
-			console.log(editer);
-			CKEDITOR.plugins.addExternal( 'uploadimage', 'http://sdk.ckeditor.com/samples/assets/plugins/uploadimage/', 'plugin.js' );
+		ckEditor:function(){			
+			
+				var editer = $('#tab_2').find('#editer');
+				console.log(editer);
+				
 
-			CKEDITOR.replace( 'editer', {
-			    extraPlugins: 'uploadimage,image2',
-			    height:300,
-			    stylesSet: [
-			        { name: 'Narrow image', type: 'widget', widget: 'image', attributes: { 'class': 'image-narrow' } },
-			        { name: 'Wide image', type: 'widget', widget: 'image', attributes: { 'class': 'image-wide' } }
-			    ],
-			    image2_alignClasses: [ 'image-align-left', 'image-align-center', 'image-align-right' ],
-			    image2_disableResizer: true
-			})
+				CKEDITOR.replace( 'editer', {
+				    extraPlugins: 'uploadimage,image2',
+				    height:300,
+				    stylesSet: [
+				        { name: 'Narrow image', type: 'widget', widget: 'image', attributes: { 'class': 'image-narrow' } },
+				        { name: 'Wide image', type: 'widget', widget: 'image', attributes: { 'class': 'image-wide' } }
+				    ],
+				    image2_alignClasses: [ 'image-align-left', 'image-align-center', 'image-align-right' ],
+				    image2_disableResizer: true,
+				    customConfig:'../../plugins/ckeditor/config.js',
+				    contentsCss:[ '../../plugins/ckeditor/contents.css', '../../plugins/ckeditor/skins/moono/editor.css','../../plugins/ckeditor/plugins/scayt/skins/moono-lisa/scayt.css','../../plugins/ckeditor/plugins/wsc/dialogs/wsc.css' ],
+				    stylesSet:['mystyles:../../plugins/ckeditor/styles.js']
+				    // templates_files:
+
+				})
+			
 		}
 	}
 	instruList.init();
-})
+})  
