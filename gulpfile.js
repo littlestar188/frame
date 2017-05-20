@@ -54,6 +54,15 @@ gulp.task('js-jqboot',function () {
         .pipe(gulp.dest(jsDst));
 });
 /*
+* bootstrap-table.min.js
+*/
+gulp.task('js-table',function(){
+    gulp.src('./plugins/bootstrap-table/js/bootstrap-table.js')
+    .pipe(rename({suffix: '.min'}))
+    .pipe(uglify())
+    .pipe(gulp.dest('./plugins/bootstrap-table/js'))
+})
+/*
 * ztree.min.js
 */
 
@@ -70,13 +79,12 @@ gulp.task('ztree-common', function () {
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
         .pipe(gulp.dest(ztreeDst));
-});
-
+})
 /*
-* ckedior.plugins.min.js
+* ckedtior.plugins.min.js
 */
-gulp.task('ckedior-plugin', function () {
-    var ckediorSrc = [
+gulp.task('plugins-ckeditor', function () {
+    var ckeditorSrc = [
             './plugins/ckeditor/lang/zh-cn.js',
             './plugins/ckeditor/plugins/uploadimage/plugin.js',
             './plugins/ckeditor/plugins/image2/plugin.js',
@@ -93,12 +101,12 @@ gulp.task('ckedior-plugin', function () {
             './plugins/ckeditor/plugins/filetools/lang/zh-cn.js',
             './plugins/ckeditor/plugins/notification/lang/zh-cn.js'
         ],
-        ckediorDst = './dist/js';
-   return gulp.src(ckediorSrc)
-        .pipe(concat('ckedior-plugins.js'))
+        ckeditorDst = './dist/js';
+   return gulp.src(ckeditorSrc)
+        .pipe(concat('plugins-ckeditor.js'))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
-        .pipe(gulp.dest(ckediorDst));
+        .pipe(gulp.dest(ckeditorDst));
 });
 /* ========================================
   css: 压缩
@@ -162,6 +170,13 @@ gulp.task('watch',function(){
     gulp.watch(paths_css,['css-common']);
     //gulp.watch(paths_script,['js-common'])
 });
+
+gulp.task('css-table',function(){
+    gulp.src('./plugins/bootstrap-table/css/bootstrap-table.css')
+    .pipe(rename({suffix: '.min'}))
+    .pipe(cleanCSS())
+    .pipe(gulp.dest('./plugins/bootstrap-table/css'))
+})
 
 /* ========================================
   image: 压缩
