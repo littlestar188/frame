@@ -99,6 +99,29 @@
                 <div class="fsize-14">库存</div>
               </div>
           </div>
+      </div>              
+    </section>
+    <!-- ./content-section -->
+    <section class="content-section row">     
+      <!-- small box -->
+      <div class="col-lg-6 col-sm-12">
+            <div class="box box-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">Bar Chart</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="barChart" style="height:230px"></canvas>
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
       </div>
                
     </section>
@@ -309,7 +332,9 @@
 
 <script src="dist/js/common.min.js"></script>
 <!-- <script src="self/js/login.js"></script> -->
-<script type="self/js/index.js"></script>
+<!-- ChartJS 1.0.1 -->
+<script src="plugins/chartjs/echarts.min.js"></script>
+<script src="self/js/index.js"></script>
 <script src="self/js/navcontent.js"></script> 
 
 <script>
@@ -322,5 +347,6 @@
     $('#nav-header .user-body .signout')[0]['attributes'][0]['value'] = 'pages/forms/login.html';
   });
 </script>
+
 </body>
 </html>

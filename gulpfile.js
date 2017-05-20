@@ -63,6 +63,15 @@ gulp.task('js-table',function(){
     .pipe(gulp.dest('./plugins/bootstrap-table/js'))
 })
 /*
+* echart.min.js
+*/
+gulp.task('js-echart',function(){
+    gulp.src('./plugins/chartjs/echarts.js')
+    .pipe(rename({suffix: '.min'}))
+    .pipe(uglify())
+    .pipe(gulp.dest('./plugins/chartjs'))
+})
+/*
 * ztree.min.js
 */
 
