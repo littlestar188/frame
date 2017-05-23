@@ -1,5 +1,7 @@
-$(function(){
-	var pws = {
+// $(function(){
+	var psw = Object.create(publicFun)
+	var psw = $.extend(psw,{
+	//var psw = {
 		old:"",
 		new:"",
 		conf:"",
@@ -9,7 +11,7 @@ $(function(){
 			//this.old = $('#oldPaw').val();
 			// this.new = $('#newPaw').val();
 			// this.conf = $('#inputConfirmPaw').val();	
-			$('#nav-header').load('nav.html',function(){});				
+			$('#nav-header').load('../../layout/top-nav.html',function(){});				
 			this.judge();
 		},
 		//基本校验
@@ -35,7 +37,7 @@ $(function(){
 				var reg=/[a-zA-Z\d]{6,16}/;
 				if(reg.test($(this).val().trim()) == 1){
 					if(that.new != that.conf){								
-						$('.confPws').css('color','#c33').html('密码不一致').show();
+						$('.confPsw').css('color','#c33').html('密码不一致').show();
 						console.log(that.new !== that.conf)
 					}
 				}else{
@@ -81,10 +83,14 @@ $(function(){
 			})	
 
 			$('.box-body').on('input','input',function(){
-				$('.confPws').hide();
+				$('.confPsw').hide();
 			});
 			
 		}
-	}
-	pws.init();
+	})
+	// psw.init();
+//})
+$(function(){
+	//console.log(role)
+	psw.init();	
 })

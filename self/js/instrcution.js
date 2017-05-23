@@ -1,19 +1,19 @@
-$(function(){
-	var instruList = {
+// $(function(){
+	var instruction = Object.create(publicFun)
+	var instruction = $.extend(instruction,{
+	//var instruList = {
 		instrTable:$('#instr_table'),
 		
 		init:function(){
 			console.log('ready')
 			var that = this;
-            //this.addPro();
-            
-            
+            //this.addPro();           
             //this.handleHash();
-		    $('#nav-header').load('nav.html',function(){});
+
 		    $('#main-content').load('instContent.html',function(){			
 				$("#instr_table").bootstrapTable({
 	             // url: '/manage/role/listRoles',
-	             url:'../../self/json/listInstructions.json',
+	             url:'http://192.168.0.15/frame/self/json/listInstructions.json',
 	             //dataType: 'json',
 	             sidePagination:'server',
 	             cache: false,//设置False禁用AJAX请求的缓存
@@ -123,14 +123,18 @@ $(function(){
 				    ],
 				    image2_alignClasses: [ 'image-align-left', 'image-align-center', 'image-align-right' ],
 				    image2_disableResizer: true,
-				    customConfig:'../../plugins/ckeditor/config.js',
-				    contentsCss:[ '../../plugins/ckeditor/contents.css', '../../plugins/ckeditor/skins/moono/editor.css','../../plugins/ckeditor/plugins/scayt/skins/moono-lisa/scayt.css','../../plugins/ckeditor/plugins/wsc/dialogs/wsc.css' ],
-				    stylesSet:['mystyles:../../plugins/ckeditor/styles.js']
+				    customConfig:'../../../frame/plugins/ckeditor/config.js',
+				    contentsCss:[ '../../../plugins/ckeditor/contents.css', '../../../plugins/ckeditor/skins/moono/editor.css','../../../plugins/ckeditor/plugins/scayt/skins/moono-lisa/scayt.css','../../../plugins/ckeditor/plugins/wsc/dialogs/wsc.css' ],
+				    stylesSet:['mystyles:../../../plugins/ckeditor/styles.js']
 				    // templates_files:
 
 				})
 			
 		}
-	}
-	instruList.init();
-})  
+	})
+	//instruction.init();
+// })  
+$(function(){
+	//console.log(role)
+	instruction.init();	
+})

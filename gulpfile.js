@@ -4,7 +4,8 @@ var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),   // css 压缩
     autoprefixer = require('gulp-autoprefixer'),//补全兼容
     //minifycss = require('gulp-minify-css'), //被废弃
-    uglify = require('gulp-uglify'),    // js 压缩
+    jshint = require('gulp-jshint'),// js语法检查
+    uglify = require('gulp-uglify'),// js 压缩
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     clean = require('gulp-clean') ; //清空文件
@@ -117,6 +118,23 @@ gulp.task('plugins-ckeditor', function () {
         .pipe(uglify())
         .pipe(gulp.dest(ckeditorDst));
 });
+
+/*
+* roleManage.html js-private
+*/
+gulp.task('js-role', function () {
+    var roleSrc = [
+            './slef/js/publicFun.js',
+            './slef/js/roleManage.js'
+        ],
+        roleDst = './dist/js';
+   return gulp.src(roleSrc)
+        .pipe(concat('role.js'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify())
+        .pipe(jshint())
+        .pipe(gulp.dest(roleDst));
+})
 /* ========================================
   css: 压缩
  ======================================== */

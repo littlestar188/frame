@@ -9,7 +9,7 @@ $(function(){
 			
 			this.navRender();
 			this.toPersonl();
-			this.initName();
+			// this.initName();
 			//console.log(login.navData);
 		},
 		navRender:function(){
@@ -118,24 +118,28 @@ $(function(){
 				window.setTimeout(window.location.href="/frame/pages/forms/personal.html",500);
 			})
 		},
-		initName:function(){
-			$.ajax({
-				// url:'../../self/js/person.json',
-				url:'/manage/user/personInfo',
-				type:'post',
-				dataType:"json",
-				success:function(res){
-					console.log('显示用户名在头部导航上-------')
-					console.log(res);
-					$('.user-name').html(res.data.userName);
-				}
-			})
-		},
+		// initName:function(){
+		// 	$.ajax({
+		// 		// url:'../../self/js/person.json',
+		// 		url:'/manage/user/personInfo',
+		// 		type:'post',
+		// 		dataType:"json",
+		// 		success:function(res){
+		// 			console.log('显示用户名在头部导航上-------')
+		// 			console.log(res);
+		// 			$('.user-name').html(res.data.userName);
+		// 		}
+		// 	})
+		// },
 		replaceAll:function(str,old,now){
 			var reg = new RegExp(old,'g');
 			return str.replace(reg,now);
 			console.log(reg)
 		}
 	};
-	nav.init();
+	//nav.init();
+})
+$(function(){
+	//console.log(role)
+	nav.init();	
 })

@@ -1,12 +1,14 @@
-$(function(){
-	var personal = {
+// $(function(){
+	var personal = Object.create(publicFun)
+	var personal = $.extend(personal,{
+	//var personal = {
 		arrayVal:[],
 		// contKey:$('.table-striped>tbody>tr>td:nth-child(1)'),
 		// contVal:$('.table-striped>tbody>tr>td:nth-child(2)'),
 		init:function(){
 			
 			//必须是ID选择器
-			$('#nav-header').load('nav.html',function(){});
+			
 			this.renderData();
 			
 		},
@@ -99,7 +101,7 @@ $(function(){
 					//同步修改导航处用户名
 					//右上角导航栏及点出框在.html添加class user-name
 
-				$('.user.user-menu .user-name').html(result.userName);
+				//$('.user.user-menu .user-name').html(result.userName);
 
 				var str2="";
 				str2 = '<li class="list-group-item">'
@@ -159,6 +161,10 @@ $(function(){
 				}
 			})
 		}
-	}
-	personal.init();
-});
+	})
+	// personal.init();
+// });
+$(function(){
+	//console.log(role)
+	personal.init();	
+})

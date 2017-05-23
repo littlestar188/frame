@@ -6,7 +6,7 @@ $(function(){
 			var that = this;
             this.addPro();
 
-			$('#nav-header').load('nav.html',function(){});
+			$('#nav-header').load('../../layout/top-nav.html',function(){});
 				$("#product_table").bootstrapTable({
 	             // url: '/manage/role/listRoles',
 	             url:'../../self/json/listProduct.json',
