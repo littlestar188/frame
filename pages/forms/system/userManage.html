@@ -6,8 +6,12 @@
   <title>AdminLTE 2 | Invoice</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- icon -->
+  <link rel="icon" href="/frame/favicon-logo.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/frame/favicon-log.ico" type="image/x-icon">
+  <!-- bootstrap -->
   <link rel="stylesheet" href="../../../plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../plugins/bootstrap-table/css/bootstrap-table.css">
+  <link rel="stylesheet" href="../../../plugins/bootstrap-table/css/bootstrap-table.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
@@ -43,7 +47,7 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- Sidebar user panel -->
-      <div class="user-panel">
+      <div class="user-panel" style="display:none;">
         <div class="pull-left image">
           <img src="../../../src/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
@@ -65,7 +69,15 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        <li class="header">MAIN NAVIGATION</li>
+        <!--  /.首页-->
+       <li class="treeview first">
+         <a href="/frame/index.html">
+           <i class="fa fa-system"></i>
+           <span class="nav-name" style="margin-left:-5px">首<span style="visibility:hidden">首页</span>页</span>
+           <span class="pull-right-container"></span>
+         </a>
+        </li>
+       <!-- /.动态加载导航 -->
         
       </ul>
     </section>

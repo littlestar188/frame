@@ -13,11 +13,7 @@ var role = $.extend(role,{
 	init:function(){
 		var that = this;
 		console.log('role.init')
-		// 顶部导航和页脚页面加载
-		// $('#nav-header').load('../../layout/top-nav.html',function(){});
-		// $('#main-footer').load('../../layout/footer.html',function(){});
-		// this.loadTopNav();
-		// this.loadeFooter();
+		
 		$("#role_table").bootstrapTable({
          url: '/manage/role/listRoles',
          //url:'../../self/json/listRoles.json',
