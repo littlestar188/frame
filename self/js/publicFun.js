@@ -14,7 +14,8 @@ var publicFun = {
     /*
 	* 加载头部导航页面
     */
-	loadTopNav:function(){	 
+	loadTopNav:function(){
+		var that = this;	 
 		var navUrl ;
 		var nav1 ='./pages/layout/top-nav.html'
 		var nav2 = '../../layout/top-nav.html';
@@ -26,9 +27,13 @@ var publicFun = {
 				 // url:'../../self/js/person.json',
 				url:'/manage/user/personInfo',
 				type:'post',
-				cache:false,
+				cache:true,
 				dataType:"json",
 				success:function(res){
+					console.log(res.data)
+					//为了减少http请求userId 存储在cookie中
+					$.cookie("user",[res.data.userId,res.data.roleName],{expires:1,path:'/'});
+					//top-nav
 					$('.user.user-menu .user-name').html(res.data.userName);
 				}
 			})
@@ -118,73 +123,30 @@ var nav = {
 
 				for(var key = 0;key<data.length;key++){
 					(function(i){
-					//console.log(i);//0 1 2					
+					//console.log(i);//0 1 2
+						var perFirst = data[i].permission;
+						console.log(perFirst)
+						if(data[i].sub_menu == false && data[i].permission !== null){}
+						perFirst = publicFun.replaceAll(perFirst.toString(),',','');
+																		
 						var li = $('<li class="treeview first" data-id="'+i+'"></li>');
 						//定义第一级导航id
-						first ='<a href="'+data[i].link+'">'
+						first ='<a href="'+data[i].link+'#'+perFirst+'">'
 							    +'<i class="fa '+data[i].icon+'"></i>' 
 							    +'<span class="nav-name">'+data[i].name+'</span>'  
 							  +'</a>'
 						li.append(first);
 						that.sidebar.append(li);
+						console.log(first)
 
 						//判断是否有二级菜单
-						
-						//console.log(a);
 						if(data[i].sub_menu!==null){
-							//一级导航栏右边添加箭头
-							var a = $('.first[data-id="'+i+'"] a:nth-child(1)');//找到第一个a
-							rightIcon = "<span class='pull-right-container'>"
-											+"<i class='fa fa-angle-left pull-right'></i>"
-										 +"</span>";
-
-							a.append(rightIcon);
-
-							//创建二级导航
-							var ul = $('<ul class="treeview-menu"></ul>');
-							//console.log(data[i].sub_menu.length);
-							//查看当前可见元素的二级导航
 							
-							//处理一级菜单的权限格式 [1,2,3,4] -->1234
-							//console.log(that.replaceAll(data[i].permission.toString(),',',''))
-							var permission = publicFun.replaceAll(data[i].permission.toString(),',','');
-							for(var j = 0;j<data[i].sub_menu.length;j++){
-								//console.log(i+"-a-"+j);	//0 1 0
-								
-
-								second = '<li class="second-menu" data-id="'+i+'-'+j+'">'
-								      +'<a href="'+data[i].sub_menu[j].link+'#'+permission+'">'
-								        +'<i class="fa fa-circle-o"></i>'+data[i].sub_menu[j].name
-								      +'</a>'
-								   +'</li>';
-								ul.append(second);
-								li.append(ul);
-								//console.log(data[i].sub_menu.length);// 2 2 1 对
-
-								//判断是否有三级子菜单
-								if(data[i].sub_menu[j].sub_menu!==null){
-									//二级导航栏右边添加箭头
-									var data_id=i+"-"+j;
-									ul.find('.second-menu[data-id='+data_id+']>a').append(rightIcon);
-									var ul2 = $('<ul class="treeview-menu third-nav"></ul>');
-									for(var k = 0;k<data[i].sub_menu[j].sub_menu.length;k++){
-										//console.log(data[i].sub_menu[j].sub_menu.length)
-										//console.log(j+"-b-"+k);//0 1 0 1									
-										third = '<li>'
-											      +'<a href="'+data[i].sub_menu[j].sub_menu[k].link+'">'
-											        +'<i class="fa fa-circle-o"></i>'+data[i].sub_menu[j].sub_menu[k].name
-											      +'</a>'
-											    +'</li>';
-										ul2.append(third);
-
-										$('.second-menu[data-id='+data_id+']').append(ul2);
-											    
-									}
-								}
-								
-							}								
+							that.secondNav(li,i,data[i]);
+									
+						}								
 							
-						}
+						//}
 					})(key);
 					
 				}
@@ -197,29 +159,74 @@ var nav = {
 			
 		})
 	},
+	/*
+		第二级导航
+		@param data sub_menu[i]
+	*/
+	secondNav:function(firstNav,i,data){
+		//一级导航栏右边添加箭头
+		var a = $('.first[data-id="'+i+'"] a:nth-child(1)');//找到第一个a
+		rightIcon = "<span class='pull-right-container'>"
+						+"<i class='fa fa-angle-left pull-right'></i>"
+					 +"</span>";
+
+		a.append(rightIcon);
+
+		//创建二级导航
+		var ul = $('<ul class="treeview-menu"></ul>');
+		//console.log(data[i].sub_menu.length);
+		//查看当前可见元素的二级导航
+		
+		//处理一级菜单的权限格式 [1,2,3,4] -->1234
+		//console.log(that.replaceAll(data[i].permission.toString(),',',''))
+		var permission = publicFun.replaceAll(data.permission.toString(),',','');
+		for(var j = 0;j<data.sub_menu.length;j++){
+			//console.log(i+"-a-"+j);	//0 1 0
+			
+			// var permission = publicFun.replaceAll(data[i].sub_menu[j].permission.toString(),',','');
+			second = '<li class="second-menu" data-id="'+i+'-'+j+'">'
+			      +'<a href="'+data.sub_menu[j].link+'#'+permission+'">'
+			        +'<i class="fa fa-circle-o"></i>'+data.sub_menu[j].name
+			      +'</a>'
+			   +'</li>';
+			ul.append(second);
+			firstNav.append(ul);
+
+			if(data.sub_menu[j].sub_menu!==null){
+
+				that.thirdNav(ul,j,data,sub_menu[j])
+			}
+		}	
+	},
+	/*
+		第三级导航
+		@param data1 sub_menu[i]
+		@paran data2 sub_menu[j]
+	*/
+	thirdNav:function(secondNav,j,data1,data2){
+
+		var data_id=i+"-"+j;
+		secondNav.find('.second-menu[data-id='+data_id+']>a').append(rightIcon);
+		var ul2 = $('<ul class="treeview-menu third-nav"></ul>');
+		for(var k = 0;k<data1.data2.sub_menu.length;k++){
+			//console.log(data[i].data2.sub_menu.length)
+			//console.log(j+"-b-"+k);//0 1 0 1									
+			third = '<li>'
+				      +'<a href="'+data1.data2.sub_menu[k].link+'">'
+				        +'<i class="fa fa-circle-o"></i>'+data1.data2.sub_menu[k].name
+				      +'</a>'
+				    +'</li>';
+			ul2.append(third);
+
+			$('.second-menu[data-id='+data_id+']').append(ul2);
+				    
+		}
+	},
 	toPersonl:function(){
 		this.personlBtn.click(function(){
 			window.setTimeout(window.location.href="/frame/pages/forms/personal.html",500);
 		})
 	}
-	// initName:function(){
-	// 	$.ajax({
-	// 		// url:'../../self/js/person.json',
-	// 		url:'/manage/user/personInfo',
-	// 		type:'post',
-	// 		dataType:"json",
-	// 		success:function(res){
-	// 			console.log('显示用户名在头部导航上-------')
-	// 			console.log(res);
-	// 			$('.user-name').html(res.data.userName);
-	// 		}
-	// 	})
-	// },
-	// replaceAll:function(str,old,now){
-	// 	var reg = new RegExp(old,'g');
-	// 	return str.replace(reg,now);
-	// 	console.log(reg)
-	// }
 };
 
 $(function(){

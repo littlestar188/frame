@@ -4,6 +4,7 @@
 var role = Object.create(publicFun)
 var role = $.extend(role,{
 //var role = {
+	adminId:"",
 	datas:{},
 	cdatas:{},
 	valueName:"",
@@ -13,6 +14,7 @@ var role = $.extend(role,{
 	init:function(){
 		var that = this;
 		console.log('role.init')
+		console.log($.cookie('user'))
 		
 		$("#role_table").bootstrapTable({
          url: '/manage/role/listRoles',
@@ -29,11 +31,11 @@ var role = $.extend(role,{
          toolbar:'#custom-toolbar',
          columns: [
                    {field: 'state',checkbox: true,formatter:function(row,value,index){
-                   	return role.disableDel(row,value,index);}
-                   },                  	   
+                   	//return role.disableDel(row,value,index);}
+                   }},                  	   
                    {field: 'roleName',title: '角色名称',align: 'center',valign: 'middle'},
                    {field: 'id',title: '操作',align: 'center',valign: 'middle',formatter:function(value){
-                   	//console.log(value)                     	
+                   	//console.log(value)id                     	
                    //return "<span><a href='javascript:void(0)' class='btn btn-success btn-xs' id='btn-watch' data-id="+value+">详情</a>&nbsp;&nbsp;<a href='javascript:void(0)' class='btn btn-info btn-xs' data-id="+value+" id='btn-edit'>修改</a>&nbsp;&nbsp;<a href='javascript:void(0)' class='btn btn-danger btn-xs' data-id="+value+" id='btn-del'>删除</a>&nbsp;&nbsp;</span>"
                    	return role.optShow(value);}
                    }
@@ -49,10 +51,12 @@ var role = $.extend(role,{
 		
 
 	},
-	//批量删除
+	/*
+		批量删除
+	*/
 	batchDel:function(){
 		var that = this;
-		$('.delGoupBtn').click(function(){
+		$('.delGroupBtn').click(function(){
 			var rows = $("#role_table").bootstrapTable('getAllSelections');
 			var realIdArr = [];
 			//批量验证角色是否为【超级管理员】
@@ -69,10 +73,40 @@ var role = $.extend(role,{
 		 
 	},
 	/*
-	  table初始化 登录账户的超级管理员禁止选中 避免误删操作
+		批量导出
 	*/
-	disableDel:function(row,value,index){
+	batchExport:function(){
+		var that = this;
+		$('.exportBtn').click(function(){
+			var ids = [];
+			var i = 0;
+			//#role_table -> 选项框
+			$("input[name='btSelectItem']").each(function() {
+				if($(this).prop("checked")){
+					ids[i] = $(this).val();
+					i++;
+				}
+			});
+			//$btSelectAll全选
+
+			if(ids.length==0){
+				window.location.href = '/manage/device/export/2?search='+search+'&key='+key+'&keyword='+keyword
+				+'&customer='+customer+'&freezerType='+freezerType+'&deviceModel='+deviceModel+'&online='+online
+				+'&province='+province+'&city='+city+'&deviceState='+deviceState+'&leaseState='+leaseState;
+				return false;
+			}else{
+				window.location.href = '/manage/device/confirmExport/2?ids='+ids
+			}
+		})
+	},
+	/*
+	  table初始化 登录账户的超级管理员禁止选中 避免误删操作
+	  取消该功能
+	*/
+	/*disableDel:function(row,value,index){
 		//默认在第一行
+		console.log(this.adminId)
+		console.log(value,row)
 		if(index == 0){
        		return {
        			disabled:true
@@ -80,7 +114,7 @@ var role = $.extend(role,{
        		return value
        	}
 
-	},		
+	},*/		
 	/*
 		@param  roleIdArr  可删除的角色ID的数组集合
 	*/
@@ -115,7 +149,10 @@ var role = $.extend(role,{
 
 		})
 	},
-	//根据一级菜单权限显示/隐藏  功能按键
+	/*
+		根据一级菜单权限显示/隐藏按键
+		@param  id		
+	*/
 	optShow:function(value){
 		//获取hash值
 		var hash = location.hash;
@@ -157,6 +194,9 @@ var role = $.extend(role,{
 		//console.log(htmlwrap.append(html)[0].outerHTML)-->span+a
 		return html;
 	},
+	/*
+		按键的对应功能实现
+	*/
 	btnPer:function(){
 		var that = this;
 		//监视option 实现某个option功能
@@ -228,7 +268,9 @@ var role = $.extend(role,{
 	// 	//$.get("/manage/menu/listFirstMenu.json",{"cache": false},function(res){})
 	// 	$.post("/manage/menu/listFirstMenu.json",{"cache": false},function(res){})
 	// },
-	//新增
+	/*
+		新增功能实现
+	*/
 	addRole:function(){	
 
 		var that = this;
@@ -266,7 +308,9 @@ var role = $.extend(role,{
 	 		console.log('selectTotal')
 	    
 	},	
-	//新增->保存->刷新角色列表
+	/*
+		新增->保存->刷新角色列表
+	*/
 	saveRole:function(){
 		var that = this;
 
@@ -982,7 +1026,7 @@ var role = $.extend(role,{
 })
 
 $(function(){
-	//console.log(role)
+	console.log(role)
 	role.init();
 	role.funZtree();	
 })

@@ -28,6 +28,7 @@ var paths_css = ['./src/css/*.css'];
 gulp.task('js-common',function () {
     var jsSrc = [
             './plugins/jQuery/jquery-2.2.3.min.js',
+            './plugins/carhartl-jquery-cookie/cookie/jquery.cookie.js',
             './plugins/bootstrap/js/bootstrap.min.js',
             './src/js/app.js',
             './src/js/demo.js'
@@ -49,7 +50,7 @@ gulp.task('js-jqboot',function () {
         ],
         jsDst = './dist/js';
     return gulp.src(jsSrc)
-        .pipe(concat('js-jqboot.js'))
+        .pipe(concat('jqboot.js'))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
         .pipe(gulp.dest(jsDst));
