@@ -1,10 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 2 | Invoice</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- icon -->
+    <link rel="icon" href="/frame/favicon-logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/frame/favicon-logo.ico" type="image/x-icon">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="../../../plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../plugins/bootstrap-table/css/bootstrap-table.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="../../../plugins/ionicons/css/ionicons.min.css">
+
+    <!-- Theme style -->
+    <!--   <link rel="stylesheet" href="../../../src/css/AdminLTE.min.css"> -->
+    <!-- <link rel="stylesheet" href="../../../src/css/skins/_all-skins.min.css"> -->
+
+    <!-- self css -->
+    <!--   <link rel="stylesheet" href="../../../self/css/public.css"> -->
+    <link rel="stylesheet" href="../../../dist/css/common.min.css">
+    <link rel="stylesheet" href="../../../self/css/userManage.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+
+    </style>
 </head>
-<body>
-$END$
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+    <div class="modal-wrapper" style="display:none">
+        <div class="box">添加修改成功</div>
+        <div class="btn btn-default beTrue">确定</div>
+    </div>
+    <header class="main-header" id="nav-header"></header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+            <div class="user-panel" style="display:none;">
+                <div class="pull-left image">
+                    <img src="../../../src/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p>Alexander Pierce</p>
+                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                </div>
+            </div>
+            <!-- search form -->
+            <form action="#" method="get" class="sidebar-form">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="Search...">
+                    <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+                </div>
+            </form>
+            <!-- /.search form -->
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu">
+                <!--  /.首页-->
+                <li class="treeview first">
+                    <a href="/frame/index.html">
+                        <i class="fa fa-system"></i>
+                        <span class="nav-name" style="margin-left:-5px">首<span style="visibility:hidden">首页</span>页</span>
+                        <span class="pull-right-container"></span>
+                    </a>
+                </li>
+                <!-- /.动态加载导航 -->
+
+            </ul>
+        </section>
+    </aside>
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div style="font-size:24px">
+                消息推送
+                <!-- <small>#007612</small> -->
+            </div>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
+                 <!--<li><a href="#">Examples</a></li> -->
+                <li class="active">消息推送</li>
+            </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <!-- Default box -->
+            <div class="box box-primary">
+                <div class="box-body">
+                    <!-- /.消息填写区 -->
+                    <form id="message_form" class="form-horizontal" action="" >
+                        <div class="form-group">
+                          <label for="txt_title" class="col-lg-1 col-sm-2" style="text-align:right">标题：</label>
+                            <div class="col-lg-4 col-sm-6">
+                                <input type="text" class="form-control" id="txt_title" name="title" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txt_content" class="col-lg-1 col-sm-2" style="text-align:right">内容：</label>
+                            <div class="col-lg-4 col-sm-6">
+                                <textarea type="text" class="form-control" id="txt_content" name="title" value=""></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-3 col-lg-offset-1 col-sm-offset-2">
+                                <span>还能输入75个字</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-1 col-lg-offset-1 col-md-6 col-sm-offset-2">
+                                <button type="button" class="btn btn-primary submitBtn">
+                                    确认推送
+                                </button>
+                            </div>
+                        </div>
+                      </form>
+                    <!-- /.模态框 -->
+                    <div class="modal fade bs-example-modal-md" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="roleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-md">
+                            <div class="modal-content" >
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"
+                                            aria-hidden="true">×</button>
+                                    <h4 class="modal-title" id="roleModalLabel" style="font-family:'微软雅黑'"></h4>
+                                </div>
+                                <div class="modal-body">
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- /.box-footer-->
+            </div>
+            <!-- /.box -->
+        </section>
+        <!-- /.content -->
+        <div class="clearfix"></div>
+    </div>
+    <!-- /.mian-footer -->
+    <footer class="main-footer no-print" id="main-footer"></footer>
+</div>
+<!-- jQuery 2.2.3 Bootstrap 3.3.6 AdminLTE App/demo-->
+<script src="../../../dist/js/common.min.js"></script>
+<script src="../../../plugins/bootstrap-table/js/bootstrap-table.js"></script>
+<!-- private -->
+<!-- <script src="../../../self/js/navcontent.js"></script> -->
+<script src="../../../self/js/publicFun.js"></script>
+<script src="../../../self/js/roleManage.js"></script>
+<script src="../../../self/js/userManage.js"></script>
+
 </body>
 </html>

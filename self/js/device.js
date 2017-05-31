@@ -11,9 +11,82 @@
 				that.showDevicelist();
 			});
 			// $('#main-footer').load('../../layout/footer.html',function(){});
-			
-			
+			this.batchExport();
+			this.settingBtn();
 		},
+        /*参数设置*/
+        settingBtn:function(){
+
+            $('.settingBtn').click(function(){
+
+                $("#deviceModalLabel").html("参数修改");
+
+                //新增区显示
+                $('.list_table .list_setting').show();
+                //角色名是否可用提示全部隐藏
+
+                $('#deviceModal').modal({show:true})
+                //角色名输入 显示是否可用请求判断 aadCheck
+
+            })
+        },
+        batchImport:function(){
+
+        },
+        /*批量导出*/
+        batchExport:function(){
+            var size = '10';
+            var current = '1';
+            var customer = '';
+            var leaseState = '0';
+            var deviceState = '0';
+            var search = '';
+            var keyword = '';
+
+            var key = '0';
+            var	freezerType = '0';
+            var	deviceModel = "0";
+            var	province = '';
+            var	city = '';
+            var online = '';
+            $("#b_key option[value="+key+"]").attr("selected", "selected");
+            if(province!='')
+                $("#province option[value="+province+"]").attr("selected", "selected");
+            if(city!='')
+                $("#city option[value="+city+"]").attr("selected", "selected");
+            $("#b_freezerType option[value='"+freezerType+"']").attr("selected", "selected");
+            $("#b_deviceModel option[value='"+deviceModel+"']").attr("selected", "selected");
+            $("#b_online option[value='"+online+"']").attr("selected", "selected");
+
+            if(customer!=''){
+                $('select[id="b_customer"] option[value='+customer+']').attr("selected", "selected");
+            }
+            $('select[id="b_leasestate"] option[value='+leaseState+']').attr("selected", "selected");
+            $('select[id="b_dstatus"] option[value='+deviceState+']').attr("selected", "selected");
+            var that = this;
+            $('.exportBtn').click(function(){
+                var ids = [];
+                var i = 0;
+                //#role_table -> 选项框
+                $("input[name='btSelectItem']").each(function() {
+                    if($(this).prop("checked")){
+                        ids[i] = $(this).val();
+                        i++;
+                    }
+                });
+                //$btSelectAll全选
+
+                if(ids.length==0){
+
+                    window.location.href = '/manage/device/export/2?search='+search+'&key='+key+'&keyword='+keyword
+                        +'&customer='+customer+'&freezerType='+freezerType+'&deviceModel='+deviceModel+'&online='+online
+                        +'&province='+province+'&city='+city+'&deviceState='+deviceState+'&leaseState='+leaseState;
+                    return false;
+                }else{
+                    window.location.href = '/manage/device/confirmExport/2?ids='+ids
+                }
+            })
+        },
 		showDevicelist:function(){
 			$('#device_table').bootstrapTable({
 			       url : "http://192.168.0.15:80/frame/self/json/device/listDevice.json",
@@ -31,7 +104,7 @@
 			       clickToSelect : false,// 设置为True时点击行即可选中单选/复选框
 			       toolbar : '#custom-toolbar',
 			       columns : [
-
+			       	   {field: 'state',checkbox: true},
 			           {field : 'product',title : '设备型号',align : 'center',width : 60,valign : 'middle',
 			               formatter : function(value) {
 			                   if(value){

@@ -47,6 +47,7 @@ var role = $.extend(role,{
 		this.searchRole();
 		//改 查 删 功能实现
 		this.btnPer();
+		// 批量删除
 		this.batchDel();
 		
 
@@ -71,33 +72,6 @@ var role = $.extend(role,{
 		})
 
 		 
-	},
-	/*
-		批量导出
-	*/
-	batchExport:function(){
-		var that = this;
-		$('.exportBtn').click(function(){
-			var ids = [];
-			var i = 0;
-			//#role_table -> 选项框
-			$("input[name='btSelectItem']").each(function() {
-				if($(this).prop("checked")){
-					ids[i] = $(this).val();
-					i++;
-				}
-			});
-			//$btSelectAll全选
-
-			if(ids.length==0){
-				window.location.href = '/manage/device/export/2?search='+search+'&key='+key+'&keyword='+keyword
-				+'&customer='+customer+'&freezerType='+freezerType+'&deviceModel='+deviceModel+'&online='+online
-				+'&province='+province+'&city='+city+'&deviceState='+deviceState+'&leaseState='+leaseState;
-				return false;
-			}else{
-				window.location.href = '/manage/device/confirmExport/2?ids='+ids
-			}
-		})
 	},
 	/*
 	  table初始化 登录账户的超级管理员禁止选中 避免误删操作
@@ -150,23 +124,25 @@ var role = $.extend(role,{
 		})
 	},
 	/*
-		根据一级菜单权限显示/隐藏按键
+		根据菜单权限显示/隐藏按键
 		@param  id		
 	*/
-	optShow:function(value){
+	optShow:function(id){
 		//获取hash值
 		var hash = location.hash;
+		var pathname = location.pathname;
+
 		hash = hash.substring(1,hash.length);
 
 		//创建功能按键
 		var htmlwrap = $('<span></span>');
-		var html = "<a href='javascript:void(0)' class='btn btn-success btn-xs' id='btn-watch' data-id="+value+">详情</a>&nbsp;&nbsp;";
+		var html = "<a href='javascript:void(0)' class='btn btn-success btn-xs' id='btn-watch' data-id="+id+">详情</a>&nbsp;&nbsp;";
 		
 		//增 查按键
-		var addBtn = $('.box-body .addBtn');
+		var addBtn = $('.box-body .addBtn').parent();
 		var searchBtn = $('.box-body .searchBtn');
 
-		//html = "<span><a href='javascript:void(0)' class='btn btn-success btn-xs' id='btn-watch' data-id="+value+">详情</a>&nbsp;&nbsp;<a href='javascript:void(0)' class='btn btn-info btn-xs' data-id="+value+" id='btn-edit'>修改</a>&nbsp;&nbsp;<a href='javascript:void(0)' class='btn btn-danger btn-xs' data-id="+value+" id='btn-del'>删除</a>&nbsp;&nbsp;</span>"
+		//html = "<span><a href='javascript:void(0)' class='btn btn-success btn-xs' id='btn-watch' data-id="+id+">详情</a>&nbsp;&nbsp;<a href='javascript:void(0)' class='btn btn-info btn-xs' data-id="+id+" id='btn-edit'>修改</a>&nbsp;&nbsp;<a href='javascript:void(0)' class='btn btn-danger btn-xs' data-id="+id+" id='btn-del'>删除</a>&nbsp;&nbsp;</span>"
 
 		//增
 		if(hash.indexOf("1")!= -1 ){
@@ -176,13 +152,22 @@ var role = $.extend(role,{
 		}
 		//删
 		if(hash.indexOf("2")!= -1 ){
-			html += '<a href="javascript:void(0)" class="btn btn-danger btn-xs" id="btn-del" data-id="'+value+'">删除</a>&nbsp;&nbsp;';
+			html += '<a href="javascript:void(0)" class="btn btn-danger btn-xs" id="btn-del" data-id="'+id+'">删除</a>&nbsp;&nbsp;';
 		}
 		//改
-		if(hash.indexOf("3")!= -1 ){
-			html += '<a href="javascript:void(0)" class="btn btn-info btn-xs" id="btn-edit" data-id="'+value+'">修改</a>&nbsp;&nbsp;'
-				+'<a href="javascript:void(0)" class="btn btn-info btn-xs" id="btn-edit2" data-id="'+value+'">修改2</a>&nbsp;&nbsp;';
+		if(hash.indexOf("3")!= -1 && pathname.indexOf("userManage") == -1){
+			console.log(hash.indexOf("3"),hash.indexOf("userManage"))
+			html += '<a href="javascript:void(0)" class="btn btn-info btn-xs" id="btn-edit" data-id="'+id+'">修改</a>&nbsp;&nbsp;'
+				+'<a href="javascript:void(0)" class="btn btn-info btn-xs" id="btn-edit2" data-id="'+id+'">修改2</a>&nbsp;&nbsp;';
+			
 		}
+		//如果在userManage页面 改的权限与重置密码关联
+		if(hash.indexOf("3")!= -1 && pathname.indexOf("userManage")!= -1 ){
+			console.log(hash.indexOf("3"),hash.indexOf("userManage"))
+			html += '<a href="javascript:void(0)" class="btn btn-info btn-xs" id="btn-edit" data-id="'+id+'">修改</a>&nbsp;&nbsp;'
+				+'<a href="javascript:void(0)" class="btn btn-success btn-xs" id="btn-watch" data-id="'+id+'">重置密码</a>&nbsp;&nbsp;'
+		}
+
 		//查
 		if(hash.indexOf("4")!= -1 ){
 			searchBtn.show();
@@ -277,9 +262,7 @@ var role = $.extend(role,{
 		//登录账号对应角色的权限菜单列表
 		this.firstMenu('#list_table>.list_choice .modal-footer');			
 
-		$('.addBtn').click(function(event){
-
-			event.stopPropagation();
+		$('.addBtn').click(function(){
 
 			$("#roleModalLabel").html("新增");
 			//所有复选框初始化

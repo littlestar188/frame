@@ -6,9 +6,26 @@
 			//$('#main-footer').load('./pages/layout/footer.html',function(){});
 			this.showStockChart();
 			this.showStockChart2();
+			// this.watchEchart();
 			
 		},
+		/*
+		* echart表随随窗口大小自适应
+		* @param charts 某表数组集合
+		*/
+		watchEchart:function(charts){	
+			var resizeChart;
+			$(window).resize(function(){ 
+				for(var key in charts){
+					(function(i){						
+						window.onresize = charts[i].resize();					
+					})(key)
+				}
+			})	
+						 
+		},
 		showStockChart:function(){
+			var that = this;
 			$.ajax({
 				url:"http://192.168.0.15:80/frame/self/json/echartData/echratData.json",
 				//url:'/manage/chart/stock/',
@@ -21,6 +38,7 @@
 					// 基于准备好的dom，初始化echarts实例
 					var stockChart2 = echarts.init(document.getElementById('stockChart2'));
 					var stockChart = echarts.init(document.getElementById('stockChart'));
+
 					option = {
 						color: ['#1f77b4','#009fa8'],
 					    tooltip : {
@@ -77,7 +95,9 @@
 
 					// 使用刚指定的配置项和数据显示图表。
 					stockChart.setOption(option);
+
 					stockChart2.setOption(option);
+					that.watchEchart([stockChart,stockChart2])
 
 				},
 				error:function(){
@@ -87,6 +107,7 @@
 		
 		},
 		showStockChart2:function(){
+			var that = this;
 			var leftChart = echarts.init(document.getElementById('leftChart'));
 		    var leftOption = {
 		        title: {
@@ -105,6 +126,7 @@
 		            containLabel: true
 		        },
 		        toolbox: {
+		        	itemSize:11,		        	
 		            feature: {
 		                saveAsImage: {}
 		            }
@@ -136,8 +158,8 @@
 		           var serie={"name":i,"type":"line","data":data[i]};
 		           leftOption.series.push(serie);
 		       	}		       	
-		       	console.log(leftOption.legend.data);
-		       	console.log(leftOption.series)
+		       	//console.log(leftOption.legend.data);
+		       	//console.log(leftOption.series)
 		       	leftChart.setOption(leftOption);
 		   	});
 
@@ -156,6 +178,7 @@
 	        }
 
 	        var midChart = echarts.init(document.getElementById('midChart'));
+	       // console.log(midChart)
             var midOption = {
                 title: {
                     text: '设备型号',
@@ -210,6 +233,14 @@
                    midOption.series[0].data.push(serie);
                }
                midChart.setOption(midOption);
+                // setTimeout(function(){
+                //     window.onresize = midChart.resize;
+                // },100)
+				
+				
+
+							 
+
            });
 
 
@@ -273,6 +304,7 @@
                     }
                     rightChart.setOption(rightOption);
                 });
+             that.watchEchart([leftChart,midChart,rightChart])
 		}
 	})
 	

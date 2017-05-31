@@ -105,10 +105,10 @@ var nav = {
 		var that = this;
 
 		$.ajax({
-			// url:'../../self/js/data.json',
-			// type:"get",
-			url:'/manage/menu/leftTree',
-			type:'post',
+			 url:'http://192.168.0.15:80/frame/self/json/data.json',
+			 stype:"get",
+			//url:'/manage/menu/leftTree',
+			//type:'post',
 			dataType:"json",
 			//async : false,
 			success:function(data){
@@ -123,37 +123,42 @@ var nav = {
 
 				for(var key = 0;key<data.length;key++){
 					(function(i){
-					//console.log(i);//0 1 2
-						var perFirst = data[i].permission;
-						console.log(perFirst)
-						if(data[i].sub_menu == false && data[i].permission !== null){}
-						perFirst = publicFun.replaceAll(perFirst.toString(),',','');
-																		
-						var li = $('<li class="treeview first" data-id="'+i+'"></li>');
-						//定义第一级导航id
-						first ='<a href="'+data[i].link+'#'+perFirst+'">'
-							    +'<i class="fa '+data[i].icon+'"></i>' 
-							    +'<span class="nav-name">'+data[i].name+'</span>'  
-							  +'</a>'
-						li.append(first);
-						that.sidebar.append(li);
-						console.log(first)
+					    //定义第一级导航id
+					    var li = $('<li class="treeview first" data-id="'+i+'"></li>');
+					    //判断是否有二级菜单
+						if(data[i].sub_menu == null){
+							//只存在一级导航时
+							var perFirst = data[i].permission;
+							console.log(perFirst);
+							perFirst = publicFun.replaceAll(perFirst.toString(),',','');
 
-						//判断是否有二级菜单
-						if(data[i].sub_menu!==null){
+							first = '<a href="'+data[i].link+'#'+perFirst+'">'
+								    +'<i class="fa '+data[i].icon+'"></i>' 
+								    +'<span class="nav-name">'+data[i].name+'</span>'  
+								    +'</a>'
+							li.append(first);
+						    that.sidebar.append(li);
+						   
+						}else{
 							
-							that.secondNav(li,i,data[i]);
-									
-						}								
-							
-						//}
+							first ='<a href="javascript:void(0)">'
+						    		+'<i class="fa '+data[i].icon+'"></i>' 
+						   		    +'<span class="nav-name">'+data[i].name+'</span>'  
+						  		    +'</a>';
+
+						    li.append(first);
+						    that.sidebar.append(li);
+						    //动态生成二级
+						    that.secondNav(li,i,data[i]);
+						}
+												
 					})(key);
 					
 				}
 				
 			},
 			error:function(){
-				console.log('后台出错');
+				console.log('左侧导航------后台出错');
 			}
 
 			
@@ -164,6 +169,7 @@ var nav = {
 		@param data sub_menu[i]
 	*/
 	secondNav:function(firstNav,i,data){
+		var that = this;
 		//一级导航栏右边添加箭头
 		var a = $('.first[data-id="'+i+'"] a:nth-child(1)');//找到第一个a
 		rightIcon = "<span class='pull-right-container'>"
@@ -179,19 +185,21 @@ var nav = {
 		
 		//处理一级菜单的权限格式 [1,2,3,4] -->1234
 		//console.log(that.replaceAll(data[i].permission.toString(),',',''))
-		var permission = publicFun.replaceAll(data.permission.toString(),',','');
-		for(var j = 0;j<data.sub_menu.length;j++){
-			//console.log(i+"-a-"+j);	//0 1 0
-			
-			// var permission = publicFun.replaceAll(data[i].sub_menu[j].permission.toString(),',','');
+		
+		for(var j = 0;j<data.sub_menu.length;j++){			
+			//二级的权限
+			var perSecond = publicFun.replaceAll(data.sub_menu[j].permission.toString(),',','');
+			//console.log(data.sub_menu[j].permission,perSecond)
+
 			second = '<li class="second-menu" data-id="'+i+'-'+j+'">'
-			      +'<a href="'+data.sub_menu[j].link+'#'+permission+'">'
+			      +'<a href="'+data.sub_menu[j].link+'#'+perSecond+'">'
 			        +'<i class="fa fa-circle-o"></i>'+data.sub_menu[j].name
 			      +'</a>'
 			   +'</li>';
 			ul.append(second);
 			firstNav.append(ul);
 
+			//动态生成三级
 			if(data.sub_menu[j].sub_menu!==null){
 
 				that.thirdNav(ul,j,data,sub_menu[j])
@@ -204,15 +212,17 @@ var nav = {
 		@paran data2 sub_menu[j]
 	*/
 	thirdNav:function(secondNav,j,data1,data2){
-
+		var that = this;
 		var data_id=i+"-"+j;
 		secondNav.find('.second-menu[data-id='+data_id+']>a').append(rightIcon);
 		var ul2 = $('<ul class="treeview-menu third-nav"></ul>');
 		for(var k = 0;k<data1.data2.sub_menu.length;k++){
-			//console.log(data[i].data2.sub_menu.length)
-			//console.log(j+"-b-"+k);//0 1 0 1									
+			
+			//三级的权限	
+			var perThird = publicFun.replaceAll(data1.data2.sub_menu[k].permission.toString(),',','');
+
 			third = '<li>'
-				      +'<a href="'+data1.data2.sub_menu[k].link+'">'
+				      +'<a href="'+data1.data2.sub_menu[k].link+'#'+perThird+'">'
 				        +'<i class="fa fa-circle-o"></i>'+data1.data2.sub_menu[k].name
 				      +'</a>'
 				    +'</li>';

@@ -8,7 +8,7 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
    <!-- icon -->
   <link rel="icon" href="/frame/favicon-logo.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="/frame/favicon-log.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/frame/favicon-logo.ico" type="image/x-icon">
   <!-- bootstrap -->
   <link rel="stylesheet" href="../../../plugins/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../../plugins/bootstrap-table/css/bootstrap-table.css">
@@ -111,7 +111,7 @@
           <!-- /.搜索 -->
           <form class="form-inline">
           <!-- /.地区选择 -->
-            <div data-toggle="distpicker" id="distpicker" style="margin-bottom:10px;">
+            <div data-toggle="distpicker" id="distpicker" style="padding-bottom:7px;">
               <div class="form-group">
                 <label class="sr-only" for="province1">Province</label>
                 <select class="form-control" id="province1"></select>
@@ -125,13 +125,24 @@
                 <select class="form-control" id="district1"></select>
               </div>
             </div>
+          </form>
             <!-- /.出库信息 -->
-            <div class="form-group">
-              <input type="text" id="outTimeStart" class="form-control" name="outTimeStart" placeholder="出库日期起始" data-date-format="yyyy-mm-dd hh:ii" value=""></div>
-            <div class="form-group">
-              <input id="outTimeEnd" type="text" class="form-control" placeholder="出库日期结束" data-date-format="yyyy-mm-dd hh:ii" name="outTimeEnd" value=""></div>
-            <div class="form-group">
+          <form class="form-inline">
+              <div class="form-group w120 mr10">
+                <select class="form-control" name="customer" id="b_customer">
+                  <option value="">设备归属</option>
 
+                  <option value="光明">光明</option>
+
+                  <option value="蒙牛">蒙牛</option>
+
+                  <option value="三全">三全</option>
+
+                  <option value="伊利">伊利</option>
+
+                </select>
+              </div>
+            <div class="form-group">
               <select class="form-control"  id="deviceType" name="model">
                 <option value="">设备型号</option>
 
@@ -187,10 +198,9 @@
 
               </select>
             </div>
+
             <div class="form-group">
-              <input type="text" class="form-control" name="terminalSN"  id="terminalSN" placeholder="SN码"></div>
-            <div class="form-group">
-              <button type="button" class="btn btn-primary" id="search">
+              <button type="button" class="btn btn-primary searchBtn">
                 <i class="fa fa-search"></i>
                 查询
               </button>
@@ -199,22 +209,93 @@
         </div>
         <!-- 内容 -->
         <table id="device_table" ></table>
-        <div class="modal fade bs-example-modal-md" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="roleModalLabel" aria-hidden="true">
+        <div class="modal fade bs-example-modal-md" id="deviceModal" tabindex="-1" role="dialog" aria-labelledby="roleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-md">
             <div class="modal-content" >
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"
                         aria-hidden="true">×</button>
-                <h4 class="modal-title" id="roleModalLabel" style="font-family:'微软雅黑'"></h4>
+                <h4 class="modal-title" id="deviceModalLabel" style="font-family:'微软雅黑'"></h4>
               </div>
               <div class="modal-body">
-              
-            </div>
+                <!--modal-body.header-->
+
+                <!--modal-body.body-->
+                <div class="list_table">
+                  <!-- 参数设置 -->
+
+                  <div class="list_setting row" style="display: none">
+                    <div class="seting_wrapper col-sm-6 col-sm-offset-3">
+                      <!--/.-->
+                      <div class="">
+                        <div class="form-group">
+                          <label for="minTemp" class="control-label">温度下限(℃)</label>
+                          <input type="text" class="form-control" id="minTemp" name="minTemp" value="-40.0">
+                        </div>
+                      </div>
+                      <!--/.-->
+                      <div class="">
+                        <div class="form-group">
+                          <label for="maxTemp" class="control-label">温度上限(℃)</label>
+
+                          <input type="text" class="form-control" id="maxTemp" name="minTemp" value="80.0">
+                        </div>
+                      </div>
+                      <!--/.-->
+                      <div class="">
+                        <div class="form-group">
+                          <label for="correctTemp" class="control-label">修正值(℃)</label>
+                          <input type="text" class="form-control" id="correctTemp" name="minTemp" value="0.0">
+                        </div>
+                      </div>
+                      <!--/.warning-->
+                      <div class="warning_switch form-group">
+                        <div class="form-group">
+                          <label class="control-label" for="active">报警推送</label>
+                          <input type="hidden" name="active" id="active" value="开">
+                          <button type="button" class="btn_on" id="alarmBtn"></button>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <div class="">
+                    <button type="button" class="btn btn-primary" id="btn-role-save" data-loading-text="提交中...">保存</button>
+                  </div>
+                </div>
+
+              </div>
 
           </div>
+
         </div>
       </div>
-    </div>
+        <!--/.操作控件-->
+        <div class="bottom-toolbar form-inline">
+          <div class="form-group">
+            <button type="button"  class="btn btn-primary form-control exportBtn">
+              <i class="fa fa-download"></i>
+              批量导出
+            </button>
+          </div>
+          <div class="form-group">
+            <button type="button"  class="btn btn-primary form-control importBtn">
+              <i class="fa fa-download"></i>
+              批量导入
+            </button>
+          </div>
+          <div class="form-group">
+            <button type="button"  class="btn btn-primary form-control settingBtn">
+              <i class="fa fa-cog"></i>
+              参数设置
+            </button>
+          </div>
+
+        </div>
+      </div>
 
     <!-- /.box-footer--> </div>
   <!-- /.box -->
@@ -224,195 +305,6 @@
 </div>
 <!-- /.content-wrapper -->
 <footer class="main-footer no-print" id="main-footer"></footer>
-
-<!-- Control Sidebar -->
-<aside class="control-sidebar control-sidebar-dark">
-<!-- Create the tabs -->
-<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-  <li>
-    <a href="#control-sidebar-home-tab" data-toggle="tab">
-      <i class="fa fa-home"></i>
-    </a>
-  </li>
-  <li>
-    <a href="#control-sidebar-settings-tab" data-toggle="tab">
-      <i class="fa fa-gears"></i>
-    </a>
-  </li>
-</ul>
-<!-- Tab panes -->
-<div class="tab-content">
-  <!-- Home tab content -->
-  <div class="tab-pane" id="control-sidebar-home-tab">
-    <h3 class="control-sidebar-heading">Recent Activity</h3>
-    <ul class="control-sidebar-menu">
-      <li>
-        <a href="javascript:void(0)">
-          <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-          <div class="menu-info">
-            <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-            <p>Will be 23 on April 24th</p>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:void(0)">
-          <i class="menu-icon fa fa-user bg-yellow"></i>
-
-          <div class="menu-info">
-            <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
-
-            <p>New phone +1(800)555-1234</p>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:void(0)">
-          <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
-
-          <div class="menu-info">
-            <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-
-            <p>nora@example.com</p>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:void(0)">
-          <i class="menu-icon fa fa-file-code-o bg-green"></i>
-
-          <div class="menu-info">
-            <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
-
-            <p>Execution time 5 seconds</p>
-          </div>
-        </a>
-      </li>
-    </ul>
-    <!-- /.control-sidebar-menu -->
-
-    <h3 class="control-sidebar-heading">Tasks Progress</h3>
-    <ul class="control-sidebar-menu">
-      <li>
-        <a href="javascript:void(0)">
-          <h4 class="control-sidebar-subheading">
-            Custom Template Design
-            <span class="label label-danger pull-right">70%</span>
-          </h4>
-
-          <div class="progress progress-xxs">
-            <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:void(0)">
-          <h4 class="control-sidebar-subheading">
-            Update Resume
-            <span class="label label-success pull-right">95%</span>
-          </h4>
-
-          <div class="progress progress-xxs">
-            <div class="progress-bar progress-bar-success" style="width: 95%"></div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:void(0)">
-          <h4 class="control-sidebar-subheading">
-            Laravel Integration
-            <span class="label label-warning pull-right">50%</span>
-          </h4>
-
-          <div class="progress progress-xxs">
-            <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:void(0)">
-          <h4 class="control-sidebar-subheading">
-            Back End Framework
-            <span class="label label-primary pull-right">68%</span>
-          </h4>
-
-          <div class="progress progress-xxs">
-            <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
-          </div>
-        </a>
-      </li>
-    </ul>
-    <!-- /.control-sidebar-menu --> </div>
-  <!-- /.tab-pane -->
-  <!-- Stats tab content -->
-  <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-  <!-- /.tab-pane -->
-  <!-- Settings tab content -->
-  <div class="tab-pane" id="control-sidebar-settings-tab">
-    <form method="post">
-      <h3 class="control-sidebar-heading">General Settings</h3>
-
-      <div class="form-group">
-        <label class="control-sidebar-subheading">
-          Report panel usage
-          <input type="checkbox" class="pull-right" checked></label>
-
-        <p>Some information about this general settings option</p>
-      </div>
-      <!-- /.form-group -->
-
-      <div class="form-group">
-        <label class="control-sidebar-subheading">
-          Allow mail redirect
-          <input type="checkbox" class="pull-right" checked></label>
-
-        <p>Other sets of options are available</p>
-      </div>
-      <!-- /.form-group -->
-
-      <div class="form-group">
-        <label class="control-sidebar-subheading">
-          Expose author name in posts
-          <input type="checkbox" class="pull-right" checked></label>
-
-        <p>Allow the user to show his name in blog posts</p>
-      </div>
-      <!-- /.form-group -->
-
-      <h3 class="control-sidebar-heading">Chat Settings</h3>
-
-      <div class="form-group">
-        <label class="control-sidebar-subheading">
-          Show me as online
-          <input type="checkbox" class="pull-right" checked></label>
-      </div>
-      <!-- /.form-group -->
-
-      <div class="form-group">
-        <label class="control-sidebar-subheading">
-          Turn off notifications
-          <input type="checkbox" class="pull-right"></label>
-      </div>
-      <!-- /.form-group -->
-
-      <div class="form-group">
-        <label class="control-sidebar-subheading">
-          Delete chat history
-          <a href="javascript:void(0)" class="text-red pull-right">
-            <i class="fa fa-trash-o"></i>
-          </a>
-        </label>
-      </div>
-      <!-- /.form-group --> </form>
-  </div>
-  <!-- /.tab-pane -->
-</div>
-</aside>
-<!-- /.control-sidebar -->
-
-<div class="control-sidebar-bg"></div>
 </div>
 <!-- jQuery 2.2.3 Bootstrap 3.3.6 AdminLTE App/demo-->
 <script src="../../../dist/js/common.min.js"></script>
