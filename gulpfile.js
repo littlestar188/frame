@@ -154,7 +154,7 @@ gulp.task('css-autoprefixer', function () {
         .pipe(gulp.dest(cssDst));
 })
 
-gulp.task('css-common',['clean','css-autoprefixer'], function () {
+gulp.task('css-common',['clean'], function () {
     var cssSrc = [
         './src/css/AdminLTE.min.css',
        // './plugins/bootstrap/css/bootstrap.min.css', 

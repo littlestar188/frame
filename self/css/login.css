@@ -5,10 +5,15 @@
 	top:0;
 	
 }
+/*filter兼容IE8*/
 .hold-transition.login-page .bg{
 	z-index:0;
-	background:linear-gradient(120deg, rgb(21, 87, 153), rgb(21, 153, 87));
 	opacity:.7;
+	background:linear-gradient(120deg, #155799, #159957);	
+	background: -moz-linear-gradient(120deg, #155799, #159957);
+	background: -webkit-gradient(120deg, rgb(21, 87, 153), rgb(21, 153, 87));
+	-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#155799',EndColorStr='#159957'); 
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=70);
 }
 .hold-transition.login-page .bg_jpg{
 	height:100%;
@@ -24,9 +29,9 @@
 	color:#fff;
 }
 
-
 .login-box-body{
 	border-color:rgba(255, 255, 255, 0.2);
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=20);
 }
 .remenber{
 	font-size:12px;
@@ -66,13 +71,16 @@
 	height: 1px;
 	width: 0;
 	background-color: #fff;
-	transition: all 0.3s; 
+	transition: all 0.3s;
+	-o-transition: all 0.3s; 
 	opacity: 0;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
 }
 #btn_login:hover .line-top {
 	width: 100%;
 	left: 0;
 	opacity: 0.55;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=55);
 }
 #btn_login .line-right {
 	position: absolute;
@@ -83,10 +91,12 @@
 	background-color: #fff;
 	transition: all 0.5s; 
 	opacity: 0;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
 }
 #btn_login:hover .line-right {
 	height: 100%;
 	opacity: 0.55;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=55;
 }
 #btn_login .line-bottom {
 	position: absolute;
@@ -97,10 +107,12 @@
 	background-color: #fff;
 	transition: all 0.5s; 
 	opacity: 0;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
 }
 #btn_login:hover .line-bottom {
 	width: 100%;
 	opacity: 0.55;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=55);
 }
 #btn_login .line-left {
 	position: absolute;
@@ -111,11 +123,13 @@
 	background-color: #fff;
 	transition: all 0.5s; 
 	opacity: 0;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
 }
 #btn_login:hover .line-left {
 	height: 100%;
 	bottom: 0;
 	opacity: 0.55;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=55);
 }
 
 
@@ -132,16 +146,18 @@
 .inputCode{
 	position: relative;;
 }
-.codeGrey:{
+.codeGrey{
 	border-color:#d2d6de;
 }
 .codeRed{
+	color:#c33;
 	border-color:#c33;
 }
 .coderror{
 	position:absolute;
 	top:10px;
-	right:20px;
+	-right:20px;
+	left:10px;
 	display: block;
 	width: 10%;
 	font-size:10px;
@@ -149,8 +165,6 @@
 	background-image: none;
 	
 }
-
-
 .hide{
 	display:none;
 }
