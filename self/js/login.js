@@ -118,6 +118,7 @@ $(function () {
       }
       if(message == "3"){
         $(".username").parent().children('.error').addClass('codeRed').html('用户名或密码错误不能为空').show();
+        $(".username").parent().children('.warn').hide();
       }
       
     },

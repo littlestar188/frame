@@ -147,6 +147,7 @@
 	position: relative;;
 }
 .codeGrey{
+	color:#d2d6de;
 	border-color:#d2d6de;
 }
 .codeRed{
@@ -156,7 +157,7 @@
 .coderror{
 	position:absolute;
 	top:10px;
-	-right:20px;
+	right:20px;
 	left:10px;
 	display: block;
 	width: 10%;

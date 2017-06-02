@@ -175,7 +175,7 @@ gulp.task('css-common',['clean'], function () {
 *  index.html
 *  index-plugins.min.css
 */
-gulp.task('css-index',['clean'], function () {
+/*gulp.task('css-index',['clean'], function () {
     var cssSrc = [
             './src/css/AdminLTE.min.css',
             './src/css/skins/_all-skins.min.css',
@@ -184,6 +184,24 @@ gulp.task('css-index',['clean'], function () {
         cssDst = './dist/css';
     return gulp.src(cssSrc)
         .pipe(concat('css-index.css'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(cleanCSS())
+        .pipe(gulp.dest(cssDst));
+});*/
+/*
+*  login.html
+   login.min.css
+*/
+gulp.task('css-login', function () {
+    var cssSrc = [
+            './src/css/AdminLTE.min.css',
+            './src/css/skins/_all-skins.min.css',
+            './self/css/public.css',
+            './self/css/login.css'
+        ],
+        cssDst = './dist/css';
+    return gulp.src(cssSrc)
+        .pipe(concat('login.css'))
         .pipe(rename({suffix: '.min'}))
         .pipe(cleanCSS())
         .pipe(gulp.dest(cssDst));
