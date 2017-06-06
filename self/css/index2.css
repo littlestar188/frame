@@ -1,0 +1,95 @@
+/*导航*/
+li{
+    list-style:none;
+}
+#nav-wrapper{
+    padding:0 50px
+}
+body{
+    position:relative;
+    top:50px;
+}
+/*全屏*/
+@media (min-width: 768px){
+    .section .swiper-wrapper{
+        left:15.6%;
+    }
+    .section .swiper-slide{
+        margin:0 auto;
+    }
+    .btn-banner{
+        position: absolute;
+        top:195px;
+        z-index: 20;
+        width:30px;
+        height:60px;
+        background-color: #fff;
+        opacity: 0.8;
+        cursor: pointer;
+    }
+    .btn-banner i{
+        position: absolute;
+        top:22px;
+        z-index: 20;
+    }
+    #btn-left{
+        left:300px;
+    }
+    #btn-left i{
+        left:7px;
+    }
+    #btn-right{
+        right:355px;
+    }
+    #btn-right i{
+        right:7px;
+    }
+    /*列表*/
+    .device-list{
+        background-color: rgb(71,77,86);
+        color:#fff;
+    }
+    .device-list>ul{
+        width:80%;
+        overflow:hidden;
+        margin:0 auto;
+        padding:0 2.5%;
+    }
+    .device-list>ul>li.item>a{
+        display: block;
+        color:#fff;
+        border-right:1px solid #fff;
+        text-decoration:none;
+    }
+    .device-list>ul>li.item:nth-child(4)>a{
+        border-right:none;
+    }
+    .device-list>ul>li.item{
+        position:relative;
+        width:22%;
+        float:left;
+        padding: 25px 0 25px 96px;
+        font-size:16px;
+    }
+    .device-list>ul>li.item:nth-child(1){
+        margin-left:2%;
+    }
+    .device-list>ul>li.item:hover{
+        background-color:#00ad9c;
+    }
+    .device-list>ul>li.item:nth-child(2n):hover{
+        -background-color:#00acd6;
+    }
+    .device-list>ul>li.item:nth-child(2n+1):hover{
+        -background-color:#00ad9c;
+    }
+    .device-list>ul>li.item>p{
+        font-size:14px;
+    }
+    /*列表*/
+    .product{
+        background-color:#f0fafb;
+    }
+
+
+}

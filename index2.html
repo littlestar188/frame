@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>frameDemo</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- icon -->
+    <link rel="icon" href="/frame/favicon-logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/frame/favicon-logo.ico" type="image/x-icon">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="plugins/ionicons/css/ionicons.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/fullPage.js/2.9.4/jquery.fullpage.css">
+    <link rel="stylesheet" href="plugins/swiper/css/idangerous.swiper.css">
+    <link rel="stylesheet" href="self/css/index2.css">
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    [endif]-->
+<style>
+#sprite a{
+    color:#0078ff;
+}
+</style>
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+    <!-- 导航 -->
+    <header class="main-header" id="nav-header">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header" style="padding:9px 0">
+                    <a href="/frame/index.html">
+                        <img src="/frame/self/resource/logo.png" alt=""/>&nbsp;&nbsp;<img src="/frame/self/resource/company-black.png">
+                    </a>
+                </div>
+                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1 nav-wrapper">
+                    <ul class="nav navbar-nav" id="nav-menu" style="padding-left:20px;">
+                        <li role="presentation" data-menuanchor="page1" class="active">
+                            <a href="#">首页</a>
+                        </li>
+                        <li role="presentation" class="dropdown" data-menuanchor="page2">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                产品服务<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li><a href="#">SAAS平台</a></li>
+                              <li><a href="#">Action</a></li>
+                              <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                        <li role="presentation" data-menuanchor="page3">
+                            <a href="#">行业应用</a>
+                        </li>
+                        <li role="presentation" data-menuanchor="page4">
+                            <a href="#">联系我们</a>
+                        </li>
+                    </ul>
+                     <div class="nav navbar-nav navbar-right">
+                         <li>
+                             <form class="navbar-form navbar-left">
+                                 <div class="form-group">
+                                     <input type="text" class="form-control" placeholder="Search">
+                                 </div>
+                                 <button type="submit" class="btn btn-default">搜索</button>
+                             </form>
+                         </li>
+                         <li><a href="#" class="navbar-link">登录</a></li>
+                         <li> <a href="#" class="navbar-link">注册</a></li>
+                     </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- /.content-wrapper -->
+    <div class="content-wrapper">
+
+        <div id="dowebok">
+            <!-- ./content-section -banner -->
+            <div class="section" data-anchor="section1">
+                <div class="swiper-container" style="height:450px">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <img src="./self/resource/banner01.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="./self/resource/banner02.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="./self/resource/banner03.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="./self/resource/banner04.png" alt="">
+                        </div>
+                    </div>
+                    <div class="pagination"></div>
+                    <!--<div class="btn-banner" id="btn-left"><i class="fa fa-chevron-left"></i></div>-->
+                    <!--<div class="btn-banner" id="btn-right"><i class="fa fa-chevron-right"></i></div>-->
+                </div>
+                <!--/.-->
+                <div class="device-list">
+                    <ul class="row">
+                        <li class="item">
+                            <a>
+                                <i class="fa fa-mixcloud fa-2x"></i>
+                                <b>全民云计算</b>
+                                <p>设备商</p>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a>
+                                <i class="fa fa-mixcloud fa-2x"></i>
+                                <b>全民云计算</b>
+                                <p>设备商</p>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a>
+                                <i class="fa fa-mixcloud fa-2x"></i>
+                                <b>全民云计算</b>
+                                <p>设备商</p>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a>
+                                <i class="fa fa-mixcloud fa-2x"></i>
+                                <b>全民云计算</b>
+                                <p>设备商</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <!--/.-->
+                <div class="product" style="/*height:375px*/">
+
+                </div>
+            </div>
+            <div class="section" data-anchor="section2">
+                <h3>第二屏</h3>
+            </div>
+            <div class="section" data-anchor="section3">
+                <div style="position:absolute;top: 150px;width: 100%;"><h1 style="margin-left:400px; color: white;">工业互联，智养万物</h1></div>
+                <div id="sprite" style="height:400px;"></div>
+
+            </div>
+            <div class="section" data-anchor="section4">
+                <div id="light" style="height:;background-color:#fff"></div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.页脚 -->
+    <footer class="main-footer" id="main-footer"></footer>
+
+
+</div>
+
+<script src="dist/js/common.min.js"></script>
+<script scr="plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/fullPage.js/2.9.4/jquery.fullpage.js"></script>
+<script src="plugins/swiper/js/idangerous.swiper.min.js"></script>
+<script src="plugins/three/build/three.js"></script>
+<script src="plugins/three/examples/js/renderers/Projector.js"></script>
+<script src="plugins/three/examples/js/renderers/CanvasRenderer.js"></script>
+<script src="plugins/three/examples/js/libs/stats.min.js"></script>
+<script src="plugins/three/examples/js/libs/tween.min.js"></script>
+<script>
+    $('.dropdown-toggle').dropdown();
+
+    $(function(){
+
+        $('#dowebok').fullpage({
+          sectionsColor:['rgb(34,37,42)','#fff','#000'],
+          anchors:['page1','page2','page3','page4'],
+          continuousVertical: false,//不循环滚动
+          loopBottom:true,
+          menu:'#nav-menu',
+          afterLoad:function(anchorLink, index){
+
+          },
+          onLeave: function(index, direction){
+
+          }
+
+          
+        });
+
+//        setInterval(function(){
+//            $.fn.fullpage.moveSlideRight();
+//          },3000);
+
+
+
+        var sectionFirst = {
+            wh:$(window).height(),
+            spHeight:$('.swiper-container').height(),
+            dlHeight:$('.device-list').height(),
+            init:function(){
+                this.banner();
+                //this.resizePart();
+
+            },
+            resizePart:function(){
+                var that = this;
+                $(window).resize(function(){
+                    that.productList();
+                })
+            },
+            banner:function(){
+                var mySwiper = new Swiper('.swiper-container',{
+                    autoplay : 5000,//可选选项，自动滑动
+                    loop : true,//可选选项，开启循环
+                    pagination : '.pagination',//分页器
+
+
+                })
+                $('#btn-left').click(function(){
+                    mySwiper.swipePrev();
+                })
+                $('#btn-right').click(function(){
+                    mySwiper.swipeNext();
+                })
+            },
+            productList:function(){
+                var proHeight=this.wh - this.spHeight-this.dlHeight;
+                $('.product').css('height',proHeight+'px');
+                console.log( $('.product').height())
+                console.log(this.wh)
+            }
+        }
+        sectionFirst.init();
+
+
+
+
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        var SEPARATION = 100,
+            AMOUNTX = 50,
+            AMOUNTY = 50;
+
+        var container;
+        var camera, scene, renderer;
+
+        var particles, particle, count = 0;
+
+        var mouseX = 100,
+            mouseY = -400;
+
+        var windowHalfX = window.innerWidth / 2;
+        var windowHalfY = window.innerHeight / 2;
+
+        init();
+        animate();
+        onWindowResize();
+
+        function init() {
+            container = document.getElementById('sprite');
+
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
+            camera.position.z = 1000;
+
+            scene = new THREE.Scene();
+
+            particles = new Array();
+
+            var PI2 = Math.PI * 2;
+            var material = new THREE.SpriteCanvasMaterial({
+
+                color: 0xffffff,
+                program: function(context) {
+
+                    context.beginPath();
+                    context.arc(0, 0, 0.5, 0, PI2, true);
+                    context.fill();
+
+                }
+
+            });
+
+            var i = 0;
+
+            for(var ix = 0; ix < AMOUNTX; ix++) {
+
+                for(var iy = 0; iy < AMOUNTY; iy++) {
+
+                    particle = particles[i++] = new THREE.Sprite(material);
+                    particle.position.x = ix * SEPARATION - ((AMOUNTX * SEPARATION) / 2);
+                    particle.position.z = iy * SEPARATION - ((AMOUNTY * SEPARATION) / 2);
+                    scene.add(particle);
+
+                }
+
+            }
+
+            renderer = new THREE.CanvasRenderer();
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(window.innerWidth, 330);
+            container.appendChild(renderer.domElement);
+
+            window.addEventListener('resize', onWindowResize, false);
+
+        }
+
+        function onWindowResize() {
+
+            windowHalfX = window.innerWidth / 2;
+            windowHalfY = window.innerHeight / 2;
+
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            var sizeX = (document.body.clientWidth >= 1200) ? document.body.clientWidth : 1200;
+            renderer.setSize(sizeX, 330);
+        }
+
+
+        function animate() {
+
+            requestAnimationFrame(animate);
+
+            render();
+
+        }
+
+        function render() {
+
+            camera.position.x += (mouseX - camera.position.x) * .05;
+            camera.position.y += (-mouseY - camera.position.y) * .05;
+            camera.lookAt(scene.position);
+
+            var i = 0;
+
+            for(var ix = 0; ix < AMOUNTX; ix++) {
+
+                for(var iy = 0; iy < AMOUNTY; iy++) {
+
+                    particle = particles[i++];
+                    particle.position.y = (Math.sin((ix + count) * 0.3) * 50) +
+                        (Math.sin((iy + count) * 0.5) * 50);
+                    particle.scale.x = particle.scale.y = (Math.sin((ix + count) * 0.3) + 1) * 4 +
+                        (Math.sin((iy + count) * 0.5) + 1) * 4;
+
+                }
+
+            }
+
+            renderer.render(scene, camera);
+
+            count += 0.1;
+
+        }
+    })
+</script>
+<script>
+    $(function(){
+        var container, stats;
+        var camera, scene, renderer, particle;
+        var mouseX = 0, mouseY = 0;
+
+        var windowHalfX = window.innerWidth / 2;
+        var windowHalfY = window.innerHeight / 2;
+
+        init();
+        animate();
+
+        function init() {
+
+            container = document.getElementById('light');
+
+            camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 5000 );
+            camera.position.z = 1000;
+
+            scene = new THREE.Scene();
+
+            var material = new THREE.SpriteMaterial( {
+                map: new THREE.CanvasTexture( generateSprite() ),
+                blending: THREE.AdditiveBlending
+            } );
+
+            for ( var i = 0; i < 1000; i++ ) {
+
+                particle = new THREE.Sprite( material );
+
+                initParticle( particle, i * 10 );
+
+                scene.add( particle );
+            }
+
+            renderer = new THREE.CanvasRenderer();
+            renderer.setClearColor( 0x000000 );//0x000040
+            renderer.setPixelRatio( window.devicePixelRatio );
+            renderer.setSize( window.innerWidth, window.innerHeight );
+            container.appendChild( renderer.domElement );
+
+            stats = new Stats();
+            container.appendChild( stats.dom );
+
+            document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+            document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+            document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+
+            //
+
+            window.addEventListener( 'resize', onWindowResize, false );
+
+        }
+
+        function onWindowResize() {
+
+            windowHalfX = window.innerWidth / 2;
+            windowHalfY = window.innerHeight / 2;
+
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+
+            renderer.setSize( window.innerWidth, window.innerHeight );
+
+        }
+
+        function generateSprite() {
+
+            var canvas = document.createElement( 'canvas' );
+            canvas.width = 16;
+            canvas.height = 16;
+
+            var context = canvas.getContext( '2d' );
+            var gradient = context.createRadialGradient( canvas.width / 2, canvas.height / 2, 0, canvas.width / 2, canvas.height / 2, canvas.width / 2 );
+            gradient.addColorStop( 0, 'rgba(255,255,255,1)' );
+            gradient.addColorStop( 0.2, 'rgba(0,255,255,1)' );
+            gradient.addColorStop( 0.4, 'rgba(0,0,64,1)' );
+            gradient.addColorStop( 1, 'rgba(0,0,0,1)' );
+
+            context.fillStyle = gradient;
+            context.fillRect( 0, 0, canvas.width, canvas.height );
+
+            return canvas;
+
+        }
+
+        function initParticle( particle, delay ) {
+
+            var particle = this instanceof THREE.Sprite ? this : particle;
+            var delay = delay !== undefined ? delay : 0;
+
+            particle.position.set( 0, 0, 0 );
+            particle.scale.x = particle.scale.y = Math.random() * 32 + 16;
+
+            new TWEEN.Tween( particle )
+                .delay( delay )
+                .to( {}, 10000 )
+                .onComplete( initParticle )
+                .start();
+
+            new TWEEN.Tween( particle.position )
+                .delay( delay )
+                .to( { x: Math.random() * 4000 - 2000, y: Math.random() * 1000 - 500, z: Math.random() * 4000 - 2000 }, 10000 )
+                .start();
+
+            new TWEEN.Tween( particle.scale )
+                .delay( delay )
+                .to( { x: 0.01, y: 0.01 }, 10000 )
+                .start();
+
+        }
+
+        //
+
+        function onDocumentMouseMove( event ) {
+
+            mouseX = event.clientX - windowHalfX;
+            mouseY = event.clientY - windowHalfY;
+        }
+
+        function onDocumentTouchStart( event ) {
+
+            if ( event.touches.length == 1 ) {
+
+                event.preventDefault();
+
+                mouseX = event.touches[ 0 ].pageX - windowHalfX;
+                mouseY = event.touches[ 0 ].pageY - windowHalfY;
+
+            }
+
+        }
+
+        function onDocumentTouchMove( event ) {
+
+            if ( event.touches.length == 1 ) {
+
+                event.preventDefault();
+
+                mouseX = event.touches[ 0 ].pageX - windowHalfX;
+                mouseY = event.touches[ 0 ].pageY - windowHalfY;
+
+            }
+
+        }
+
+        //
+
+        function animate() {
+
+            requestAnimationFrame( animate );
+
+            render();
+            stats.update();
+
+        }
+
+        function render() {
+
+            TWEEN.update();
+
+            camera.position.x += ( mouseX - camera.position.x ) * 0.05;
+            camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
+            camera.lookAt( scene.position );
+
+            renderer.render( scene, camera );
+
+        }
+
+    })
+</script>
+</body>
+</html>
