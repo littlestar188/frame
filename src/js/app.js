@@ -86,13 +86,15 @@ $.AdminLTE.options = {
       //Open icon
       open: 'fa-plus',
       //Remove icon
-      remove: 'fa-times'
+      remove: 'fa-times',
+      magnify:'fa-arrows-alt'
     },
     boxWidgetSelectors: {
       //Remove button selector
       remove: '[data-widget="remove"]',
       //Collapse button selector
-      collapse: '[data-widget="collapse"]'
+      collapse: '[data-widget="collapse"]',
+      magnify:'[data-widget="magnify"]'
     }
   },
   //Direct Chat plugin options
@@ -569,6 +571,11 @@ function _init() {
         e.preventDefault();
         _this.remove($(this));
       });
+    //放大方法
+      $(_box).on('click', _this.selectors.magnify, function (e) {
+         e.preventDefault();
+         _this.magnify($(this));
+      });
     },
     collapse: function (element) {
       var _this = this;
@@ -600,6 +607,11 @@ function _init() {
       //Find the box parent
       var box = element.parents(".box").first();
       box.slideUp(this.animationSpeed);
+    },
+    magnify:function(element){
+      //Find the box parent
+      var box = element.parents(".box").first();
+
     }
   };
 }

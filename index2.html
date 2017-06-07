@@ -181,7 +181,8 @@
           sectionsColor:['rgb(34,37,42)','#fff','#000'],
           anchors:['page1','page2','page3','page4'],
           continuousVertical: false,//不循环滚动
-          loopBottom:true,
+          loopBottom:true,//滚到底部后滚回顶部
+          //scrollOverflow:true,//内容超出满屏后显示滚动条
           menu:'#nav-menu',
           afterLoad:function(anchorLink, index){
 
@@ -205,14 +206,21 @@
             dlHeight:$('.device-list').height(),
             init:function(){
                 this.banner();
-                //this.resizePart();
+               this.resizePart();
 
             },
             resizePart:function(){
                 var that = this;
-                $(window).resize(function(){
-                    that.productList();
-                })
+                var sh = $('.section').eq(0).height();//565px
+//                $(window).resize(function(){
+                    console.log(that.wh)
+                    if(that.wh < sh){
+                        $('.fullpage-wrapper').css('transform','translate3d(0,0,0)');
+
+                    }
+
+                    //that.productList();
+//                })
             },
             banner:function(){
                 var mySwiper = new Swiper('.swiper-container',{
@@ -275,6 +283,7 @@
             particles = new Array();
 
             var PI2 = Math.PI * 2;
+//          材料
             var material = new THREE.SpriteCanvasMaterial({
 
                 color: 0xffffff,

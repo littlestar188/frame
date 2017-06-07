@@ -19,33 +19,32 @@ $(function () {
   });
   $(".connectedSortable .box-header, .connectedSortable .nav-tabs-custom").css("cursor", "move");
 
-  //jQuery UI sortable for the todo list
-  $(".todo-list").sortable({
-    placeholder: "sort-highlight",
-    handle: ".handle",
-    forcePlaceholderSize: true,
-    zIndex: 999999
-  });
+  /*jQuery UI sortable for the todo list*/
+  // $(".todo-list").sortable({
+  //   placeholder: "sort-highlight",
+  //   handle: ".handle",
+  //   forcePlaceholderSize: true,
+  //   zIndex: 999999
+  // });
 
   //bootstrap WYSIHTML5 - text editor
-  $(".textarea").wysihtml5();
 
-  $('.daterange').daterangepicker({
-    ranges: {
-      'Today': [moment(), moment()],
-      'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-      'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-      'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-      'This Month': [moment().startOf('month'), moment().endOf('month')],
-      'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-    },
-    startDate: moment().subtract(29, 'days'),
-    endDate: moment()
-  }, function (start, end) {
-    window.alert("You chose: " + start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-  });
-
-  /* jQueryKnob */
+  // $('.daterange').daterangepicker({
+  //   ranges: {
+  //     'Today': [moment(), moment()],
+  //     'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+  //     'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+  //     'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+  //     'This Month': [moment().startOf('month'), moment().endOf('month')],
+  //     'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+  //   },
+  //   startDate: moment().subtract(29, 'days'),
+  //   endDate: moment()
+  // }, function (start, end) {
+  //   window.alert("You chose: " + start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+  // });
+  //
+  // /* jQueryKnob */
   $(".knob").knob();
 
   //jvectormap data
@@ -63,7 +62,7 @@ $(function () {
     "RU": 3000 //Russia
   };
   //World map by jvectormap
-  $('#world-map').vectorMap({
+ /* $('#world-map').vectorMap({
     map: 'world_mill_en',
     backgroundColor: "transparent",
     regionStyle: {
@@ -86,41 +85,41 @@ $(function () {
       if (typeof visitorsData[code] != "undefined")
         el.html(el.html() + ': ' + visitorsData[code] + ' new visitors');
     }
-  });
+  });*/
 
   //Sparkline charts
-  var myvalues = [1000, 1200, 920, 927, 931, 1027, 819, 930, 1021];
-  $('#sparkline-1').sparkline(myvalues, {
-    type: 'line',
-    lineColor: '#92c1dc',
-    fillColor: "#ebf4f9",
-    height: '50',
-    width: '80'
-  });
-  myvalues = [515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921];
-  $('#sparkline-2').sparkline(myvalues, {
-    type: 'line',
-    lineColor: '#92c1dc',
-    fillColor: "#ebf4f9",
-    height: '50',
-    width: '80'
-  });
-  myvalues = [15, 19, 20, 22, 33, 27, 31, 27, 19, 30, 21];
-  $('#sparkline-3').sparkline(myvalues, {
-    type: 'line',
-    lineColor: '#92c1dc',
-    fillColor: "#ebf4f9",
-    height: '50',
-    width: '80'
-  });
+  // var myvalues = [1000, 1200, 920, 927, 931, 1027, 819, 930, 1021];
+  // $('#sparkline-1').sparkline(myvalues, {
+  //   type: 'line',
+  //   lineColor: '#92c1dc',
+  //   fillColor: "#ebf4f9",
+  //   height: '50',
+  //   width: '80'
+  // });
+  // myvalues = [515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921];
+  // $('#sparkline-2').sparkline(myvalues, {
+  //   type: 'line',
+  //   lineColor: '#92c1dc',
+  //   fillColor: "#ebf4f9",
+  //   height: '50',
+  //   width: '80'
+  // });
+  // myvalues = [15, 19, 20, 22, 33, 27, 31, 27, 19, 30, 21];
+  // $('#sparkline-3').sparkline(myvalues, {
+  //   type: 'line',
+  //   lineColor: '#92c1dc',
+  //   fillColor: "#ebf4f9",
+  //   height: '50',
+  //   width: '80'
+  // });
 
   //The Calender
   $("#calendar").datepicker();
 
   //SLIMSCROLL FOR CHAT WIDGET
-  $('#chat-box').slimScroll({
+  /*$('#chat-box').slimScroll({
     height: '250px'
-  });
+  });*/
 
   /* Morris.js Charts */
   // Sales chart
@@ -193,18 +192,6 @@ $(function () {
     area.redraw();
     donut.redraw();
     line.redraw();
-  });
-
-  /* The todo list plugin */
-  $(".todo-list").todolist({
-    onCheck: function (ele) {
-      window.console.log("The element has been checked");
-      return ele;
-    },
-    onUncheck: function (ele) {
-      window.console.log("The element has been unchecked");
-      return ele;
-    }
   });
 
 });
