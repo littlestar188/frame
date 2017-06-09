@@ -30,7 +30,7 @@ gulp.task('js-common',function () {
             './plugins/jQuery/jquery-2.2.3.min.js',
             './plugins/carhartl-jquery-cookie/cookie/jquery.cookie.js',
             './plugins/bootstrap/js/bootstrap.min.js',
-            './src/js/app.js',
+            // './src/js/app.js',
             './src/js/demo.js'
 
         ],
@@ -119,7 +119,23 @@ gulp.task('plugins-ckeditor', function () {
         .pipe(uglify())
         .pipe(gulp.dest(ckeditorDst));
 });
-
+/*
+*
+* */
+gulp.task('js-bmap', function () {
+    var mapSrc = [
+            './plugins/chartjs/extension/bmap.js',
+            './plugins/chartjs/extension/BMapCoordSys.js',
+            './plugins/chartjs/extension/BMapModel.js',
+            './plugins/chartjs/extension/BMapView.js'
+        ],
+        mapDst = './dist/js';
+    return gulp.src(mapSrc)
+        .pipe(concat('bmap.js'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify())
+        .pipe(gulp.dest(mapDst));
+})
 /*
 * roleManage.html js-private
 */

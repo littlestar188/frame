@@ -94,6 +94,7 @@ $.AdminLTE.options = {
       remove: '[data-widget="remove"]',
       //Collapse button selector
       collapse: '[data-widget="collapse"]',
+      //Magnify button selector
       magnify:'[data-widget="magnify"]'
     }
   },
@@ -198,6 +199,7 @@ $(function () {
   //Activate box widget
   if (o.enableBoxWidget) {
     $.AdminLTE.boxWidget.activate();
+    $.AdminLTE.boxWidget.keydown();
   }
 
   //Activate fast click
@@ -571,11 +573,21 @@ function _init() {
         e.preventDefault();
         _this.remove($(this));
       });
-    //放大方法
+    //Listen for magnify event triggers
       $(_box).on('click', _this.selectors.magnify, function (e) {
          e.preventDefault();
          _this.magnify($(this));
       });
+    },
+    keydown:function(){
+      var _this= this;
+      document.onkeydown = function(e){
+        console.log("esc全屏111")
+        e = e || window.event;
+        if(e.keyCode == 27 || e.which == 27){
+            _this.magnify($(this));
+        }
+      }
     },
     collapse: function (element) {
       var _this = this;
@@ -611,7 +623,36 @@ function _init() {
     magnify:function(element){
       //Find the box parent
       var box = element.parents(".box").first();
+      //var chart1 = document.getElementById('line-chart');
+      var chart =document.getElementById(box.find('.chart')[0].id) ;
+      console.log('全屏点击------')
+      console.log(chart)
+      if (!box.attr('fullscreen')) {
+          box.attr('fullscreen', 'true');
+          $.AdminLTE.boxWidget.requestFullscreen(chart);
+      } else {
+          box.removeAttr('fullscreen');
+          $.AdminLTE.boxWidget.exitFullscreen(chart);
+      }
 
+    },
+    requestFullscreen:function(element){
+        if (element.requestFullscreen) {
+            element.requestFullscreen();
+        } else if (element.mozRequestFullScreen) {
+            element.mozRequestFullScreen();
+        } else if (element.webkitRequestFullScreen) {
+            element.webkitRequestFullScreen();
+        }
+    },
+    exitFullscreen:function(element){
+        if (element.exitFullscreen) {
+            element.exitFullscreen();
+        } else if (element.mozCancelFullScreen) {
+            element.mozCancelFullScreen();
+        } else if (element.webkitCancelFullScreen) {
+            element.webkitCancelFullScreen();
+        }
     }
   };
 }
@@ -710,6 +751,7 @@ function _init() {
  * @usage $("#box-widget").activateBox();
  * @usage $("#box-widget").toggleBox();
  * @usage $("#box-widget").removeBox();
+ * @usage $("#box-widget").magnifyBox();
  */
 (function ($) {
 
@@ -728,6 +770,11 @@ function _init() {
     var button = $($.AdminLTE.boxWidget.selectors.remove, this);
     $.AdminLTE.boxWidget.remove(button);
   };
+  $.fn.magnifyBox = function () {
+    var button = $($.AdminLTE.boxWidget.selectors.magnify, this);
+    $.AdminLTE.boxWidget.magnify(button);
+  };
+
 
 })(jQuery);
 

@@ -6,7 +6,7 @@
 			//$('#main-footer').load('./pages/layout/footer.html',function(){});
 			this.showStockChart();
 			this.showStockChart2();
-			// this.watchEchart();
+			this.baiduMap();
 			
 		},
 		/*
@@ -38,6 +38,7 @@
 					// 基于准备好的dom，初始化echarts实例
 					var stockChart2 = echarts.init(document.getElementById('stockChart2'));
 					var stockChart = echarts.init(document.getElementById('stockChart'));
+                    var revenueChart = echarts.init(document.getElementById('revenue-chart'));
 
 					option = {
 						color: ['#1f77b4','#009fa8'],
@@ -47,6 +48,22 @@
 					            type:'line'
 					        }
 					    },
+                        toolbox: {
+                            //itemSize:11,
+                            feature: {
+                                saveAsImage: {show:true},
+								myTool:{
+									show:true,
+									title:'转换为饼状图',
+									icon:'image://http://192.168.0.15:80/frame/self/resource/pie.svg',//从iconLibrary获取
+									onclick:function(){
+										alert('pie')
+									}
+								},
+                                magicType : {show: true, type: ['line', 'bar','stack','tiled','pie']}
+                            },
+							right:'4%'
+                        },
 					    grid: {
 			 		        left: '3%',
 			 		        right: '4%',
@@ -65,6 +82,7 @@
 					    yAxis: [
 					        {
 					            type: 'value'
+
 					        }
 					    ],
 					    series: [
@@ -97,6 +115,7 @@
 					stockChart.setOption(option);
 
 					stockChart2.setOption(option);
+                    revenueChart.setOption(option);
 					that.watchEchart([stockChart,stockChart2])
 
 				},
@@ -116,6 +135,7 @@
 		        tooltip: {
 		            trigger: 'axis'
 		        },
+
 		        legend: {
 		            data:[]
 		        },
@@ -126,6 +146,7 @@
 		            containLabel: true
 		        },
 		        toolbox: {
+		        	show:true,
 		        	itemSize:11,		        	
 		            feature: {
 		                saveAsImage: {}
@@ -305,6 +326,26 @@
                     rightChart.setOption(rightOption);
                 });
              that.watchEchart([leftChart,midChart,rightChart])
+		},
+		baiduMap:function(){
+         //var mp = new BMap.Map('map-chart');
+          var myBMapExt = new BMapExtension($('#map-chart')[0], BMap, echarts);
+          var mp = myBMapExt.getMap();
+            var startPoint = {
+            	x:121.491,
+				y:31.233
+			}
+            mp.centerAndZoom(new BMap.Point(startPoint.x, startPoint.y), 11);
+            mp.enableScrollWheelZoom();//支持鼠标放大缩小
+            //var mapChart = echarts.init(document.getElementById('map-chart'));
+
+			//配置option
+			var option = {
+				title:"设备状态地理分布"
+			}
+            // var container = BMapExt.getEchartsContainer();
+            // var myChart = BMapExt.initECharts(container);
+            // BMapExt.setOption(option);
 		}
 	})
 	

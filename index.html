@@ -101,9 +101,22 @@
             <div class="tab-content no-padding">
               <!-- Morris chart - Sales -->
               <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
-              <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
+
             </div>
-            <div class=""></div>
+
+          </div>
+          <!--/.baidu map-->
+          <div class="nav-tabs-custom">
+            <!-- Tabs within a box -->
+            <ul class="nav nav-tabs pull-right">
+              <li class="pull-left header"></i>Device Map</li>
+            </ul>
+            <div class="tab-content no-padding">
+              <!-- Morris chart - Sales -->
+              <div class="chart tab-pane active" id="map-chart" style="position: relative; height: 300px;"></div>
+
+            </div>
+
           </div>
 
         </section>
@@ -275,12 +288,20 @@
 </div>
 
 <script src="dist/js/common.min.js"></script>
+<script src="src/js/app.js"></script>
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<!-- bmap 2.0 -->
+<script src="http://api.map.baidu.com/api?v=2.0&ak=xBGACOaPUAGZT3VFsjUMDSNie6Gv4Xl6&s=1"></script>
 <!-- ChartJS 1.0.1 -->
 <script src="plugins/chartjs/echarts.min.js"></script>
+<script src="plugins/require/require.js"></script>
+<!--<script src="dist/js/bmap.min.js"></script>-->
+<!--<script src="plugins/chartjs/extension/bmap.min.js"></script>-->
+<!--<script src="plugins/echarts-2.2.7/build/dist/echarts.js"></script>-->
+<script src="plugins/echarts-2.2.7/extension/BMap/doc/BMap.js"></script>
 <script src="plugins/knob/jquery.knob.js"></script>
-<script src="plugins/morris/morris.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<!--<script src="plugins/morris/morris.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>-->
 <script src="src/js/pages/dashboard.js"></script>
 <script src="self/js/publicFun.js"></script>
 <script src="self/js/index.js"></script>

@@ -12,6 +12,7 @@
     "jquery": "^3.1.1"
   },
   "devDependencies": {
+    "echarts": "^3.6.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-clean": "^0.3.2",
@@ -26,6 +27,7 @@
     "gulp-uglify": "^2.1.2",
     "jquery": "^3.1.1",
     "jshint": "^2.9.4",
+    "require": "^2.4.20",
     "three.js": "^0.77.1"
   }
 }
