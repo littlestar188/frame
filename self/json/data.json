@@ -1,6 +1,7 @@
 {
 	"data":[{
-		"name":"系统管理",	
+		"name":"系统管理",
+		"icon":"fa-cog",
 		"sub_menu":[
 			{
 				"name":"用户管理",
@@ -11,7 +12,7 @@
 			{
 				"name":"角色管理",
 				"link":"http://192.168.0.15:80/frame/pages/forms/system/roleManage.html",
-				"permission":[1,2,3],
+				"permission":[1,2,3,4],
 				"sub_menu":null
 			},
 			{
@@ -24,6 +25,7 @@
 	},
 	{
 		"name":"库存管理",
+		"icon":"fa-th",
 		"sub_menu":[
 			{
 				"name":"出库",
@@ -41,6 +43,7 @@
 	},
 	{
 		"name":"设备管理",
+		"icon":"fa-pie-chart",
 		"link":"http://192.168.0.15:80/frame/pages/forms/device/device.html",
 		"sub_menu":null,
 		"permission":[1,2,3,4]
@@ -48,6 +51,7 @@
 	},
 	{
 		"name":"消息中心",
+		"icon":"fa-envelope-o",
 		"permission":[1,2,3,4],
 		"sub_menu":[
 			{

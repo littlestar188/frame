@@ -7,6 +7,7 @@
 			this.showStockChart();
 			this.showStockChart2();
 			this.baiduMap();
+			this.gaugeChart();
 			
 		},
 		/*
@@ -39,6 +40,7 @@
 					var stockChart2 = echarts.init(document.getElementById('stockChart2'));
 					var stockChart = echarts.init(document.getElementById('stockChart'));
                     var revenueChart = echarts.init(document.getElementById('revenue-chart'));
+                    var blankChart = echarts.init(document.getElementById('blank-chart'));
 
 					option = {
 						color: ['#1f77b4','#009fa8'],
@@ -55,12 +57,17 @@
 								myTool:{
 									show:true,
 									title:'转换为饼状图',
-									icon:'image://http://192.168.0.15:80/frame/self/resource/pie.svg',//从iconLibrary获取
+									icon:'image://http://192.168.0.15:80/frame/self/resource/pie2.svg',//后缀只能是svg否则失真
+									//点击重绘成饼状图
 									onclick:function(){
-										alert('pie')
+										// $('#revenue-chart').hide();
+                                        revenueChart.clear()
+                                        index.redrawPie(revenueChart,option,data);
+                                        // $('#blank-chart').show();
+										//console.log(option)
 									}
 								},
-                                magicType : {show: true, type: ['line', 'bar','stack','tiled','pie']}
+                                magicType : {show: true, type: ['line', 'bar'/*,'stack','tiled'*/]}
                             },
 							right:'4%'
                         },
@@ -110,13 +117,13 @@
 					        }
 					    ]
 					};
-
+					console.log(option)
 					// 使用刚指定的配置项和数据显示图表。
 					stockChart.setOption(option);
-
 					stockChart2.setOption(option);
                     revenueChart.setOption(option);
-					that.watchEchart([stockChart,stockChart2])
+                    //resize
+					that.watchEchart([stockChart,stockChart2,revenueChart])
 
 				},
 				error:function(){
@@ -124,6 +131,76 @@
 				}
 			});
 		
+		},
+		redrawPie:function(chart,chartOption,data){
+			//var newOption = chart.getOption();
+			var option ={
+
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                toolbox: {
+                    //itemSize:11,
+                    feature: {
+                        saveAsImage: {show: true},
+                        myTool: {
+                            show: true,
+                            title: '转换为饼状图',
+                            icon: 'image://http://192.168.0.15:80/frame/self/resource/pie2.svg',//后缀只能是svg否则失真
+                            //点击重绘成饼状图
+                            onclick: function () {
+                                index.redrawPie(chart,chartOption,data1,data2);
+                                //console.log(option)
+                            }
+                        },
+						mytool2:{
+                            show: true,
+                            title: '转换为柱状图',
+                            icon: 'image://http://192.168.0.15:80/frame/self/resource/bar.svg',//后缀只能是svg否则失真
+                            //点击重绘成饼状图
+                            onclick: function () {
+                                chart.clear();
+                                index.showStockChart();
+
+                            }
+						}
+                    },
+                    right: '4%'
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                legend: {
+                    orient: 'vertical',
+                    left: 'left',
+                    data: ['入库', '出库']
+                },
+                series: [
+                    {
+                    	name:"入库",
+                        type: 'pie',
+                        radius: '55%',
+                        data:data.inStockAxis
+                    },
+					{
+                        name:"出库",
+                        type: 'pie',
+                        radius: '55%',
+                        data:data.outStockAxis
+					}
+                ]
+
+
+			}
+            chart.setOption(option/*,{
+			 notMerge:false
+			 }*/)
+			console.log(option)
+
 		},
 		showStockChart2:function(){
 			var that = this;
@@ -328,13 +405,14 @@
              that.watchEchart([leftChart,midChart,rightChart])
 		},
 		baiduMap:function(){
-         //var mp = new BMap.Map('map-chart');
-          var myBMapExt = new BMapExtension($('#map-chart')[0], BMap, echarts);
-          var mp = myBMapExt.getMap();
+        var mp = new BMap.Map('map-chart');
+          //var myBMapExt = new BMapExtension($('#map-chart')[0], BMap, echarts);
+         // var mp = myBMapExt.getMap();
             var startPoint = {
-            	x:121.491,
+                x:121.491,
 				y:31.233
 			}
+
             mp.centerAndZoom(new BMap.Point(startPoint.x, startPoint.y), 11);
             mp.enableScrollWheelZoom();//支持鼠标放大缩小
             //var mapChart = echarts.init(document.getElementById('map-chart'));
@@ -346,11 +424,40 @@
             // var container = BMapExt.getEchartsContainer();
             // var myChart = BMapExt.initECharts(container);
             // BMapExt.setOption(option);
+		},
+		gaugeChart:function(){
+            var gaugeChart = echarts.init(document.getElementById('gauge-chart'));
+            gaugeOption = {
+                tooltip : {
+                    formatter: "{a} <br/>{b} : {c}%"
+                },
+                toolbox: {
+                    feature: {
+                        restore: {},
+                        saveAsImage: {}
+                    }
+                },
+                series: [
+                    {
+                        name: '业务指标',
+                        type: 'gauge',
+                        detail: {formatter:'{value}%'},
+                        data: [{value: 50, name: '完成率'}]
+                    }
+                ]
+            };
+            //gaugeChart.setOption(option, true);
+            setInterval(function () {
+                gaugeOption.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+                gaugeChart.setOption(gaugeOption, true);
+            },2000);
+
 		}
 	})
 	
 //});
+
 $(function(){
-	//console.log(role)
-	index.init();	
+    //console.log(role)
+    index.init();
 })

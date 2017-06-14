@@ -76,7 +76,6 @@ var publicFun = {
 				$('#list_table li input').prop('checked',false);
 			}
 		});
-
 	},
 	//字符串替换
 	replaceAll:function(str,old,now){
@@ -133,7 +132,8 @@ var nav = {
 							perFirst = publicFun.replaceAll(perFirst.toString(),',','');
 
 							first = '<a href="'+data[i].link+'#'+perFirst+'">'
-								    +'<i class="fa '+data[i].icon+'"></i>' 
+								    // +'<i class="fa '+data[i].icon+'"></i>'
+									+'<i class="fa fa-circle-o"></i>'
 								    +'<span class="nav-name">'+data[i].name+'</span>'  
 								    +'</a>'
 							li.append(first);

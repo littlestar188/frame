@@ -71,7 +71,7 @@
         <!--  /.首页-->
       	<li class="treeview first">
          <a href="/frame/index.html">
-           <i class="fa fa-system"></i>
+           <i class="fa fa-dashboard"></i>
            <span class="nav-name" style="margin-left:-5px">首<span style="visibility:hidden">首页</span>页</span>
            <span class="pull-right-container"></span>
          </a>
@@ -101,6 +101,7 @@
             <div class="tab-content no-padding">
               <!-- Morris chart - Sales -->
               <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
+              <div class="chart tab-pane active" id="blank-chart" style="position: relative; height: 300px;display: none;"></div>
 
             </div>
 
@@ -169,6 +170,27 @@
             </div>
             <!-- /.box-footer -->
           </div>
+          <!-- Gauge box -->
+          <div class="box box-solid">
+            <div class="box-header">
+              <h3 class="box-title">Gauge Graph</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn bg-teal btn-sm" data-widget="magnify"><i class="fa fa-arrows-alt"></i>
+                </button>
+                <button type="button" class="btn bg-teal btn-sm" data-widget="remove"><i class="fa fa-times"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body border-radius-none">
+              <div class="chart" id="gauge-chart" style="height:300px"></div>
+            </div>
+
+
+            <!-- /.box-footer -->
+          </div>
           <!-- /.box -->
         </section>
         <!-- right col -->
@@ -209,6 +231,13 @@
                 <h3 class="box-title" style="padding-top:18px">出入库记录</h3>
                 <div class="form-group w120 pull-right" style="margin-left:15px;padding-top:10px;">
                   <select id="showType" class="form-control">
+                    <option value="1">离心机</option>
+                    <option value="2">空压机</option>
+                    <option value="3">注塑机</option>
+                  </select>
+                </div>
+                <div class="form-group w120 pull-right" style="margin-left:15px;padding-top:10px;">
+                  <select id="showT" class="form-control">
                     <option value="1">天</option>
                     <option value="2">周</option>
                     <option value="3">月</option>
@@ -287,18 +316,13 @@
   <div class="control-sidebar-bg"></div>
 </div>
 
-<script src="dist/js/common.min.js"></script>
+<script src="dist/js/index-common.min.js"></script>
 <script src="src/js/app.js"></script>
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- bmap 2.0 -->
 <script src="http://api.map.baidu.com/api?v=2.0&ak=xBGACOaPUAGZT3VFsjUMDSNie6Gv4Xl6&s=1"></script>
 <!-- ChartJS 1.0.1 -->
 <script src="plugins/chartjs/echarts.min.js"></script>
-<script src="plugins/require/require.js"></script>
-<!--<script src="dist/js/bmap.min.js"></script>-->
-<!--<script src="plugins/chartjs/extension/bmap.min.js"></script>-->
-<!--<script src="plugins/echarts-2.2.7/build/dist/echarts.js"></script>-->
-<script src="plugins/echarts-2.2.7/extension/BMap/doc/BMap.js"></script>
 <script src="plugins/knob/jquery.knob.js"></script>
 <!--<script src="plugins/morris/morris.min.js"></script>-->
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>-->

@@ -30,13 +30,30 @@ gulp.task('js-common',function () {
             './plugins/jQuery/jquery-2.2.3.min.js',
             './plugins/carhartl-jquery-cookie/cookie/jquery.cookie.js',
             './plugins/bootstrap/js/bootstrap.min.js',
-            // './src/js/app.js',
+            './src/js/app.js',
             './src/js/demo.js'
 
         ],
         jsDst = './dist/js';
     return gulp.src(jsSrc)
         .pipe(concat('common.js'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify())
+        .pipe(gulp.dest(jsDst));
+});
+
+gulp.task('js-index-common',function () {
+    var jsSrc = [
+            './plugins/jQuery/jquery-2.2.3.min.js',
+            './plugins/carhartl-jquery-cookie/cookie/jquery.cookie.js',
+            './plugins/bootstrap/js/bootstrap.min.js',
+            // './src/js/app.js',
+            './src/js/demo.js'
+
+        ],
+        jsDst = './dist/js';
+    return gulp.src(jsSrc)
+        .pipe(concat('index-common.js'))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
         .pipe(gulp.dest(jsDst));
