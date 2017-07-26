@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>AdminLTE 2 | Log in</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+   <!-- icon -->
+  <link rel="icon" href="favicon-logo.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/frame/favicon-logo.ico" type="image/x-icon">
+  <!-- Bootstrap 3.3.6 --> 
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">  
+  <!-- Font-awesome -->
+  <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/common.min.css">
+  <!-- private -->
+  <link rel="stylesheet" href="css/login.css">
+
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="hold-transition login-page">
+<div class="bg">
+  <!-- <div class="bg_jpg"></div> -->
+</div>
+
+<!-- 登录框 -->
+<div class="login-box">
+  <div class="login-logo">
+  <!-- 公司名 -->
+    <a href="./index.html"><b>Admin</b>LTE</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+   <!--  <p class="login-box-msg">Sign in to start your session</p> -->
+
+    <form action="./index2.html" method="post">
+      <div class="form-group has-feedback">
+       <input type="text" class="form-control username" placeholder="账号">
+       <span class="form-control warn" style="display:none">用户不能为空</span>
+       <span class="form-control error" style="display:none;"></span>
+       <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control password" placeholder="密码">
+         <span class="form-control warn" style="display:none">密码不能空</span>
+         <span class="form-control error" style="display:none;color:#c33;"></span>
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <div class="col-xs-8 inputCode">
+          <input type="text" class="form-control incode" placeholder="验证码">
+          <span class="form-control error" style="display:none"></span>
+          <span class="glyphicon glyphicon-remove coderror" style="display:none;"></span>
+        </div>
+        <div class="col-xs-4 imgCode">
+          <!-- <img src="" class="imgCheckCode" title="点击换一张" /> -->
+          <a href="javascript:void(0)" class="imgCheckCode">
+          <img src="http://192.168.0.21:8080/checkCode" title="换一张" style="width:100%;height:100%">  
+          </a>
+        </div>
+      </div>
+    </form>
+
+    <div class="row login-Wrapper">
+      <div class="col-xs-2 login"></div>
+
+      <div class="col-xs-8 login">
+        <button type="submit" class="btn btn-primary btn-block btn-flat" data-toggle="modal" data-target=".bs-example-modal-sm" id="btn_login">登录
+        <div class="line-top"></div>
+        <div class="line-right"></div>
+        <div class="line-bottom"></div>
+        <div class="line-left"></div>
+        </button>
+        <!-- small modal -->
+       <!--  <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+              登录超时
+            </div>
+          </div>
+        </div> -->
+
+      </div>
+      <div class="col-xs-2 login"></div>
+    </div>
+  </div>
+  <!-- /.login-box-body -->
+</div>
+  <!-- jQuery 2.2.3 -->
+  <!-- Bootstrap 3.3.6 -->
+  <script src="dist/js/jqboot.min.js"></script>
+  <!-- iCheck -->
+  <script src="plugins/iCheck/icheck.min.js"></script>
+  <!-- login -->
+  <script src="js/login.js"></script>
+</body>
+</html>

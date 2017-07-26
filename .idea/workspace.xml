@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="58778a8d-9eff-4deb-a2b8-e9f1e926c958" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/common.min.js" afterPath="$PROJECT_DIR$/dist/js/common.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/self/js/index.js" afterPath="$PROJECT_DIR$/self/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/self/js/publicFun.js" afterPath="$PROJECT_DIR$/self/js/publicFun.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/self/json/data.json" afterPath="$PROJECT_DIR$/self/json/data.json" />
-    </list>
+    <list default="true" id="58778a8d-9eff-4deb-a2b8-e9f1e926c958" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,14 +15,31 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/self/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
+            <state relative-caret-position="4579">
               <caret line="241" column="28" lean-forward="false" selection-start-line="241" selection-start-column="28" selection-end-line="241" selection-end-column="28" />
               <folding>
-                <element signature="e#2308#2435#0" expanded="false" />
-                <element signature="e#2455#2499#0" expanded="false" />
-                <element signature="e#2518#2630#0" expanded="false" />
-                <element signature="e#2663#2711#0" expanded="false" />
-                <element signature="e#12987#13669#0" expanded="false" />
+                <marker date="1498012319651" expanded="true" signature="83:14568" ph="{...}" />
+                <marker date="1498012319651" expanded="true" signature="607:667" ph="{...}" />
+                <marker date="1498012319651" expanded="true" signature="639:667" ph="{&quot;url&quot;: &quot;http://192.168.0.15:80/frame/self/json/echartData/echratData.json&quot;...}" />
+                <marker date="1498012319651" expanded="true" signature="12270:12891" ph="{...}" />
+                <marker date="1498012319651" expanded="true" signature="12426:12749" ph="{...}" />
+                <marker date="1498012319651" expanded="true" signature="12467:12563" ph="{...}" />
+                <marker date="1498012319651" expanded="true" signature="12567:12663" ph="{...}" />
+                <marker date="1498012319651" expanded="false" signature="12914:13596" ph="{...}" />
+                <marker date="1498012319651" expanded="true" signature="12970:13082" ph="//..." />
+                <marker date="1498012319651" expanded="true" signature="13112:13158" ph="{...}" />
+                <marker date="1498012319651" expanded="true" signature="13277:13368" ph="//..." />
+                <marker date="1498012319651" expanded="true" signature="13400:13427" ph="{&quot;title&quot;: &quot;设备状态地理分布&quot;...}" />
+                <marker date="1498012319651" expanded="true" signature="13440:13592" ph="//..." />
+                <marker date="1498012319651" expanded="true" signature="13621:14565" ph="{...}" />
+                <marker date="1498012319651" expanded="true" signature="13732:14301" ph="{...}" />
+                <marker date="1498012319651" expanded="true" signature="13760:13832" ph="{&quot;formatter&quot;: &quot;{a} &lt;br/&gt;{b} : {c}%&quot;...}" />
+                <marker date="1498012319651" expanded="true" signature="13859:14008" ph="{...}" />
+                <marker date="1498012319651" expanded="true" signature="13890:13990" ph="{...}" />
+                <marker date="1498012319651" expanded="true" signature="14034:14287" ph="[...]" />
+                <marker date="1498012319651" expanded="true" signature="14056:14269" ph="{&quot;name&quot;: '业务指标'...}" />
+                <marker date="1498012319651" expanded="true" signature="14389:14553" ph="{...}" />
+                <marker date="1498012319651" expanded="true" signature="14591:14636" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -39,7 +48,7 @@
       <file leaf-file-name="publicFun.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/self/js/publicFun.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
+            <state relative-caret-position="2527">
               <caret line="135" column="62" lean-forward="false" selection-start-line="135" selection-start-column="51" selection-end-line="135" selection-end-column="62" />
               <folding />
             </state>
@@ -49,8 +58,8 @@
       <file leaf-file-name="index2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/self/js/index2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="247" column="31" lean-forward="false" selection-start-line="247" selection-start-column="30" selection-end-line="247" selection-end-column="31" />
+            <state relative-caret-position="4693">
+              <caret line="247" column="31" lean-forward="false" selection-start-line="247" selection-start-column="31" selection-end-line="247" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -79,7 +88,7 @@
       <file leaf-file-name="example.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plugins/echarts-2.2.7/extension/BMap/doc/example.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
+            <state relative-caret-position="551">
               <caret line="29" column="11" lean-forward="false" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
               <folding />
             </state>
@@ -99,8 +108,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="236" column="27" lean-forward="true" selection-start-line="236" selection-start-column="27" selection-end-line="236" selection-end-column="27" />
+            <state relative-caret-position="19">
+              <caret line="236" column="27" lean-forward="false" selection-start-line="236" selection-start-column="27" selection-end-line="236" selection-end-column="27" />
               <folding>
                 <element signature="n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#section#0;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -126,7 +135,7 @@
         <entry file="file://$PROJECT_DIR$/self/json/data.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="931">
-              <caret line="49" column="8" lean-forward="true" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+              <caret line="49" column="8" lean-forward="false" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -270,9 +279,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -861,10 +868,12 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="E:/ideaWorkspace" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../frame2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -1324,11 +1333,12 @@
       <workItem from="1496970105612" duration="20381000" />
       <workItem from="1497228716921" duration="22454000" />
       <workItem from="1497316953733" duration="7505000" />
+      <workItem from="1498036256719" duration="181000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155018000" />
+    <option name="totallyTimeSpent" value="155199000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1347,7 +1357,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2803838" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2835821" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1701,8 +1711,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/self/js/index2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="247" column="31" lean-forward="false" selection-start-line="247" selection-start-column="30" selection-end-line="247" selection-end-column="31" />
+        <state relative-caret-position="4693">
+          <caret line="247" column="31" lean-forward="false" selection-start-line="247" selection-start-column="31" selection-end-line="247" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -1711,13 +1721,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="38" column="22" lean-forward="true" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/plugins/echarts-2.2.7/extension/BMap/doc/example.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
+        <state relative-caret-position="551">
           <caret line="29" column="11" lean-forward="false" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
           <folding />
         </state>
@@ -1725,7 +1734,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/self/js/publicFun.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
+        <state relative-caret-position="2527">
           <caret line="135" column="62" lean-forward="false" selection-start-line="135" selection-start-column="51" selection-end-line="135" selection-end-column="62" />
           <folding />
         </state>
@@ -1733,14 +1742,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/self/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
+        <state relative-caret-position="4579">
           <caret line="241" column="28" lean-forward="false" selection-start-line="241" selection-start-column="28" selection-end-line="241" selection-end-column="28" />
           <folding>
-            <element signature="e#2308#2435#0" expanded="false" />
-            <element signature="e#2455#2499#0" expanded="false" />
-            <element signature="e#2518#2630#0" expanded="false" />
-            <element signature="e#2663#2711#0" expanded="false" />
-            <element signature="e#12987#13669#0" expanded="false" />
+            <marker date="1498012319651" expanded="true" signature="83:14568" ph="{...}" />
+            <marker date="1498012319651" expanded="true" signature="607:667" ph="{...}" />
+            <marker date="1498012319651" expanded="true" signature="639:667" ph="{&quot;url&quot;: &quot;http://192.168.0.15:80/frame/self/json/echartData/echratData.json&quot;...}" />
+            <marker date="1498012319651" expanded="true" signature="12270:12891" ph="{...}" />
+            <marker date="1498012319651" expanded="true" signature="12426:12749" ph="{...}" />
+            <marker date="1498012319651" expanded="true" signature="12467:12563" ph="{...}" />
+            <marker date="1498012319651" expanded="true" signature="12567:12663" ph="{...}" />
+            <marker date="1498012319651" expanded="false" signature="12914:13596" ph="{...}" />
+            <marker date="1498012319651" expanded="true" signature="12970:13082" ph="//..." />
+            <marker date="1498012319651" expanded="true" signature="13112:13158" ph="{...}" />
+            <marker date="1498012319651" expanded="true" signature="13277:13368" ph="//..." />
+            <marker date="1498012319651" expanded="true" signature="13400:13427" ph="{&quot;title&quot;: &quot;设备状态地理分布&quot;...}" />
+            <marker date="1498012319651" expanded="true" signature="13440:13592" ph="//..." />
+            <marker date="1498012319651" expanded="true" signature="13621:14565" ph="{...}" />
+            <marker date="1498012319651" expanded="true" signature="13732:14301" ph="{...}" />
+            <marker date="1498012319651" expanded="true" signature="13760:13832" ph="{&quot;formatter&quot;: &quot;{a} &lt;br/&gt;{b} : {c}%&quot;...}" />
+            <marker date="1498012319651" expanded="true" signature="13859:14008" ph="{...}" />
+            <marker date="1498012319651" expanded="true" signature="13890:13990" ph="{...}" />
+            <marker date="1498012319651" expanded="true" signature="14034:14287" ph="[...]" />
+            <marker date="1498012319651" expanded="true" signature="14056:14269" ph="{&quot;name&quot;: '业务指标'...}" />
+            <marker date="1498012319651" expanded="true" signature="14389:14553" ph="{...}" />
+            <marker date="1498012319651" expanded="true" signature="14591:14636" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1748,15 +1774,15 @@
     <entry file="file://$PROJECT_DIR$/self/json/data.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="931">
-          <caret line="49" column="8" lean-forward="true" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+          <caret line="49" column="8" lean-forward="false" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="236" column="27" lean-forward="true" selection-start-line="236" selection-start-column="27" selection-end-line="236" selection-end-column="27" />
+        <state relative-caret-position="19">
+          <caret line="236" column="27" lean-forward="false" selection-start-line="236" selection-start-column="27" selection-end-line="236" selection-end-column="27" />
           <folding>
             <element signature="n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#0;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
