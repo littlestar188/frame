@@ -58,10 +58,10 @@
 			var name = $('#user_name').val();
 
 			$('#btn_search').click(function(){
-				//'../../self/json/getSomeUser.json'
+				
 				$("#user_table").bootstrapTable('refresh','resources/json/getSomeUser.json'+name)				
 				// $.ajax({
-				// 	url:'../../self/json/getSomeUser.json',
+				// 	url:'resources/json/getSomeUser.json',
 				// 	data:{
 				// 		roleName:name
 				// 	},
